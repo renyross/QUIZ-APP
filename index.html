@@ -1,0 +1,2813 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction & Quiz de l'Apprenti Initié</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            masonic: {
+              bg: '#050811',
+              card: '#0a101f',
+              border: '#2c2214',
+              gold: '#d4af37',
+              goldLight: '#f6ecbf',
+              goldDark: '#8f7218',
+              blue: '#16233b',
+              blueGlow: '#1f3458'
+            }
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            cormorant: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050811;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(31, 52, 88, 0.3) 0%, transparent 65%),
+        radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        linear-gradient(to bottom, #050811, #080d1a);
+      min-height: 100vh;
+    }
+
+    .pave-subtil {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%), 
+        linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%), 
+        linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%);
+    }
+
+    .gold-border-glow {
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.08), inset 0 0 15px rgba(212, 175, 55, 0.03);
+    }
+
+    .gold-gradient {
+      background: linear-gradient(135deg, #fdf4d1 0%, #d4af37 50%, #9e7e1c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #070b16; }
+    ::-webkit-scrollbar-thumb { background: #262013; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+  
+/* Interface éditoriale — bleu nuit, ivoire et laiton */
+:root { color-scheme: dark; --ink:#101b2b; --gold:#c7aa72; }
+body { background:#0c1421; background-image:none; color:#e9edf3; -webkit-font-smoothing:antialiased; }
+.pave-subtil { background-image:none; }
+.gold-gradient { background:none; -webkit-text-fill-color:initial; color:#e9ddc5; }
+.gold-border-glow { border:1px solid #304052; box-shadow:none; }
+header { background:#0c1421f2!important; border-color:#ffffff12!important; }
+header > div:first-child { height:88px; }
+header h1 { font-size:14px!important; letter-spacing:.14em!important; }
+header p { font-family:Inter,sans-serif!important; font-size:10px!important; letter-spacing:.12em!important; margin-top:5px; }
+header nav button { font-family:Inter,sans-serif!important; font-size:12px!important; border-radius:6px!important; }
+header nav button:hover { background:#ffffff08!important; }
+header .rounded-full { border-radius:10px; border-color:#c7aa7250; background:#c7aa720b; }
+main { max-width:1200px!important; padding-top:40px!important; padding-bottom:64px!important; }
+#view-home { gap:32px; }
+#view-home > div:first-child { text-align:left; padding:60px!important; border-radius:16px; background:linear-gradient(115deg,#192b42,#111e30 70%); position:relative; isolation:isolate; }
+#view-home > div:first-child::after { content:'G'; position:absolute; right:3%; top:50%; transform:translateY(-50%); font-family:Cinzel,serif; font-size:260px; line-height:1; color:#c7aa7208; border:1px solid #c7aa7218; width:310px; height:310px; display:grid; place-items:center; border-radius:50%; z-index:-1; pointer-events:none; }
+#view-home > div:first-child > div:first-child { background:transparent; padding:0; border:0; color:#c7aa72; font-family:Inter,sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:.16em; margin-bottom:24px; }
+#view-home h2 { max-width:760px; font-size:clamp(28px,4.2vw,48px)!important; line-height:1.22; font-weight:600; letter-spacing:-.025em!important; margin-bottom:20px; }
+#view-home > div:first-child > p { margin-left:0; max-width:620px; font-size:21px; color:#acb9ca; line-height:1.6; }
+#view-home > div:first-child > div:last-child { justify-content:flex-start; gap:12px; }
+button { cursor:pointer; }
+button:focus-visible, input:focus-visible { outline:2px solid #e2c486; outline-offset:4px; }
+#view-home > div:first-child button { font-family:Inter,sans-serif; font-size:12px; letter-spacing:0; border-radius:7px; padding:15px 22px; font-weight:600; }
+#view-home > div:first-child button:first-child { background:#d1b580; box-shadow:none; color:#142033; }
+#view-home > div:first-child button:last-child { background:#ffffff04; border-color:#ffffff25; color:#e0e6ed; }
+#view-home > .grid { gap:0; border:1px solid #ffffff12; border-radius:12px; overflow:hidden; background:#111d2d; text-align:left; }
+#view-home > .grid > div { border:0; border-radius:0; background:transparent; padding:25px 28px; }
+#view-home > .grid > div + div { border-left:1px solid #ffffff12; }
+#view-home > .grid > div > div:first-child { font-family:Inter,sans-serif; color:#8c9bb0; font-size:9px; letter-spacing:.16em; margin-bottom:8px; }
+#view-home > .grid > div > div:nth-child(2) { font-size:17px; font-weight:500; color:#d5bd91; letter-spacing:.06em; }
+#view-home > .grid p { font-family:Inter,sans-serif; color:#93a2b6; font-size:12px; line-height:1.8; }
+#view-home h3 { font-size:23px!important; font-weight:500; letter-spacing:-.02em; }
+#view-home h3 + p { font-family:Inter,sans-serif; font-style:normal; font-size:12px; margin-top:9px; }
+#view-home > div:last-child > div:first-child { margin-top:40px; margin-bottom:25px; }
+#categoriesGrid { gap:18px; }
+#categoriesGrid > div { background:#111d2d; border-color:#ffffff10; border-radius:12px; padding:26px; position:relative; transition:transform .2s,border-color .2s,background .2s; }
+#categoriesGrid > div:hover { transform:translateY(-4px); background:#152337; border-color:#c7aa7255; }
+#categoriesGrid h4 { font-family:Inter,sans-serif; font-size:16px; font-weight:600; line-height:1.5; }
+#categoriesGrid p { font-family:Inter,sans-serif; font-size:12px; line-height:1.85; min-height:66px; color:#95a4b8; }
+#categoriesGrid > div > div:first-child > div:first-child { border:0; background:#c7aa7210; border-radius:10px; color:#cfb37f; width:43px; height:43px; }
+#categoriesGrid > div > div:last-child { border-color:#ffffff0d; margin-top:8px; }
+#categoriesGrid button { font-family:Inter,sans-serif; background:transparent; color:#d3bc92; padding-right:0; }
+#categoriesGrid button:hover { color:#fff; }
+#categoriesGrid .font-mono { color:#8595ab; font-family:Inter,sans-serif; font-size:11px; }
+#view-quiz > div, #view-results > div, #view-catechism > div { background:#111d2d; border-color:#ffffff15; box-shadow:none; border-radius:14px; }
+#view-quiz > div:first-child { padding:22px; }
+#questionText { font-size:clamp(20px,2.6vw,27px)!important; font-weight:500; line-height:1.65; }
+#optionsContainer button { background:#0d1726; border-color:#ffffff14; border-radius:9px; padding:18px; line-height:1.6; }
+#optionsContainer button:hover:enabled { background:#1b2c42; border-color:#c7aa7280; }
+#optionsContainer button:disabled { cursor:default; }
+#optionsContainer button.bg-emerald-950\/60 { background:#073c2b!important; border-color:#39a97b!important; }
+#optionsContainer button.bg-red-950\/60 { background:#471f29!important; border-color:#be6675!important; }
+#nextBtn, #view-results button { font-family:Inter,sans-serif; border-radius:7px; letter-spacing:0; }
+#catechismSearch { background:#0c1625; border-color:#ffffff20; border-radius:8px; padding-top:16px; padding-bottom:16px; }
+#catechismList { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+#catechismList > div { margin-top:0; border-color:#ffffff13; border-radius:10px; background:#0d1726; padding:24px; }
+#catechismList pre { font-family:Inter,sans-serif; font-size:13px; line-height:1.9; background:transparent; border:0; padding:0; margin-top:15px; color:#acb8c9; }
+#catechismList h4 { margin-top:14px; }
+footer { background:#0a121e!important; border-color:#ffffff10!important; color:#75869c!important; font-family:Inter,sans-serif!important; padding:26px 0!important; }
+footer .font-cinzel { color:#a99a7b; font-size:10px; }
+@keyframes enter { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+.animate-fade-in { animation:enter .35s ease both; }
+@media(max-width:767px) {
+ main { padding-top:20px!important; }
+ header > div:first-child { height:74px; }
+ header h1 { font-size:11px!important; }
+ #view-home > div:first-child { padding:30px 24px!important; }
+ #view-home > div:first-child::after { font-size:180px; width:230px; height:230px; right:-90px; }
+ #view-home > div:first-child > p { font-size:18px; }
+ #view-home > div:first-child button { width:100%; justify-content:center; }
+ #view-home > .grid > div + div { border-left:0; border-top:1px solid #ffffff12; }
+ #view-home > div:last-child > div:first-child { align-items:flex-start; gap:18px; flex-direction:column; margin-top:28px; }
+ #catechismList { grid-template-columns:1fr; }
+ #view-quiz > div:first-child > div:first-child { flex-wrap:wrap; gap:12px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+  
+.memento-tools { display:flex; flex-wrap:wrap; gap:16px; align-items:end; margin:24px 0 16px; }
+.memento-tools label { display:flex; flex-direction:column; gap:8px; font-size:11px; color:#9aaac0; flex:1; min-width:180px; }
+.memento-tools select { font:inherit; font-size:13px; color:#e2e8f0; border:1px solid #ffffff22; border-radius:8px; background:#0d1726; padding:12px; width:100%; }
+#mementoCount { color:#cbb486; font-size:12px; padding-bottom:12px; }
+.memento-note { color:#889ab1; font-size:12px; line-height:1.8; margin-bottom:28px; max-width:750px; }
+.memento-card { display:flex; flex-direction:column; align-items:start; border:1px solid #ffffff15; border-radius:12px; background:#0d1726; padding:26px; }
+.memento-category { color:#ccb17c; font-size:10px; letter-spacing:.09em; text-transform:uppercase; }
+.memento-card h3 { font-family:Cinzel,serif; font-size:18px; color:#edf0f5; line-height:1.5; margin:12px 0 16px; }
+.memento-copy { white-space:pre-line; color:#b4c0d1; font-size:13px; line-height:1.9; margin-bottom:22px; }
+.memento-reference { margin-top:auto; padding-top:16px; border-top:1px solid #ffffff12; width:100%; font-size:11px; line-height:1.7; color:#ccb17c; text-decoration:none; }
+.memento-reference:hover { color:#f0dfb9; text-decoration:underline; }
+.memento-empty { grid-column:1/-1; padding:32px; text-align:center; color:#9aaac0; }
+
+
+.mobile-menu-trigger { display:flex; align-items:center; gap:10px; min-height:44px; padding:10px 13px; border:1px solid #c7aa7245; border-radius:8px; color:#ddc99f; background:#c7aa7208; font:500 12px Inter,sans-serif; }
+.menu-bars { width:17px; height:12px; border-top:1.5px solid currentColor; border-bottom:1.5px solid currentColor; position:relative; }
+.menu-bars::after { content:''; position:absolute; top:4px; left:5px; right:0; border-top:1.5px solid currentColor; }
+#mobileMenu { position:fixed; inset:12px 12px auto auto; margin:0; padding:0; width:min(420px,calc(100vw - 24px)); max-width:none; max-height:calc(100dvh - 24px); overflow:auto; color:#e9edf3; background:#111e30; border:1px solid #3c4859; border-radius:18px; box-shadow:0 24px 90px #0008; }
+#mobileMenu[open] { animation:enter .2s ease both; }
+#mobileMenu::backdrop { background:#030914b8; backdrop-filter:blur(6px); }
+.mobile-menu-top { display:flex; align-items:start; justify-content:space-between; gap:10px; padding:28px 24px 24px; }
+.mobile-menu-eyebrow { color:#bca577; font:500 9px Inter,sans-serif; letter-spacing:.13em; }
+#mobileMenuTitle { font:500 21px/1.4 Cinzel,serif; margin-top:10px; max-width:240px; }
+.mobile-menu-close { flex-shrink:0; width:44px; height:44px; border:1px solid #ffffff20; border-radius:50%; background:#ffffff05; color:#bdc9da; font:300 28px/1 Inter,sans-serif; }
+.mobile-menu-close:hover { background:#ffffff10; color:white; }
+.mobile-menu-links { display:grid; gap:8px; padding:0 14px 22px; }
+.mobile-menu-links button { display:flex; align-items:center; gap:14px; width:100%; padding:18px 12px; text-align:left; border:1px solid transparent; border-radius:10px; background:transparent; }
+.mobile-menu-links button:hover { background:#ffffff05; }
+.mobile-menu-links button[aria-current="page"] { border-color:#c7aa7235; background:#c7aa720b; }
+.mobile-link-icon { display:grid; place-items:center; flex:0 0 38px; height:38px; font-size:23px; color:#cbb17f; background:#c7aa7210; border-radius:10px; }
+.mobile-menu-links strong { display:block; color:#e7eaf0; font:500 14px/1.5 Inter,sans-serif; }
+.mobile-menu-links small { display:block; color:#8fa1b9; font:400 11px/1.6 Inter,sans-serif; margin-top:4px; }
+.mobile-link-arrow { margin-left:auto; color:#9e8d6a; font-size:18px; }
+.mobile-menu-bottom { display:flex; align-items:center; gap:8px; border-top:1px solid #ffffff0d; padding:20px 24px calc(20px + env(safe-area-inset-bottom)); font:400 11px/1.6 Inter,sans-serif; color:#8fa1b9; }
+.mobile-menu-dot { width:5px; height:5px; background:#c7aa72; border-radius:50%; }
+@media(max-width:380px) { header h1 { font-size:9px!important; letter-spacing:.08em!important; } header p { font-size:8px!important; } header .space-x-3 { gap:8px; --tw-space-x-reverse:0; } .mobile-menu-trigger { padding:10px; } .mobile-menu-trigger > span:first-child { display:none; } .mobile-menu-links button { gap:10px; } }
+
+
+/* Menu plein écran : grandes rubriques et accordéons */
+#mobileMenu { inset:0; width:100%; height:100dvh; max-height:100dvh; max-width:100%; margin:0; border:0; border-radius:0; background:#0c1421; box-shadow:none; padding:0; }
+#mobileMenu[open] { display:flex; flex-direction:column; }
+.mobile-menu-top { flex-shrink:0; position:sticky; top:0; z-index:1; padding:24px clamp(22px,6vw,56px); border-bottom:1px solid #ffffff12; align-items:center; background:#0c1421; min-height:100px; }
+.mobile-menu-brand { display:flex; gap:12px; align-items:center; }
+.mobile-brand-mark { display:grid; place-items:center; width:40px; height:44px; border:1px solid #c7aa7260; font:600 24px Cinzel,serif; color:#d1b580; }
+.mobile-menu-eyebrow { color:#dbc28e; font-size:10px; letter-spacing:.1em; }
+.mobile-menu-brand p { margin:5px 0 0; color:#8fa1b9; font:400 10px Inter,sans-serif; }
+.mobile-menu-close { position:relative; width:44px; height:44px; border:0; border-radius:0; background:transparent; }
+.mobile-menu-close span::before,.mobile-menu-close span::after { content:''; width:28px; height:2px; background:#d8c296; position:absolute; top:21px; left:8px; transform:rotate(45deg); }
+.mobile-menu-close span::after { transform:rotate(-45deg); }
+.mobile-menu-content { flex:1; display:flex; flex-direction:column; padding:24px clamp(24px,6vw,56px) max(28px,env(safe-area-inset-bottom)); }
+.mobile-menu-links { display:block; padding:0; margin-bottom:48px; }
+.mobile-menu-group { border:0; }
+.mobile-menu-group summary { display:flex; align-items:center; justify-content:space-between; gap:18px; min-height:100px; padding:24px 0; list-style:none; cursor:pointer; color:#e6eaf0; font:400 clamp(20px,4.6vw,30px)/1.35 Inter,sans-serif; letter-spacing:-.035em; }
+.mobile-menu-group summary::-webkit-details-marker { display:none; }
+.mobile-menu-group summary:hover,.mobile-menu-group[open] summary { color:#d1b580; }
+.mobile-chevron { flex-shrink:0; width:10px; height:10px; border-bottom:2px solid #d1b580; border-right:2px solid #d1b580; transform:rotate(45deg); margin:0 5px 5px; transition:transform .2s; }
+.mobile-menu-group[open] .mobile-chevron { transform:rotate(225deg); margin-bottom:-5px; }
+.mobile-submenu { padding:0 0 22px 18px; border-left:1px solid #c7aa7245; margin:0 0 12px; }
+.mobile-menu-links .mobile-submenu button { border:0; border-radius:0; font:400 14px/1.6 Inter,sans-serif; color:#b3c0d2; padding:12px 0; min-height:46px; gap:12px; }
+.mobile-menu-links .mobile-submenu button:hover,.mobile-menu-links .mobile-submenu button[aria-current="page"] { background:transparent; color:#d1b580; }
+.mobile-submenu button > span { margin-left:auto; }
+.mobile-submenu p { color:#7f91aa; font:400 12px/1.8 Inter,sans-serif; max-width:330px; margin:10px 0; }
+.mobile-menu-cta { display:flex; justify-content:space-between; gap:20px; align-items:center; width:100%; min-height:76px; padding:22px 24px; margin-top:auto; background:#18283c; border:1px solid #c7aa7230; color:#e2c386; text-align:left; font:600 14px/1.5 Inter,sans-serif; }
+.mobile-menu-cta > span:last-child { font-size:25px; font-weight:400; }
+.mobile-menu-cta:hover { background:#21334b; }
+@media(min-height:850px) { .mobile-menu-group summary { min-height:120px; } }
+@media(max-width:360px) { .mobile-menu-top { padding:18px; } .mobile-menu-eyebrow { font-size:9px; } .mobile-menu-brand { gap:8px; } .mobile-menu-group summary { font-size:20px; } }
+
+</style>
+</head>
+<body class="pave-subtil flex flex-col min-h-screen selection:bg-masonic-gold selection:text-black">
+
+  <!-- Header -->
+  <header class="border-b border-masonic-border bg-masonic-card/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="navigate('home')">
+        <div class="w-11 h-11 rounded-full border border-masonic-gold/40 flex items-center justify-center bg-masonic-blue/40 shadow-inner">
+          <span class="font-cinzel text-xl font-bold text-masonic-gold">G</span>
+        </div>
+        <div>
+          <h1 class="font-cinzel text-base sm:text-lg font-bold tracking-widest gold-gradient">INSTRUCTION RITUÉLIQUE</h1>
+          <p class="text-[10px] sm:text-xs text-gray-400 font-serif italic tracking-wider">CULTURE & CATÉCHISME D'APPRENTI</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-2">
+        <button onclick="navigate('home')" class="px-4 py-2 rounded-lg text-sm font-cinzel transition-all hover:text-masonic-gold hover:bg-masonic-blue/30 text-gray-300 flex items-center gap-2">
+          <i data-lucide="compass" class="w-4 h-4 text-masonic-gold"></i> Ateliers
+        </button>
+        <button onclick="startQuiz('all')" class="px-4 py-2 rounded-lg text-sm font-cinzel transition-all hover:text-masonic-gold hover:bg-masonic-blue/30 text-gray-300 flex items-center gap-2">
+          <i data-lucide="scroll" class="w-4 h-4 text-masonic-gold"></i> Grand Examen (<span data-question-total></span>)
+        </button>
+        <button onclick="navigate('catechism')" class="px-4 py-2 rounded-lg text-sm font-cinzel transition-all hover:text-masonic-gold hover:bg-masonic-blue/30 text-gray-300 flex items-center gap-2">
+          <i data-lucide="book-open" class="w-4 h-4 text-masonic-gold"></i> Mémento Rituélique
+        </button>
+      </nav>
+
+      <div class="md:hidden flex items-center">
+        <button id="mobileMenuBtn" class="mobile-menu-trigger" aria-label="Ouvrir le menu" aria-haspopup="dialog" aria-controls="mobileMenu" aria-expanded="false">
+          <span>Menu</span><span class="menu-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation mobile -->
+    <dialog id="mobileMenu" aria-labelledby="mobileMenuTitle">
+      <div class="mobile-menu-top">
+        <div class="mobile-menu-brand"><span class="mobile-brand-mark" aria-hidden="true">G</span><div><span class="mobile-menu-eyebrow">INSTRUCTION RITUÉLIQUE</span><p>L’atelier de l’apprenti</p></div></div>
+        <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Fermer le menu" autofocus><span aria-hidden="true"></span></button>
+      </div>
+      <div class="mobile-menu-content">
+        <nav class="mobile-menu-links" aria-label="Navigation mobile">
+          <details class="mobile-menu-group">
+            <summary>Les ateliers<span class="mobile-chevron" aria-hidden="true"></span></summary>
+            <div class="mobile-submenu">
+              <button data-mobile-view="home" onclick="navigate('home')">Voir tous les ateliers <span aria-hidden="true">↗</span></button>
+              <button onclick="startQuiz('catechism')">Catéchisme & tuilage</button>
+              <button onclick="startQuiz('reflection')">Cabinet & épreuves</button>
+              <button onclick="startQuiz('officers')">Officiers & organisation</button>
+            </div>
+          </details>
+          <details class="mobile-menu-group">
+            <summary>Symbolisme<span class="mobile-chevron" aria-hidden="true"></span></summary>
+            <div class="mobile-submenu"><button onclick="startQuiz('tools')">Outils, décors & symboles <span aria-hidden="true">↗</span></button></div>
+          </details>
+          <details class="mobile-menu-group">
+            <summary>Spiritualité<span class="mobile-chevron" aria-hidden="true"></span></summary>
+            <div class="mobile-submenu"><button onclick="startQuiz('theurgy')">Allumage des étoiles & théurgie</button><button onclick="startQuiz('occult')">Correspondances & angéologie</button></div>
+          </details>
+          <details class="mobile-menu-group">
+            <summary>Mémento & catéchisme<span class="mobile-chevron" aria-hidden="true"></span></summary>
+            <div class="mobile-submenu"><button data-mobile-view="catechism" onclick="navigate('catechism')">Consulter les 21 fiches <span aria-hidden="true">↗</span></button><p>Synthèses et références aux quatre documents de votre bibliothèque.</p></div>
+          </details>
+          <details class="mobile-menu-group">
+            <summary>Votre évaluation<span class="mobile-chevron" aria-hidden="true"></span></summary>
+            <div class="mobile-submenu"><button data-mobile-view="quiz" onclick="startQuiz('all')">Passer l’examen complet <span aria-hidden="true">↗</span></button><p><span data-question-total></span> questions avec corrections expliquées.</p></div>
+          </details>
+        </nav>
+        <button class="mobile-menu-cta" onclick="startQuiz('all')"><span>Commencer le grand examen</span><span aria-hidden="true">↗</span></button>
+      </div>
+    </dialog>
+  </header>
+
+  <!-- Contenu Principal -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- VUE ACCUEIL -->
+    <section id="view-home" class="space-y-10 animate-fade-in">
+      <div class="relative overflow-hidden rounded-2xl gold-border-glow bg-gradient-to-r from-masonic-card via-[#0e1629] to-masonic-card p-8 sm:p-12 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-masonic-gold/30 bg-masonic-bg/80 text-xs font-cinzel text-masonic-gold mb-4">
+          <i data-lucide="shield" class="w-3.5 h-3.5"></i> L’atelier de l’apprenti · Espace d’étude
+        </div>
+        <h2 class="font-cinzel text-2xl sm:text-4xl font-bold tracking-wide gold-gradient mb-4">
+          Le savoir se construit.<br>Une question à la fois.
+        </h2>
+        <p class="font-cormorant text-lg sm:text-2xl text-gray-300 max-w-3xl mx-auto italic mb-8 leading-relaxed">
+          « Vaincre mes passions, soumettre ma volonté à mes devoirs et faire de nouveaux progrès dans l'Art Royal. »
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <button onclick="startQuiz('all')" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-masonic-goldDark via-masonic-gold to-masonic-goldDark text-black font-cinzel font-bold tracking-wider shadow-lg hover:shadow-masonic-gold/25 hover:scale-[1.02] transition-all flex items-center gap-2">
+            <i data-lucide="play" class="w-5 h-5 fill-black"></i> Commencer l’examen · <span data-question-total></span> questions
+          </button>
+          <button onclick="navigate('catechism')" class="px-6 py-3.5 rounded-xl border border-masonic-gold/40 bg-masonic-card hover:bg-masonic-blue/40 text-masonic-gold font-cinzel font-semibold transition-all flex items-center gap-2">
+            <i data-lucide="book-open" class="w-4 h-4"></i> Consulter le Mémento
+          </button>
+        </div>
+      </div>
+
+      <!-- Piliers symboliques -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="p-6 rounded-xl border border-masonic-border bg-masonic-card/70 backdrop-blur">
+          <div class="text-masonic-gold font-cinzel text-xs tracking-widest uppercase mb-1">Premier Pilier</div>
+          <div class="font-cinzel text-xl text-white font-bold mb-2">SAGESSE</div>
+          <p class="text-xs text-gray-400 font-serif leading-relaxed">Elle conçoit l'édifice moral et spirituel. Elle est représentée par le Vénérable Maître à l'Orient.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-masonic-border bg-masonic-card/70 backdrop-blur">
+          <div class="text-masonic-gold font-cinzel text-xs tracking-widest uppercase mb-1">Second Pilier</div>
+          <div class="font-cinzel text-xl text-white font-bold mb-2">FORCE</div>
+          <p class="text-xs text-gray-400 font-serif leading-relaxed">Elle exécute et soutient l'œuvre. Symbolisée par le Premier Surveillant et la colonne d'Apprenti.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-masonic-border bg-masonic-card/70 backdrop-blur">
+          <div class="text-masonic-gold font-cinzel text-xs tracking-widest uppercase mb-1">Troisième Pilier</div>
+          <div class="font-cinzel text-xl text-white font-bold mb-2">BEAUTÉ</div>
+          <p class="text-xs text-gray-400 font-serif leading-relaxed">Elle orne le Temple intérieur et parfait l'harmonie. Représentée par le Second Surveillant.</p>
+        </div>
+      </div>
+
+      <!-- Choix des Chambres d'instruction -->
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <i data-lucide="layers" class="w-5 h-5 text-masonic-gold"></i>
+              Votre parcours de révision
+            </h3>
+            <p class="text-sm text-gray-400 font-cormorant italic">Six thématiques pour approfondir vos connaissances, à votre rythme.</p>
+          </div>
+          <span class="text-xs font-mono text-masonic-gold bg-masonic-blue/40 px-3 py-1 rounded border border-masonic-gold/30">
+            6 ateliers · <span data-question-total></span> questions
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="categoriesGrid">
+          <!-- Dynamique -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VUE QUIZ -->
+    <section id="view-quiz" class="hidden space-y-6 max-w-4xl mx-auto">
+      <div class="bg-masonic-card p-4 rounded-xl border border-masonic-border flex flex-col gap-3">
+        <div class="flex items-center justify-between text-xs sm:text-sm font-cinzel">
+          <span class="text-gray-400 flex items-center gap-2">
+            <span id="quizCategoryBadge" class="px-2.5 py-0.5 rounded bg-masonic-blue text-masonic-gold font-sans font-semibold text-xs border border-masonic-gold/20">Chambre</span>
+            <span id="quizCounterText">Question 1 / <span data-question-total></span></span>
+          </span>
+          <div class="flex items-center gap-3">
+            <span class="text-masonic-gold font-bold flex items-center gap-1">
+              <i data-lucide="award" class="w-4 h-4"></i> <span id="quizScoreCurrent">0</span> pts
+            </span>
+            <button onclick="abandonQuiz()" class="text-gray-400 hover:text-red-400 text-xs tracking-wider uppercase font-sans">Quitter</button>
+          </div>
+        </div>
+        <div class="w-full bg-masonic-bg rounded-full h-2 overflow-hidden border border-masonic-border">
+          <div id="quizProgressBar" class="h-full bg-gradient-to-r from-masonic-goldDark to-masonic-gold transition-all duration-300 w-0"></div>
+        </div>
+      </div>
+
+      <div class="bg-masonic-card gold-border-glow rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+        <div class="text-[11px] font-mono uppercase tracking-widest text-masonic-gold/80 mb-2 flex items-center gap-2">
+          <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+          <span>Instruction Initiatique au 1er Grade</span>
+        </div>
+        
+        <h3 id="questionText" class="font-cinzel text-lg sm:text-2xl text-white font-bold leading-relaxed mb-6">
+          Chargement de la question...
+        </h3>
+
+        <div id="optionsContainer" class="space-y-3 mb-6">
+          <!-- Options dynamiques -->
+        </div>
+
+        <div id="explanationContainer" class="hidden rounded-xl border p-5 bg-masonic-bg/80 animate-fade-in text-sm leading-relaxed">
+          <div class="flex items-start gap-3">
+            <div id="explanationIcon" class="mt-0.5"></div>
+            <div>
+              <div id="explanationStatus" class="font-cinzel font-bold text-base mb-1"></div>
+              <div id="explanationContent" class="text-gray-300 font-serif text-base leading-relaxed"></div>
+              <div id="ritualSource" class="mt-2 text-xs font-mono text-masonic-gold/90 border-t border-masonic-border/50 pt-2"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex justify-end">
+          <button id="nextBtn" onclick="nextQuestion()" class="hidden px-6 py-2.5 rounded-lg bg-masonic-gold hover:bg-masonic-goldLight text-black font-cinzel font-bold text-sm tracking-wider transition-all items-center gap-2 shadow-md">
+            <span>Passer à la suivante</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VUE RÉSULTATS -->
+    <section id="view-results" class="hidden max-w-3xl mx-auto space-y-8 animate-fade-in">
+      <div class="bg-masonic-card gold-border-glow rounded-2xl p-8 sm:p-12 text-center shadow-2xl">
+        <div class="w-20 h-20 mx-auto rounded-full border-2 border-masonic-gold flex items-center justify-center bg-masonic-blue/30 mb-6">
+          <i data-lucide="award" class="w-10 h-10 text-masonic-gold"></i>
+        </div>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold gold-gradient mb-2">Travail Accompli, Mon Frère</h2>
+        <p class="font-cormorant text-lg sm:text-xl text-gray-300 italic mb-6">
+          Voici le salaire de votre instruction rituélique
+        </p>
+
+        <div class="bg-masonic-bg/70 border border-masonic-border rounded-xl p-6 max-w-xs mx-auto mb-8">
+          <div class="font-cinzel text-4xl sm:text-5xl font-black text-masonic-gold" id="finalScoreVal">0/0</div>
+          <div class="text-xs uppercase tracking-widest text-gray-400 mt-2 font-mono" id="finalPercentage">0% de justesse</div>
+        </div>
+
+        <div id="finalJudgmentText" class="p-4 rounded-xl bg-masonic-blue/20 border border-masonic-border text-sm font-serif italic text-gray-200 mb-8 max-w-xl mx-auto">
+          <!-- Jugement initiatique -->
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <button onclick="restartQuiz()" class="px-6 py-3 rounded-xl bg-masonic-gold text-black font-cinzel font-bold text-sm hover:scale-105 transition-all flex items-center gap-2">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Recommencer l'épreuve
+          </button>
+          <button onclick="reviewErrors()" id="btnReviewErrors" class="px-6 py-3 rounded-xl border border-masonic-gold/40 text-masonic-gold font-cinzel text-sm hover:bg-masonic-blue/30 transition-all flex items-center gap-2">
+            <i data-lucide="eye" class="w-4 h-4"></i> Réviser les erreurs (<span id="errorsCount">0</span>)
+          </button>
+          <button onclick="navigate('home')" class="px-6 py-3 rounded-xl bg-masonic-card border border-masonic-border text-gray-300 font-cinzel text-sm hover:text-white transition-all">
+            Retour aux Ateliers
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VUE MÉMENTO DU CATÉCHISME -->
+    <section id="view-catechism" class="hidden space-y-8 animate-fade-in">
+      <div class="gold-border-glow rounded-2xl bg-masonic-card p-6 sm:p-10">
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mb-2 flex items-center gap-3">
+          <i data-lucide="book-marked" class="w-7 h-7 text-masonic-gold"></i>
+          Mémento & Catéchisme du 1er Grade
+        </h2>
+        <p class="font-cormorant text-gray-400 text-lg italic mb-6">
+          21 fiches de révision tirées des quatre documents de votre bibliothèque. Chaque synthèse renvoie aux pages du PDF source.
+        </p>
+
+        <div class="relative mb-6">
+          <i data-lucide="search" class="w-5 h-5 absolute left-3 top-3.5 text-gray-400"></i>
+          <input type="text" id="catechismSearch" oninput="filterCatechism()" placeholder="Rechercher un sujet, un symbole ou un enseignement…" class="w-full bg-masonic-bg border border-masonic-border rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-masonic-gold text-white placeholder-gray-500">
+        </div>
+
+        <div class="memento-tools">
+          <label for="mementoSource">Document <select id="mementoSource" onchange="filterCatechism()"><option value="">Tous les documents</option></select></label>
+          <label for="mementoTheme">Thème <select id="mementoTheme" onchange="filterCatechism()"><option value="">Tous les thèmes</option></select></label>
+          <span id="mementoCount" role="status" aria-live="polite"></span>
+        </div>
+        <p class="memento-note">Synthèses des documents fournis. Les formulations et les usages peuvent varier selon les sources. Les liens indiquent les pages du fichier PDF.</p>
+        <div id="catechismList" class="space-y-4">
+          <!-- Dynamique -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-masonic-border bg-masonic-card py-6 text-center text-xs text-gray-500 font-serif">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div>Instruction rituélique et philosophique de l'Apprenti Maçon.</div>
+      <div class="text-masonic-gold font-cinzel tracking-widest">LIBERTÉ — ÉGALITÉ — FRATERNITÉ</div>
+    </div>
+  </footer>
+
+  <script>
+    const QUIZ_DATA = [
+      // 1. Catéchisme d'Apprenti & Tuilage (1 à 20)
+      {
+        id: 1,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "D'où venez-vous, mon Frère, lorsqu'on vous interroge à l'entrée du Temple ?",
+        options: ["De la Vallée du Nil", "De la Loge de Saint-Jean", "Du Temple de Salomon", "De l'Occident vers l'Orient"],
+        answer: 1,
+        explanation: "Selon le catéchisme traditionnel, la réponse immuable est : « De la loge de Saint-Jean, Vénérable Maître ».",
+        source: "Catéchisme Interprétatif au Grade d'Apprenti"
+      },
+      {
+        id: 2,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Que fait-on à la Loge de Saint-Jean ?",
+        options: ["On y étudie la kabbale spéculative", "On y élève des Temples à la vertu et l'on y creuse des cachots pour les vices", "On y consacre les métaux et les mots sacrés", "On y invoque les quatre éléments"],
+        answer: 1,
+        explanation: "R:. « On y élève des Temples à la vertu et l'on y creuse des cachots pour les vices. »",
+        source: "Catéchisme Interprétatif au Grade d'Apprenti"
+      },
+      {
+        id: 3,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Qu'apportez-vous en vous présentant dans la Loge ?",
+        options: ["L'équerre et le compas", "La parole perdue des maîtres", "Salut, prospérité et bon accueil à tous les Frères", "La sagesse des bâtisseurs"],
+        answer: 2,
+        explanation: "R:. « Salut, prospérité et bon accueil à tous les Frères. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 4,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Que venez-vous faire ici en tant qu'Apprenti Maçon ?",
+        options: ["Rechercher l'élévation sociale", "Vaincre mes passions, soumettre ma volonté à mes devoirs et faire de nouveaux progrès dans la Franc-Maçonnerie", "Prendre mon salaire auprès de la colonne J:.", "Diriger les travaux des ouvriers"],
+        answer: 1,
+        explanation: "R:. « Vaincre mes passions, soumettre ma volonté à mes devoirs et faire de nouveaux progrès dans la Franc-Maçonnerie. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 5,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Qu'est-ce qu'un Franc-Maçon selon le catéchisme traditionnel ?",
+        options: ["Un bâtisseur de cathédrales", "Un homme né libre et de bonnes mœurs, ami du riche et du pauvre s'ils sont vertueux", "Un adepte des sociétés de secours mutuels", "Un ouvrier recevant le salaire d'Hiram"],
+        answer: 1,
+        explanation: "R:. « C'est un homme né libre de bonne vie et de bonnes mœurs, ami du riche et du pauvre s'ils sont vertueux. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 6,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Que signifie initiatiquement l'expression « né libre » ?",
+        options: ["Qu'il possède une totale indépendance financière", "Qu'il jouit des droits de citoyenneté civile", "Celui qui, après être mort aux préjugés du vulgaire, s'est vu renaître à la vie nouvelle que confère l'initiation", "Qu'il est affranchi de toute loi sociale"],
+        answer: 2,
+        explanation: "R:. « L'homme né libre c'est celui qui après être mort aux préjugés du vulgaire, s'est vu renaître à la vie nouvelle que confère l'initiation. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 7,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "À la question « Êtes-vous Maçon ? », quelle est l'unique réponse de l'Apprenti ?",
+        options: ["Oui, j'ai reçu la lumière en Loge", "Mes Frères me reconnaissent pour tel", "Mon tablier blanc le prouve", "Je connais le mot sacré"],
+        answer: 1,
+        explanation: "R:. « Mes Frères me reconnaissent pour tel. » L'Apprenti doit se défier de lui-même et craindre de porter un jugement avant d'avoir fait appel aux lumières de ses Frères.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 8,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Quels sont les devoirs essentiels du Maçon ?",
+        options: ["Fuir le vice et pratiquer la vertu", "Étudier les sciences hermétiques", "Fréquenter assidûment les banquets", "Payer ses capitations"],
+        answer: 0,
+        explanation: "R:. « Fuir le vice et pratiquer la vertu », en préférant à toute chose la justice et la vérité.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 9,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Où avez-vous été préparé à devenir Maçon ?",
+        options: ["Dans le cabinet de réflexion", "Sur les parvis du temple", "Dans mon cœur", "Entre les deux colonnes"],
+        answer: 2,
+        explanation: "R:. « Dans mon cœur. En m'appliquant à aimer fraternellement tous les humains. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 10,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Quels sont les trois devoirs fondamentaux de l'Apprenti ?",
+        options: ["Lire, Écrire, Parler", "Écouter, Obéir, Travailler", "Méditer, Prier, Jeûner", "Demander, Chercher, Frapper"],
+        answer: 1,
+        explanation: "Les trois devoirs fondamentaux sont : A. Écouter, B. Obéir, C. Travailler.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 11,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Quelles sont les 4 vertus morales requises chez le Maçon ?",
+        options: ["Prudence, Justice, Force, Tempérance", "La Moralité, L'Équité, L'Impartialité, L'Éveil de Conscience", "Foi, Espérance, Charité, Vérité", "Rigueur, Miséricorde, Beauté, Sagesse"],
+        answer: 1,
+        explanation: "Les 4 Vertus essentielles énoncées sont : La Moralité, L'Équité, L'Impartialité et L'Éveil de Conscience.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 12,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Quelle est la maxime fondamentale sur la sincérité du Maçon ?",
+        options: ["La parole est d'argent, le silence est d'or", "Le Maçon ne dit pas ce qu'il pense mais il pense ce qu'il dit", "Tout ce qui est en haut est comme ce qui est en bas", "La vérité finit toujours par triompher"],
+        answer: 1,
+        explanation: "« Le Maçon ne dit pas ce qu'il pense mais il pense ce qu'il dit. »",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 13,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Depuis quand êtes-vous Franc-Maçon ?",
+        options: ["Depuis le jour de ma naissance", "Depuis trois ans", "Depuis que j'ai reçu la Lumière", "Depuis la prestation de mon serment"],
+        answer: 2,
+        explanation: "R:. « Depuis que j'ai reçu la Lumière. » Car l'on ne devient réellement Maçon que lorsque l'esprit s'ouvre à l'intelligence des mystères.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 14,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "À quoi reconnaîtrai-je que vous êtes Maçon ?",
+        options: ["À mon tablier et mes gants blancs", "À mes signes, paroles et attouchements", "Au mot de passe de Salomon", "À mon assiduité aux travaux"],
+        answer: 1,
+        explanation: "R:. « À mes signes, paroles et attouchements. » Les signes indiquent l'action équitable, les paroles le langage loyal, les attouchements la fraternité active.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 15,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Comment se font les signes des Maçons ?",
+        options: ["Par triangle, cercle et pentagramme", "Par équerre, niveau et perpendiculaire", "Par le geste de la main sur le cœur", "Par trois pas en avant"],
+        answer: 1,
+        explanation: "R:. « Par équerre, niveau et perpendiculaire. » Équerre (justice/équité), Niveau (nivellement des inégalités arbitraires), Perpendiculaire (élévation morale).",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 16,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Quel est l'âge symbolique de l'Apprenti Maçon ?",
+        options: ["Un an", "Trois ans", "Cinq ans", "Sept ans"],
+        answer: 1,
+        explanation: "L'Apprenti a trois ans, car il doit être initié aux mystères des trois premiers nombres.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 17,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Que représente le salaire pour un Franc-Maçon ?",
+        options: ["Une rétribution matérielle", "Un perfectionnement graduel de soi-même", "Le droit de commander aux ouvriers", "L'accès aux hauts grades"],
+        answer: 1,
+        explanation: "Le salaire maçonnique se traduit par le perfectionnement moral et intellectuel graduel de soi-même.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 18,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Pourquoi l'Apprenti ne sait-il ni lire ni écrire, mais seulement épeler ?",
+        options: ["Parce qu'il est analphabète", "Cela se rapporte au langage symbolique dont le sens ne se discerne que progressivement", "Parce que le secret interdit toute écriture", "Parce que ses yeux sont bandés"],
+        answer: 1,
+        explanation: "Cela s'applique au langage emblématique dont le sens ne se discerne que progressivement ; l'initié au début épelle avec difficulté ce qui fera plus tard l'objet d'une lecture courante.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 19,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Quelles sont les heures conventionnelles d'ouverture et de fermeture des travaux ?",
+        options: ["Du lever au coucher du soleil", "De Midi à Minuit", "De 6 heures à 18 heures", "De Minuit à Midi"],
+        answer: 1,
+        explanation: "Les travaux s'ouvrent à Midi et se ferment à Minuit. Cela indique que l'homme atteint le midi de sa vie avant d'être utile, et doit travailler sans relâche jusqu'à sa dernière heure.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 20,
+        cat: "catechism",
+        catName: "Catéchisme & Tuilage",
+        q: "Que nous apprend la coutume de s'informer de l'heure avant d'agir ?",
+        options: ["Qu'il faut régler sa montre", "L'action n'est utile que si elle vient à propos ; il faut savoir attendre le moment opportun", "Que les travaux sont chronométrés", "Que la nuit est propice aux rituels"],
+        answer: 1,
+        explanation: "« L'action n'est utile que si elle vient à propos. Les conquêtes du progrès ne s'accomplissent qu'à leur heure. Agir trop tôt ou trop tard entraîne l'échec. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+
+      // 2. Cabinet de Réflexion & Épreuves (21 à 38)
+      {
+        id: 21,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que représente le Cabinet de Réflexion dans le parcours initiatique ?",
+        options: ["Une antichambre d'attente profane", "Le tombeau du monde profane et le premier voyage (épreuve de la Terre)", "Un lieu de punition pour le candidat", "Une chapelle de prière"],
+        answer: 1,
+        explanation: "C'est le lieu où le récipiendaire rentre en lui-même, meurt au monde profane pour renaître dans la lumière initiatique (épreuve de la Terre).",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 22,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que signifie l'acronyme alchimique V.I.T.R.I.O.L. inscrit sur le mur ?",
+        options: ["Visita Interiora Terrae, Rectificando Invenies Occultum Lapidem", "Vaincre L'Ignorance Tout Révélant L'Initiation Oubliée Lors", "Virtus In Tenebris Radians In Omnibus Lucet", "Voie Intérieure Tracée والرoyaume Idéal Où Luit la Lumière"],
+        answer: 0,
+        explanation: "« Visite l'intérieur de la Terre, et en rectifiant tu trouveras la Pierre cachée » (la pierre philosophale).",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 23,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Quels sont les trois principes alchimiques présents dans le Cabinet de Réflexion ?",
+        options: ["Or, Argent, Bronze", "Le Soufre, le Mercure et le Sel", "L'Eau, la Terre et le Feu", "Le Pain, le Vin et l'Huile"],
+        answer: 1,
+        explanation: "Le Soufre (l'Âme, Feu), le Mercure (l'Esprit, Air/Eau) et le Sel (le Corps, Terre). Ce ternaire représente l'homme dans sa totalité.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 24,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que symbolise le Coq peint dans le Cabinet de Réflexion ?",
+        options: ["L'emblème républicain", "La vigilance et l'avènement de la lumière initiatique dissipant les ténèbres", "Le reniement de saint Pierre", "Le sacrifice rituel"],
+        answer: 1,
+        explanation: "Le coq annonce le lever du soleil et la victoire de la lumière sur les ténèbres. Il invite l'initié à la vigilance constante.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 25,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que symbolise le Sablier présent sur la table ?",
+        options: ["La durée maximale pour répondre", "La fuite du temps, l'éphémère de la vie et l'analogie entre le haut et le bas", "La poussière du désert", "La patience passive"],
+        answer: 1,
+        explanation: "Le sablier évoque la fuite du temps, l'éphémère de l'existence et l'inversion hermétique : ce qui est en haut devient ce qui est en bas.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 26,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que rappelle la Faux peinte auprès du sablier et des ossements ?",
+        options: ["L'égalité de tous devant la mort et la moisson des fruits de ses œuvres", "Une arme de guerre antique", "Le travail agricole des bâtisseurs", "La séparation brutale"],
+        answer: 0,
+        explanation: "La faux fauche sans distinction de rang ni de richesse ; elle rappelle la mortalité humaine et la moisson du travail personnel.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 27,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Quelles sont les trois questions du Testament Philosophique ?",
+        options: ["Votre nom, âge et religion", "Vos devoirs envers Dieu, envers vous-même et envers l'humanité", "Vos biens, dettes et héritiers", "Vos connaissances en symbolisme"],
+        answer: 1,
+        explanation: "Le postulant répond par écrit à ses devoirs : 1° Envers Dieu, 2° Envers lui-même, 3° Envers l'Humanité.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 28,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Pourquoi le candidat est-il dépouillé de tous ses métaux ?",
+        options: ["Pour vérifier qu'il ne porte pas d'armes", "Preuve de désintéressement et pour apprendre à se priver sans regret de ce qui nuit au perfectionnement moral", "Pour payer les frais de loge", "Parce que le métal altère les énergies"],
+        answer: 1,
+        explanation: "R:. « Dépourvu de tous métaux comme preuve de désintéressement et pour apprendre à se priver sans regret de tout ce qui peut nuire à notre perfectionnement moral. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 29,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Dans quel état vestimentaire singulier le récipiendaire est-il préparé ?",
+        options: ["En habit noir solennel", "Ni nu ni vêtu, cœur à découvert, genou droit nu, pied gauche déchaussé, les yeux bandés", "Drapé d'une toge blanche", "En vêtements de travail de chantier"],
+        answer: 1,
+        explanation: "Ni nu ni vêtu (la vertu n'a pas besoin d'ornements), cœur à découvert (sincérité), genou nu (humilité), pied gauche déchaussé (respect du lieu sacré).",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 30,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Pourquoi le pied gauche du récipiendaire est-il déchaussé ?",
+        options: ["Pour vérifier sa démarche", "À l'imitation d'une coutume antique et par respect pour un lieu saint où l'on recherche la Vérité", "Pour ressentir la fraîcheur de la terre", "Pour marquer le pas d'Apprenti"],
+        answer: 1,
+        explanation: "« Le pied gauche déchaussé, à l'imitation d'une coutume orientale et par respect pour un lieu qui est saint parce qu'on y recherche la vérité. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 31,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Pourquoi le cœur du postulant est-il mis à découvert ?",
+        options: ["Pour y poser le compas", "En signe de sincérité et de franchise", "Pour mesurer son pouls", "Pour montrer qu'il ne porte pas de cuirasse"],
+        answer: 1,
+        explanation: "« Le cœur découvert, en signe de sincérité et de franchise. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 32,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Combien de coups le candidat frappe-t-il à la porte du Temple ?",
+        options: ["Un grand coup", "Deux coups rapides", "Trois grands coups", "Cinq coups rythmés"],
+        answer: 2,
+        explanation: "Par trois grands coups : « Demandez et vous recevrez, Cherchez et vous trouverez, Frappez et l'on vous ouvrira ».",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 33,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Quels principes spirituels le rituel ésotérique associe-t-il aux trois coups frappés à la porte ?",
+        options: ["Kether, Chokmah, Binah", "Atma, Buddhi, Manas", "Atoh, Gibor, Leolam", "Ghimel, Gadol, Guiah"],
+        answer: 1,
+        explanation: "1er coup : Atma (l'Esprit divin) ; 2e coup : Buddhi (l'Âme spirituelle) ; 3e coup : Manas (le Mental supérieur).",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 34,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Combien de voyages initiatiques le récipiendaire accomplit-il en Loge ?",
+        options: ["Un seul voyage", "Deux voyages", "Trois voyages symboliques (Air, Eau, Feu)", "Sept voyages planétaires"],
+        answer: 2,
+        explanation: "Après l'épreuve de la Terre dans le cabinet, il accomplit en Loge trois voyages purificateurs : l'Air, l'Eau et le Feu.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 35,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que traverse le récipiendaire lors de son voyage purifié par l'Air ?",
+        options: ["Un brasier ardent", "Le tumulte, le fracas et les bruits d'armes figurant les passions profanes", "Une onde glacée", "Un labyrinthe"],
+        answer: 1,
+        explanation: "Le voyage dans l'Air est marqué par le tumulte et les obstacles, figurant les passions désordonnées du monde profane que l'adepte doit surmonter.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 36,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que voit le néophyte à l'instant où tombe le bandeau et qu'il reçoit la Lumière ?",
+        options: ["Ses parrains souriants", "Le Soleil, la Lune et le Maître de la Loge", "L'épée flamboyante levée", "Le tableau de loge"],
+        answer: 1,
+        explanation: "R:. « Le soleil, la lune et le Maître de la Loge. » Le Soleil éclaire le jour (la raison), la Lune la nuit (l'imagination), le Vénérable éclaire sans cesse la Loge.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 37,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Que signifie le fait d'avoir eu les yeux bandés durant les épreuves ?",
+        options: ["Une mesure de sécurité profane", "L'aveuglement de l'illusion profane et l'obligation d'apprendre à écouter avec impartialité", "La peur du feu de l'autel", "Une coutume sans portée morale"],
+        answer: 1,
+        explanation: "Les yeux bandés rappellent que l'Apprenti nouveau-né ne sait rien mais doit apprendre à écouter. C'est aussi l'emblème de la justice impartiale.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 38,
+        cat: "reflection",
+        catName: "Cabinet de Réflexion & Épreuves",
+        q: "Quelle est la pénalité symbolique rappelée dans le Serment d'Apprenti ?",
+        options: ["Une amende pécuniaire", "Avoir la gorge coupée plutôt que de révéler les secrets confiés", "L'exclusion de toute société", "Un jeûne de 40 jours"],
+        answer: 1,
+        explanation: "Le serment traditionnel rappelle que l'Initié préférerait avoir la gorge tranchée plutôt que de trahir ses engagements et révéler les secrets de l'Ordre.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+
+      // 3. Outils, Décors & Symboles (39 à 58)
+      {
+        id: 39,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Quels sont les deux outils emblématiques de l'Apprenti ?",
+        options: ["L'Équerre et le Compas", "Le Ciseau et le Maillet", "La Règle et le Levier", "La Truelle et le Fil à plomb"],
+        answer: 1,
+        explanation: "R:. « Le ciseau et le maillet. » Le ciseau représente la pensée arrêtée et les résolutions prises ; le maillet, la volonté active qui les met à exécution.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 40,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que représente le Maillet entre les mains de l'Initié ?",
+        options: ["La force musculaire brute", "La volonté agissante et le « Moi Exécuteur »", "L'autorité dictatoriale", "Le bruit du métal"],
+        answer: 1,
+        explanation: "Le Maillet symbolise la force de volonté agissante, la persévérance et le « Moi Exécuteur ».",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 41,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que représente le Ciseau tenu en main gauche ?",
+        options: ["La froideur de l'acier", "L'Intelligence, le discernement et la précision de la pensée", "L'arme de défense de l'adepte", "La règle de justice"],
+        answer: 1,
+        explanation: "Le Ciseau représente le savoir, l'intelligence et le discernement guidant la volonté.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 42,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "À quoi travaillent sans relâche les Apprentis ?",
+        options: ["À tracer des plans d'architecture", "À dégrossir la pierre brute", "À polir la pierre cubique", "À manier la truelle"],
+        answer: 1,
+        explanation: "R:. « À dégrossir la pierre brute afin de la dépouiller de ses aspérités et la rapprocher d'une forme en rapport avec sa destination. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 43,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que symbolise la Pierre Brute ?",
+        options: ["Un matériau de construction de carrière", "L'homme lui-même, à l'état grossier de nature, appelé à être poli par l'Initiation", "Le socle de Salomon", "La terre aride"],
+        answer: 1,
+        explanation: "« C'est l'homme lui-même en tant que produit grossier de la nature, appelé à être poli et transformé par l'art. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 44,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Comment est décrit le Signe d'Ordre de l'Apprenti ?",
+        options: ["Main droite à plat sous la gorge, 4 doigts joints, pouce écarté en équerre, bras horizontal, pieds à 90°", "Main gauche sur le cœur, tête inclinée", "Deux mains croisées sur le plexus", "Index levé vers le ciel"],
+        answer: 0,
+        explanation: "Main droite étendue sous la gorge, quatre doigts joints, pouce écarté formant équerre, bras horizontal à hauteur de l'épaule, pieds en équerre.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 45,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Quelle est la double signification morale du Signe d'Ordre sous la gorge ?",
+        options: ["Il rappelle la punition du traître et montre la soumission aveugle", "Il rappelle le serment prêté et contient le bouillonnement des passions de la poitrine pour préserver la lucidité de la tête", "Il bloque la parole et signale la faim", "Il figure le tranchant de l'épée"],
+        answer: 1,
+        explanation: "Il rappelle le serment mais surtout contient les passions qui bouillonnent dans la poitrine, préservant la tête pour juger de toute chose avec impartialité.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 46,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Comment s'exécute le Signe Pénal d'Apprenti ?",
+        options: ["En frappant trois coups sur sa cuisse", "En retirant la main droite horizontalement vers l'épaule droite puis en laissant retomber le bras le long du corps", "En s'inclinant profondément", "En posant les mains sur les genoux"],
+        answer: 1,
+        explanation: "En tirant horizontalement la main droite vers l'épaule droite comme pour trancher la gorge, décrivant une équerre, puis en laissant retomber le bras le long du corps.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 47,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Comment commence et s'exécute la Marche de l'Apprenti vers l'Orient ?",
+        options: ["Du pied droit en sautillant", "Du pied gauche, par trois pas distincts et d'égale distance, ramenant chaque fois le talon droit en équerre", "À reculons depuis l'Occident", "En marchant en cercle dextrorsum"],
+        answer: 1,
+        explanation: "Départ pied gauche, trois pas réguliers et d'égale distance en traçant l'équerre à chaque pas, le regard fixé sur la Lumière d'Orient.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 48,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Comment se donne l'Attouchement d'Apprenti ?",
+        options: ["Une poignée de main ordinaire", "Une pression marquée du pouce recourbé sur la première jointure de l'index droit du Frère", "Un contact épaule contre épaule", "Trois pressions de la paume"],
+        answer: 1,
+        explanation: "On prend la main droite du Frère et on exerce une pression marquée du pouce recourbé sur la première jointure de l'index.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 49,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Quelle est la Batterie d'Apprenti au Rite Écossais Ancien et Accepté ?",
+        options: ["Un coup isolé", "Trois coups lents et distincts : O - O - O", "Cinq coups rythmés : 2 et 3", "Trois coups précipités"],
+        answer: 1,
+        explanation: "Trois coups lents et distincts : O - O - O (frappés dans les mains ou avec le maillet).",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 50,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Quelle est l'Acclamation écossaise traditionnelle qui suit la batterie ?",
+        options: ["Amen, Amen, Amen", "Houzzaï, Houzzaï, Houzzaï", "Vivat, Vivat, Semper Vivat", "Fiat Lux, Fiat Lux, Fiat Lux"],
+        answer: 1,
+        explanation: "Debout, pieds en équerre, bras droit tendu à l'horizontale : « HOUZZAÏ, HOUZZAÏ, HOUZZAÏ ! » (prononcé Houzzé).",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 51,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Comment l'Apprenti doit-il porter son Tablier blanc ?",
+        options: ["La bavette rabattue", "La bavette relevée", "En bandoulière", "Plié en deux"],
+        answer: 1,
+        explanation: "L'Apprenti porte son tablier blanc de peau avec la bavette relevée (elle protège symboliquement le plexus dans le dégrossissage de la pierre).",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 52,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que représente le Pavé Mosaïque sur le sol de la Loge ?",
+        options: ["Un dallage d'époque décoratif", "Le contraste du Bien et du Mal, l'équilibre des opposés sur lequel l'Initié doit marcher droit", "L'échiquier des batailles d'Israël", "Les quatre saisons"],
+        answer: 1,
+        explanation: "Le pavé noir et blanc symbolise le dualisme (lumière/ténèbres, bien/mal) et la nécessité pour l'Initié de marcher sur la ligne médiane de l'équilibre.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 53,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que représente la Houppe Dentelée qui entoure le haut du Temple ?",
+        options: ["Les amarres de l'Arche de Noé", "La chaîne d'union universelle reliant tous les Maçons avec ses 12 lacs d'amour", "Le voile du Saint des Saints", "Une corde de pendu"],
+        answer: 1,
+        explanation: "Elle compte 12 lacs d'amour symbolisant l'union universelle des Maçons, les 12 mois de l'année et les 12 signes du zodiaque.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 54,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que signifie pour les Maçons l'expression rituelle « Passer la truelle » ?",
+        options: ["Passer les outils à l'ouvrier suivant", "Pardonner et oublier fraternellement les offenses", "Achever le mortier du mur", "Régler son écot aux agapes"],
+        answer: 1,
+        explanation: "« L'expression 'Passer la truelle' a le sens traditionnel de pardonner et d'oublier les offenses. »",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 55,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que symbolise le Niveau dévolu au Premier Surveillant ?",
+        options: ["La surface plane", "L'égalité sociale fondamentale et la justice équitable", "La paresse au travail", "Le nivellement par le bas"],
+        answer: 1,
+        explanation: "Le Niveau symbolise l'égalité originelle et le nivellement des inégalités arbitraires de la société profane.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 56,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que symbolise la Perpendiculaire (ou Fil à plomb) du Second Surveillant ?",
+        options: ["La profondeur de la recherche intérieure, la rectitude de la Vérité et l'équilibre", "La pesanteur physique", "La chute morale", "La hauteur de l'édifice"],
+        answer: 0,
+        explanation: "La perpendiculaire indique la rectitude verticale de la Vérité et l'approfondissement introspectif nécessaire à l'Initié.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 57,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "Que symbolise le Compas comparé à l'Équerre ?",
+        options: ["Le Compas symbolise l'Esprit, tandis que l'Équerre symbolise la Matière", "Le Compas est la Terre et l'Équerre le Ciel", "Ils sont interchangeables", "Le Compas représente la Loge profane"],
+        answer: 0,
+        explanation: "Le Compas symbolise l'Esprit et la pensée céleste mesurée ; l'Équerre symbolise la Matière et la rectitude terrestre.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 58,
+        cat: "tools",
+        catName: "Outils, Décors & Symboles",
+        q: "En travaillant sur la Pierre Brute avec le Maillet, quelle affirmation rituelle prononce l'Apprenti ?",
+        options: ["« Par le marteau je bâtis »", "« Je suis le fils de Zorobabel, ma force est en moi »", "« Hiram me guide »", "« Que la pierre soit cubique »"],
+        answer: 1,
+        explanation: "Le rituel traditionnel précise : « En travaillant sur la pierre brute avec le maillet, on dit : Je suis le fils de Zorobabel, ma force est en moi. »",
+        source: "Cours d'Instruction Complète"
+      },
+
+      // 4. Officiers, Bijoux & Organisation de la Loge (59 à 74)
+      {
+        id: 59,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quelle est la forme géométrique de la Loge maçonnique ?",
+        options: ["Un cercle parfait", "Un carré long (rectangle)", "Un triangle équilatéral", "Un octogone"],
+        answer: 1,
+        explanation: "La Loge a la forme d'un carré long (rectangle orienté d'Orient en Occident).",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 60,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quelles sont les dimensions universelles de la Loge ?",
+        options: ["Longueur : Orient-Occident ; Largeur : Midi-Septentrion ; Hauteur : Zénith-Nadir", "12 coudées sur 7", "De Paris à Jérusalem", "Celles du temple de Salomon"],
+        answer: 0,
+        explanation: "Longueur : d'Orient en Occident ; Largeur : du Midi au Septentrion ; Hauteur : du Zénith au Nadir. Ces dimensions expriment l'universalité de la Franc-Maçonnerie.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 61,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Que faut-il pour qu'une Loge soit juste et parfaite ?",
+        options: ["Trois la dirigent, cinq l'éclairent, sept la rendent juste et parfaite", "Douze maîtres assemblés", "Le Vénérable seul", "Sept apprentis munis de maillets"],
+        answer: 0,
+        explanation: "« Trois la dirigent (Vénérable et Surveillants), cinq l'éclairent (avec l'Orateur et le Secrétaire), sept la rendent juste et parfaite (7 membres réguliers). »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 62,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Où se tiennent les Frères Apprentis en Loge et pour quelle raison ?",
+        options: ["Au Midi, pour recevoir le plein soleil", "Au Septentrion (Nord), région la moins éclairée, car ils ne peuvent supporter un trop grand jour", "À l'Orient, auprès des maîtres", "Devant la porte du temple"],
+        answer: 1,
+        explanation: "Au Septentrion, région la moins éclairée, parce qu'ils n'ont reçu qu'une instruction élémentaire et ne sont pas en état de supporter une clarté trop vive.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 63,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Où siège le Vénérable Maître et pourquoi ?",
+        options: ["Au centre du pavé mosaïque", "À l'Orient, de même que le soleil s'y lève pour ouvrir le jour et mettre les ouvriers à l'œuvre", "À l'Occident, pour fermer la loge", "Au Zénith de l'autel"],
+        answer: 1,
+        explanation: "R:. « À l'Orient. De même que le soleil se lève dans cette partie pour ouvrir le jour, le Maître s'y tient pour ouvrir la Loge, mettre les Ouvriers à l'œuvre et les diriger. »",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 64,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quelles sont les trois Grandes Lumières placées sur l'Autel des Serments ?",
+        options: ["Le Soleil, la Lune et l'Étoile", "Le Volume de la Loi Sacrée, l'Équerre et le Compas", "La Sagesse, la Force et la Beauté", "Trois cierges allumés"],
+        answer: 1,
+        explanation: "Les trois Grandes Lumières de la Franc-Maçonnerie sont : le Volume de la Loi Sacrée, l'Équerre et le Compas.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 65,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Qu'appelle-t-on les trois Bijoux Mobiles de la Loge ?",
+        options: ["La Pierre Brute, la Pierre Cubique et la Planche à Tracer", "L'Équerre, le Niveau et la Perpendiculaire", "Le Maillet, le Ciseau et le Levier", "Les trois colonnettes"],
+        answer: 1,
+        explanation: "L'Équerre (Vénérable Maître), le Niveau (Premier Surveillant) et la Perpendiculaire (Second Surveillant) sont les trois bijoux mobiles.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 66,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quel est le bijou distinctif de l'Orateur de la Loge ?",
+        options: ["Deux plumes entrecroisées", "Le Livre ouvert (ou un Soleil rayonnant)", "Deux clefs entrecroisées", "Une aumônière"],
+        answer: 1,
+        explanation: "L'Orateur porte le Livre ouvert ou le Soleil ; il est le gardien de la loi et des règlements de l'Atelier.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 67,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quel est le bijou distinctif du Secrétaire de la Loge ?",
+        options: ["Deux plumes entrecroisées en sautoir", "Un rouleau de parchemin", "Une balance", "Un oeil ouvert"],
+        answer: 0,
+        explanation: "Le Secrétaire (« qui tient le crayon » et trace la planche) porte deux plumes en sautoir.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 68,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quel est le bijou de l'Hospitalier (Éléémosynaire) ?",
+        options: ["Deux clefs croisées", "Une aumônière ou un cœur enflammé", "Une équerre d'argent", "Un compas ouvert"],
+        answer: 1,
+        explanation: "L'Hospitalier / Éléémosynaire porte une aumônière ornée d'un cœur enflammé.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 69,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Que symbolise l'Épée Flamboyante sur le plateau du Vénérable Maître ?",
+        options: ["Le châtiment militaire", "L'autorité spirituelle, le feu divin et les Chérubins gardiens de l'Arbre de Vie", "L'arme d'Hiram", "Le glaive de la vengeance"],
+        answer: 1,
+        explanation: "Symbole d'autorité spirituelle et de puissance céleste, elle évoque les Kérubim gardant le chemin de l'Arbre de Vie (Genèse 3, 24).",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 70,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Dans quel sens doivent s'effectuer tous les déplacements en Loge ?",
+        options: ["En ligne droite sans tourner", "Dans le sens solaire (dextrorsum), en marquant les angles droits", "Dans le sens inverse des aiguilles d'une montre (senestrorsum)", "Librement"],
+        answer: 1,
+        explanation: "Tous les déplacements rituels s'effectuent dans le sens solaire (dextrorsum, de gauche à droite) en marquant rigoureusement les angles droits par équerre.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 71,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quelle est la mission du Frère Couvreur ?",
+        options: ["Couvrir le Vénérable de son manteau", "Garder la porte intérieure du Temple pour veiller à ce que la Loge soit à couvert des profanes", "Éteindre les lumières", "Distribuer les gants blancs"],
+        answer: 1,
+        explanation: "Placé à l'Occident entre les colonnes, le Couvreur veille, épée en main, à ce qu'aucun profane ne viole l'enceinte sacrée des travaux.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 72,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Que signifie pour un Maçon l'avertissement rituel « Il pleut ! » ?",
+        options: ["Qu'une averse commence dehors", "Que les travaux ne sont pas à couvert et qu'un profane écoute ou approche", "Que l'épreuve de l'eau débute", "Que la tenue est suspendue"],
+        answer: 1,
+        explanation: "« Il pleut ! » est la formule traditionnelle permettant aux Frères de s'avertir discrètement qu'un profane risque de surprendre leur conversation.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+      {
+        id: 73,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Au Rite Écossais Ancien et Accepté (REAA), auprès de quelle colonne les Apprentis reçoivent-ils leur salaire ?",
+        options: ["La Colonne Jakin (J:.)", "La Colonne Boaz (B:.)", "La Colonne du Milieu", "La Colonne d'Harmonie"],
+        answer: 1,
+        explanation: "Au REAA, la colonne des Apprentis est la colonne B:. (Boaz), alors qu'au Rite Français elle est traditionnellement inversée.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 74,
+        cat: "officers",
+        catName: "Officiers & Organisation",
+        q: "Quelle est la signification hébraïque du mot de la Colonne B:. ?",
+        options: ["Dieu établira", "En lui est la force / Ma force est en Dieu / Persévérance dans le Bien", "Splendeur céleste", "Justice éternelle"],
+        answer: 1,
+        explanation: "Littéralement : « En lui est la force », devenu « Ma force est en Dieu », puis « Persévérance dans le Bien ».",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      },
+
+      // 5. Allumage des Étoiles & Théurgie (75 à 88)
+      {
+        id: 75,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "En théurgie opérative maçonnique, comment allume-t-on une étoile de travail ?",
+        options: ["Directement avec un briquet à gaz", "On allume d'abord une étoile d'allumage intermédiaire et on transmet le feu pur", "Avec une allumette soufrée ordinaire", "Par friction d'amadou"],
+        answer: 1,
+        explanation: "On n'allume jamais directement une étoile de travail avec un briquet minéral souillé. On allume un cierge intermédiaire pur et on transmet la flamme.",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 76,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Pourquoi évite-t-on les allumettes soufrées pour allumer les étoiles de prière ?",
+        options: ["Parce qu'elles brûlent trop vite", "Parce que le soufre minéral est impur et fuligineux, alors que la flamme doit être pure", "Pour ne pas faire de bruit", "Parce que le bois est profane"],
+        answer: 1,
+        explanation: "Les allumettes soufrées contiennent une matière fuligineuse impure ; la flamme comme le cierge doivent être purs pour relier au monde spirituel.",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 77,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Quel est le symbolisme ternaire du cierge (de l'Étoile) ?",
+        options: ["Cire = Terre, Mèche = Eau, Flamme = Feu", "Cire = Corps (Père), Mèche = Âme (Fils), Flamme = Esprit (Saint-Esprit)", "Cire = Passé, Mèche = Présent, Flamme = Avenir", "Cire = Loge, Mèche = Officiers, Flamme = Vénérable"],
+        answer: 1,
+        explanation: "Le Cierge représente le Corps, l'Âme et l'Esprit : la Cire est l'image du Père (Corps), la Mèche du Fils (Âme), la Flamme du Saint-Esprit (Esprit).",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 78,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Quelle parole sacrée prononce-t-on en allumant l'étoile d'allumage ?",
+        options: ["« Vayomer Elohim Yehi Aur, Vihi Aur » (Fiat Lux)", "« Au nom de Salomon »", "« Par le ciseau et le maillet »", "« Que tout soit pur »"],
+        answer: 0,
+        explanation: "On dit : « VAYOMER ELOHIM YEHI AUR, VIHI AUR » (Et Dieu dit que la Lumière soit, et la Lumière fut) ou « FIAT LUX ET FACTA EST LUX ».",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 79,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Sous quel angle présente-t-on le cierge pour allumer l'étoile de travail ?",
+        options: ["À 45 degrés", "À 90 degrés au-dessus de la mèche", "À 180 degrés", "À la verticale descendante"],
+        answer: 1,
+        explanation: "On présente l'étoile à 90 degrés au-dessus de la flamme de l'étoile d'allumage, respectant ainsi l'équerre sacrée.",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 80,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Quelle batterie fait-on devant le Delta ou l'étoile à allumer ?",
+        options: ["Un coup de maillet", "La batterie en trois points en vibrant : GHIMEL, GADOL, GUIAH", "Cinq claquements de mains", "Trois génuflexions"],
+        answer: 1,
+        explanation: "On tire la batterie en trois points en vibrant les trois mots du Delta : « Ghimel, Gadol, Guiah ».",
+        source: "Comment allumer une étoile FM & Cours d'Instruction"
+      },
+      {
+        id: 81,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Quelle formule d'invocation prononce-t-on en appelant les entités spirituelles ?",
+        options: ["« Je vous appelle par la puissance du vent et de la pluie »", "« Je vous invoque tous par le Trône d’Adonaï et par le pouvoir du Grand Béthel et de Jéhovah »", "« Venez sans hésiter au nom de la Loge »", "« Par la vertu des métaux anciens »"],
+        answer: 1,
+        explanation: "La formule rituelle transmise est : « Je vous invoque par le Trône d’Adonaï et par le pouvoir du Grand Béthel et de Jéhovah. »",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 82,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Que fait-on immédiatement sur l'étoile après l'avoir allumée ?",
+        options: ["On l'éteint pour la rallumer", "On souffle son mot sacré de grade dessus", "On verse de l'eau bénite sur le pied", "On la déplace vers l'Occident"],
+        answer: 1,
+        explanation: "« Après l'allumage, dites et soufflez le mot sacré de votre grade dessus. »",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 83,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Dans quel cas travaille-t-on en « Appel » sur un Triangle d'étoiles ?",
+        options: ["Pour chasser un sortilège", "Pour trouver quelque chose, attirer une grâce ou charger des énergies constructives", "Pour éteindre la lumière", "Pour suspendre les travaux"],
+        answer: 1,
+        explanation: "« On travaille en Appel pour trouver quelque chose, attirer vers soi et faire un chargement spirituel. »",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 84,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Dans quel cas travaille-t-on en « Renvoi » sur un Triangle d'étoiles ?",
+        options: ["Pour attirer l'argent", "Pour purifier, nettoyer, désenvoûter ou renvoyer des énergies nuisibles", "Pour ouvrir la loge", "Pour consacrer un officier"],
+        answer: 1,
+        explanation: "« On travaille en Renvoi pour se désenvoûter, purifier et chasser les influences ténébreuses. »",
+        source: "Comment allumer une étoile FM"
+      },
+      {
+        id: 85,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Quel est l'ordre d'allumage du Triangle en Appel (Lune croissante) ?",
+        options: ["Force - Beauté - Sagesse", "Sagesse - Beauté - Force - Sagesse - Personne", "Personne - Sagesse - Force - Beauté", "Nadir vers Zénith"],
+        answer: 1,
+        explanation: "En Appel : 1. Sagesse -> 2. Beauté -> 3. Force -> 4. Fermeture en Sagesse -> 5. Étoile Personnelle au centre.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 86,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Quel est l'ordre d'allumage du Triangle en Renvoi (Lune décroissante) ?",
+        options: ["Personne - Sagesse - Force - Beauté - Sagesse", "Beauté - Sagesse - Force", "Sagesse - Force - Beauté", "Occident vers Orient"],
+        answer: 0,
+        explanation: "En Renvoi : 1. Étoile Personnelle au centre (qui rejette l'énergie) -> 2. Sagesse -> 3. Force -> 4. Beauté -> 5. Sagesse.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 87,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Comment éteint-on rituellement les étoiles du Triangle à la fin des travaux ?",
+        options: ["En soufflant fort dessus d'un coup", "À l'inverse exact de la façon dont elles furent allumées, de préférence avec un éteignoir", "En versant de l'eau", "Toutes en même temps"],
+        answer: 1,
+        explanation: "« Si vous avez travaillé sur le triangle, on éteint les lumières à l'inverse de la façon dont elles furent allumées. On ne souffle pas dessus, on utilise un éteignoir. »",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 88,
+        cat: "theurgy",
+        catName: "Allumage des Étoiles & Théurgie",
+        q: "Comment se fait la Salutation des 4 Portes du Monde avec le mot AGLA ?",
+        options: ["Atoh (Orient) -> Gibor (Occident) -> Leolam (Septentrion) -> Adonaï (Midi) -> AGLA", "Adonaï -> Atoh -> Gibor -> Leolam", "En tournant dans le sens inverse des aiguilles d'une montre", "En restant immobile face au Nord"],
+        answer: 0,
+        explanation: "1. Atoh à l'Orient, 2. Gibor à l'Occident, 3. Leolam au Septentrion, 4. Adonaï au Midi, puis vibration du mot saint AGLA.",
+        source: "Cours d'Instruction Complète"
+      },
+
+      // 6. Correspondances Occultes & Angéologie (89 à 102)
+      {
+        id: 89,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel Archange régit la Porte de l'Orient et quel est son Élément ?",
+        options: ["Gabriel et l'Eau", "Raphaël et l'Air", "Michaël et le Feu", "Uriel et la Terre"],
+        answer: 1,
+        explanation: "Orient = Raphaël, Élément Air, Archange guérisseur dont la couleur est le jaune.",
+        source: "Cours d'Instruction Complète & Livret de l'Apprenti"
+      },
+      {
+        id: 90,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel Archange régit la Porte de l'Occident et quel est son Élément ?",
+        options: ["Gabriel et l'Eau", "Raphaël et l'Air", "Uriel et la Terre", "Michaël et le Feu"],
+        answer: 0,
+        explanation: "Occident = Gabriel, Élément Eau, messager divin dont la couleur est le bleu.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 91,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel Archange régit le Midi (Sud) et quel est son Élément ?",
+        options: ["Michaël et le Feu", "Gabriel et l'Eau", "Uriel et la Terre", "Raphaël et l'Air"],
+        answer: 0,
+        explanation: "Midi = Michaël, Élément Feu, chef des milices célestes dont la couleur est le rouge.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 92,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel Archange régit le Septentrion (Nord) et quel est son Élément ?",
+        options: ["Uriel et la Terre", "Michaël et le Feu", "Raphaël et l'Air", "Gabriel et l'Eau"],
+        answer: 0,
+        explanation: "Septentrion = Uriel, Élément Terre, manifestation divine dont la couleur est le vert/noir.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 93,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Comment se trace la Croix Kabbalistique sur le corps ?",
+        options: ["Front (Atoh) -> Pubis (Ve Malkuth) -> Épaule Droite (Ve Geburah) -> Épaule Gauche (Ve Guedulah) -> Mains au cœur (Le Olam, Amen)", "Front -> Cœur -> Épaule gauche -> Épaule droite", "En cercle autour du nombril", "Avec le pouce sur les lèvres"],
+        answer: 0,
+        explanation: "1. Front : Atoh, 2. Pubis : Ve Malkuth, 3. Épaule Droite : Ve Geburah, 4. Épaule Gauche : Ve Guedulah, 5. Mains jointes sur la poitrine : Le Olam Amen.",
+        source: "Livret de l'Apprenti Maçon"
+      },
+      {
+        id: 94,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel est le Psaume de pénitence et de purification que l'Apprenti récite à genoux ?",
+        options: ["Le Psaume 23", "Le Psaume 51 (Miserere)", "Le Psaume 133", "Le Psaume 91"],
+        answer: 1,
+        explanation: "Le Psaume 51 (versets 3 à 21) est le psaume de purification par excellence, récité à genoux avec le pouce contre terre.",
+        source: "Cours d'Instruction Complète & Modèle de prière"
+      },
+      {
+        id: 95,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel passage d'Évangile est qualifié « d'Évangile des Initiés » et lu lors des travaux ?",
+        options: ["Matthieu 5 (Les Béatitudes)", "Le Prologue de Jean (Jean 1, 1 à 18)", "L'Apocalypse", "L'Épître aux Hébreux"],
+        answer: 1,
+        explanation: "Saint Jean 1, 1-18 (« Au commencement était la Parole... »). Au verset 14 (« Et la Parole a été faite chair »), l'adepte s'agenouille et formule ses demandes.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 96,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel Psaume célèbre la fraternité et l'huile sainte d'Aaron lors de la Chaîne d'Union ?",
+        options: ["Le Psaume 1", "Le Psaume 133", "Le Psaume 24", "Le Psaume 150"],
+        answer: 1,
+        explanation: "Le Psaume 133 : « Voici, oh ! qu'il est agréable, qu'il est doux pour des frères de demeurer ensemble ! C'est comme l'huile précieuse répandue sur la tête qui descend sur la barbe d'Aaron... ».",
+        source: "Catéchisme d'Instruction & Livret de l'Apprenti"
+      },
+      {
+        id: 97,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Combien d'Anges constituent la Hiérarchie des Génies de la Kabbale ?",
+        options: ["12 Anges", "24 Vieillards", "72 Anges répartis en 9 Chœurs", "99 Génies"],
+        answer: 2,
+        explanation: "La tradition kabbalistique reconnaît 72 Anges de 5 degrés chacun, répartis en 9 Chœurs angéliques de 8 Anges.",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 98,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quelles sont les trois entités protectrices personnelles qu'un Frère cherche à connaître ?",
+        options: ["Les trois Rois Mages", "Son Ange Gardien, son Chef de Décan et son Soldat de Décan", "Raphaël, Gabriel et Michaël", "Hiram, Salomon et Hiram de Tyr"],
+        answer: 1,
+        explanation: "« L'Apprenti Maçon se doit de connaître le nom de son Ange Gardien et de ses deux Anges accompagnateurs : le Chef de Décan et le Soldat de Décan. »",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 99,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel Archange préside traditionnellement le Dimanche ?",
+        options: ["Gabriel", "Michaël (associé au Soleil)", "Raphaël", "Zadkiel"],
+        answer: 1,
+        explanation: "Le Dimanche est régi par l'Archange Michaël, correspondant au Soleil (Tiphéreth).",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 100,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Quel Archange préside traditionnellement le Lundi ?",
+        options: ["Gabriel (associé à la Lune)", "Samaël", "Raphaël", "Cassiel"],
+        answer: 0,
+        explanation: "Le Lundi est gouverné par l'Archange Gabriel, associé aux énergies de la Lune (Yésod).",
+        source: "Cours d'Instruction Complète"
+      },
+      {
+        id: 101,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Dans la prière du « Notre Père des Initiés », quelle tâche essentielle incombe au Maçon ?",
+        options: ["Convertir tous les hommes", "Faire en sorte que les religions et les sciences s'entendent", "Bâtir des temples de marbre", "Accumuler des richesses matérielles"],
+        answer: 1,
+        explanation: "« Que ton règne arrive, car il faut que les religions et les sciences s'entendent, œuvre à laquelle je veux et je dois travailler. »",
+        source: "Catéchisme d'Instruction & Cours FM"
+      },
+      {
+        id: 102,
+        cat: "occult",
+        catName: "Correspondances & Angéologie",
+        q: "Que représente le Delta Lumineux placé à l'Orient au-dessus du Vénérable Maître ?",
+        options: ["Un simple compas ouvert", "Le principe divin trinitaire, l'œil de la Conscience cosmique et le tétragramme sacré", "Une lampe de secours", "L'équerre des surveillants"],
+        answer: 1,
+        explanation: "Le Delta Lumineux représente l'omniprésence du Principe Créateur (GADLU), la Conscience divine et l'Harmonie trinitaire du cosmos.",
+        source: "Catéchisme d'Instruction au 1er Grade"
+      }
+    ];
+
+    QUIZ_DATA.push(...[
+  {
+    "id": 103,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que désignent les agapes après une tenue ?",
+    "options": [
+      "Une collation fraternelle qui prolonge la réunion",
+      "Un scrutin de recrutement",
+      "Une série de grades",
+      "Une épreuve du cabinet"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : une collation fraternelle qui prolonge la réunion. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 13"
+  },
+  {
+    "id": 104,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que signifie l’affiliation d’un maçon ?",
+    "options": [
+      "Sa première candidature",
+      "Son inscription dans une autre loge que celle de son initiation",
+      "Son accession automatique à la maîtrise",
+      "La fermeture de sa loge"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : son inscription dans une autre loge que celle de son initiation. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 13"
+  },
+  {
+    "id": 105,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "À quoi servait l’alphabet maçonnique évoqué dans le glossaire ?",
+    "options": [
+      "À compter les cotisations",
+      "À fixer les dates des solstices",
+      "À chiffrer la correspondance",
+      "À remplacer les gestes rituels"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : à chiffrer la correspondance. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 13"
+  },
+  {
+    "id": 106,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Que désigne l’accolade dans ce glossaire ?",
+    "options": [
+      "Un outil de taille",
+      "Un document administratif",
+      "Un déplacement autour du temple",
+      "Une série de trois baisers échangés en certaines circonstances"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : une série de trois baisers échangés en certaines circonstances. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 13"
+  },
+  {
+    "id": 107,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que signifie l’assiduité dans la vie d’un atelier ?",
+    "options": [
+      "La présence régulière aux tenues auxquelles on est convoqué",
+      "La possession de nombreux décors",
+      "La visite exclusive d’autres loges",
+      "La mémorisation des noms de tous les membres"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la présence régulière aux tenues auxquelles on est convoqué. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 108,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que signifie travailler sous les auspices d’un organisme maçonnique ?",
+    "options": [
+      "Être dispensé de règlement",
+      "Bénéficier de sa reconnaissance",
+      "Travailler sans rattachement",
+      "Recevoir une décoration individuelle"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : bénéficier de sa reconnaissance. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 109,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "À quoi servent les boules blanches et noires mentionnées dans le glossaire ?",
+    "options": [
+      "À représenter les saisons",
+      "À mesurer la hauteur du temple",
+      "À effectuer des votes secrets",
+      "À désigner les places des visiteurs"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : à effectuer des votes secrets. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 110,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "À quoi correspond la capitation selon le glossaire fourni ?",
+    "options": [
+      "À une épreuve de passage",
+      "À la lecture d’une planche",
+      "À un nom de grade",
+      "À une contribution versée à l’Ordre pour son fonctionnement"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : à une contribution versée à l’Ordre pour son fonctionnement. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 111,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Pourquoi une loge perçoit-elle des cotisations ?",
+    "options": [
+      "Pour financer ses besoins matériels et son fonctionnement",
+      "Pour déterminer l’âge symbolique",
+      "Pour remplacer le travail initiatique",
+      "Pour supprimer les obligations de présence"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : pour financer ses besoins matériels et son fonctionnement. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 112,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "À quoi correspond la consécration d’une nouvelle loge dans ce document ?",
+    "options": [
+      "À un simple déménagement de mobilier",
+      "À un acte destiné à donner vie spirituelle au temple après son installation",
+      "À une clôture définitive",
+      "À la seule élection d’un secrétaire"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : à un acte destiné à donner vie spirituelle au temple après son installation. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 113,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Comment appelle-t-on le fauteuil du Vénérable Maître ?",
+    "options": [
+      "Le parvis",
+      "La salle humide",
+      "La chaire de Salomon",
+      "La colonne d’harmonie"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la chaire de Salomon. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 114,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que désigne une chambre dans le vocabulaire du glossaire ?",
+    "options": [
+      "Un dortoir réservé aux visiteurs",
+      "Un local de stockage des décors",
+      "Une contribution financière",
+      "Une séance de maçons travaillant au même grade"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : une séance de maçons travaillant au même grade. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 115,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "À quoi sert la charte remise à un atelier ?",
+    "options": [
+      "À attester sa constitution par l’autorité maçonnique",
+      "À consigner uniquement les présences",
+      "À représenter le tableau du grade",
+      "À remplacer les cotisations"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : à attester sa constitution par l’autorité maçonnique. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 116,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que désigne le collège des officiers ?",
+    "options": [
+      "Tous les candidats non initiés",
+      "L’ensemble des membres qui dirigent la loge",
+      "Les seuls visiteurs étrangers",
+      "Un groupe réservé aux anciens secrétaires"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : l’ensemble des membres qui dirigent la loge. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 14"
+  },
+  {
+    "id": 117,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Que désigne la colonne d’harmonie ?",
+    "options": [
+      "Une colonne portant les comptes",
+      "Le pupitre de l’Orateur",
+      "La musique qui accompagne les tenues et cérémonies",
+      "La liste des visiteurs"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la musique qui accompagne les tenues et cérémonies. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 15"
+  },
+  {
+    "id": 118,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Qu’est-ce qu’un congé dans le vocabulaire maçonnique ?",
+    "options": [
+      "Une radiation définitive",
+      "Un passage au grade suivant",
+      "Une interdiction de visiter toute autre loge",
+      "Une permission de ne pas assister aux travaux pendant une période"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : une permission de ne pas assister aux travaux pendant une période. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 15"
+  },
+  {
+    "id": 119,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que désigne le convent dans le glossaire fourni ?",
+    "options": [
+      "Une assemblée annuelle des représentants des loges",
+      "Le cabinet de réflexion",
+      "Un repas réservé aux candidats",
+      "Un serment individuel"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : une assemblée annuelle des représentants des loges. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 15"
+  },
+  {
+    "id": 120,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "À quels travaux un apprenti peut-il assister selon le glossaire ?",
+    "options": [
+      "À tous les degrés sans distinction",
+      "Aux tenues du premier degré",
+      "Aux seuls travaux du troisième degré",
+      "Exclusivement aux réunions administratives"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : aux tenues du premier degré. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 15"
+  },
+  {
+    "id": 121,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que rappelle l’égalité entre membres dans le glossaire ?",
+    "options": [
+      "L’identité obligatoire de toutes les opinions",
+      "La suppression de toute progression initiatique",
+      "L’absence de distinction fondée sur l’origine sociale ou l’ancienneté",
+      "La priorité des membres les plus riches"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : l’absence de distinction fondée sur l’origine sociale ou l’ancienneté. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 15"
+  },
+  {
+    "id": 122,
+    "cat": "reflection",
+    "catName": "Cabinet & Épreuves",
+    "q": "Quel est l’objet des enquêtes avant l’admission d’un candidat ?",
+    "options": [
+      "Lui conférer un grade à distance",
+      "Fixer son salaire professionnel",
+      "Lui apprendre une cérémonie avant sa réception",
+      "Examiner sa candidature par des entretiens menés par des maîtres"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : examiner sa candidature par des entretiens menés par des maîtres. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 15"
+  },
+  {
+    "id": 123,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "À quoi correspond l’expression « ère vulgaire » ?",
+    "options": [
+      "À la datation profane ordinaire",
+      "À un grade supérieur",
+      "À la durée d’une tenue",
+      "À une période de fermeture imposée"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : à la datation profane ordinaire. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 16"
+  },
+  {
+    "id": 124,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que signifie essaimer pour une loge ?",
+    "options": [
+      "Suspendre toutes les réunions",
+      "Créer une nouvelle loge à partir de membres d’une loge existante",
+      "Changer seulement la musique",
+      "Détruire les archives anciennes"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : créer une nouvelle loge à partir de membres d’une loge existante. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 16"
+  },
+  {
+    "id": 125,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que désigne l’exotérisme, par opposition à l’ésotérisme ?",
+    "options": [
+      "Une correspondance chiffrée",
+      "Un enseignement réservé aux seuls officiers",
+      "Un enseignement public",
+      "Une fonction de surveillance"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : un enseignement public. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 16"
+  },
+  {
+    "id": 126,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quel sens le glossaire donne-t-il au mot gnose ?",
+    "options": [
+      "Une taxe annuelle",
+      "Une règle de vote",
+      "Un élément de mobilier",
+      "La connaissance initiatique"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la connaissance initiatique. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 16"
+  },
+  {
+    "id": 127,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quels sont les trois grades de la maçonnerie symbolique cités dans le glossaire ?",
+    "options": [
+      "Apprenti, Compagnon et Maître",
+      "Postulant, visiteur et secrétaire",
+      "Orateur, trésorier et couvreur",
+      "Novice, diacre et patriarche"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : apprenti, Compagnon et Maître. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 16"
+  },
+  {
+    "id": 128,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Qui organise les séances d’instruction à chaque degré selon le glossaire ?",
+    "options": [
+      "Les seuls candidats",
+      "Les Surveillants",
+      "Les visiteurs profanes",
+      "Le responsable des repas uniquement"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : les Surveillants. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 17"
+  },
+  {
+    "id": 129,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle limite le document fixe-t-il à la justice maçonnique ?",
+    "options": [
+      "Elle annule les lois du pays",
+      "Elle décide des condamnations pénales",
+      "Elle ne remplace jamais la justice de la République",
+      "Elle soustrait les membres à toute juridiction extérieure"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : elle ne remplace jamais la justice de la République. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 17"
+  },
+  {
+    "id": 130,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "À quelle catégorie appartiennent les gants portés en tenue ?",
+    "options": [
+      "Aux outils de mesure",
+      "Aux documents de candidature",
+      "Aux moyens de scrutin",
+      "Aux décors du maçon"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : aux décors du maçon. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 17"
+  },
+  {
+    "id": 131,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Qu’est-ce que la loge mère d’un maçon ?",
+    "options": [
+      "La loge dans laquelle il a reçu l’initiation",
+      "La loge la plus proche de son domicile actuel",
+      "Toute loge qu’il a visitée",
+      "La plus ancienne loge de son pays"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la loge dans laquelle il a reçu l’initiation. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 17"
+  },
+  {
+    "id": 132,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quelle est la fonction d’une loge de transit dans ce glossaire ?",
+    "options": [
+      "Former uniquement les secrétaires",
+      "Accueillir des membres en déplacement loin d’un orient régulier",
+      "Remplacer tous les ateliers permanents",
+      "Réunir seulement les candidats profanes"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : accueillir des membres en déplacement loin d’un orient régulier. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 17"
+  },
+  {
+    "id": 133,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que désigne une planche ou un morceau d’architecture ?",
+    "options": [
+      "Un élément de charpente du bâtiment",
+      "Un bulletin de vote",
+      "Un travail présenté oralement en loge",
+      "Un registre de cotisations"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : un travail présenté oralement en loge. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 17"
+  },
+  {
+    "id": 134,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Qu’appelle-t-on le parvis ?",
+    "options": [
+      "Le plafond étoilé",
+      "La table du trésorier",
+      "Le siège du Vénérable",
+      "La zone qui précède le temple"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la zone qui précède le temple. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 18"
+  },
+  {
+    "id": 135,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "À quoi sert le parrain d’un nouvel initié selon le glossaire ?",
+    "options": [
+      "À l’aider et à l’accompagner dans sa vie maçonnique",
+      "À répondre systématiquement à sa place",
+      "À le dispenser d’instruction",
+      "À choisir toutes ses opinions"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : à l’aider et à l’accompagner dans sa vie maçonnique. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 18"
+  },
+  {
+    "id": 136,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que désigne une patente dans ce document ?",
+    "options": [
+      "Un diplôme universitaire",
+      "Une autorisation permettant à une loge de travailler sous des auspices reconnus",
+      "Une invitation à un repas",
+      "Une sanction personnelle"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : une autorisation permettant à une loge de travailler sous des auspices reconnus. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 18"
+  },
+  {
+    "id": 137,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Que désigne un plateau dans une loge ?",
+    "options": [
+      "Un grade intermédiaire",
+      "Une partie de l’habillement",
+      "La table ou le pupitre d’un officier",
+      "Le registre des visiteurs"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la table ou le pupitre d’un officier. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 18"
+  },
+  {
+    "id": 138,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que peut désigner l’Orient, en plus de la direction de l’Est ?",
+    "options": [
+      "Le montant d’une cotisation",
+      "La liste des membres absents",
+      "Le seul siège du Secrétaire",
+      "La ville où se réunit une loge"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la ville où se réunit une loge. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 18"
+  },
+  {
+    "id": 139,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que signifie l’expression « passer à l’Orient éternel » ?",
+    "options": [
+      "Mourir",
+      "Changer de loge",
+      "Accéder automatiquement à un grade",
+      "Partir en voyage à l’étranger"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : mourir. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 18"
+  },
+  {
+    "id": 140,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Comment le glossaire définit-il une obédience ?",
+    "options": [
+      "Un outil de construction",
+      "Une fédération de loges ou de rites",
+      "Un type de scrutin",
+      "Un repas de clôture"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : une fédération de loges ou de rites. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 18"
+  },
+  {
+    "id": 141,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Qu’est-ce qu’un rite selon le glossaire ?",
+    "options": [
+      "Le compte rendu d’une séance",
+      "Un accessoire vestimentaire",
+      "L’organisation d’un ensemble de degrés et de cérémonies",
+      "La seule durée d’une initiation"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : l’organisation d’un ensemble de degrés et de cérémonies. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 19"
+  },
+  {
+    "id": 142,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Qu’est-ce qu’un rituel dans le vocabulaire du site ?",
+    "options": [
+      "La fédération administrative de plusieurs loges",
+      "Le nom collectif des visiteurs",
+      "Le relevé des dépenses",
+      "L’ensemble détaillé des règles de déroulement d’une tenue ou d’une cérémonie"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : l’ensemble détaillé des règles de déroulement d’une tenue ou d’une cérémonie. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 19"
+  },
+  {
+    "id": 143,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Comment appelle-t-on le local où se déroulent les agapes ?",
+    "options": [
+      "La salle humide",
+      "La chambre du milieu",
+      "Le cabinet de réflexion",
+      "Le parvis uniquement"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : la salle humide. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 19"
+  },
+  {
+    "id": 144,
+    "cat": "reflection",
+    "catName": "Cabinet & Épreuves",
+    "q": "Quel objectif le glossaire associe-t-il au silence de l’apprenti ?",
+    "options": [
+      "Lui interdire toute réflexion personnelle",
+      "Favoriser l’humilité et la réflexion",
+      "Le soustraire au travail",
+      "Remplacer l’écoute par l’isolement définitif"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : favoriser l’humilité et la réflexion. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 19"
+  },
+  {
+    "id": 145,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que signifie la mise en sommeil d’une loge ?",
+    "options": [
+      "Son accession à un degré supérieur",
+      "Son déménagement obligatoire",
+      "L’arrêt de son fonctionnement pendant un temps déterminé",
+      "L’ouverture permanente de ses travaux"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : l’arrêt de son fonctionnement pendant un temps déterminé. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 19"
+  },
+  {
+    "id": 146,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Comment le glossaire présente-t-il l’interprétation des symboles ?",
+    "options": [
+      "Comme une réponse unique à réciter sans examen",
+      "Comme une technique réservée aux comptables",
+      "Comme une activité sans rapport avec l’initiation",
+      "Comme une réflexion personnelle qui progresse par analogie"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : comme une réflexion personnelle qui progresse par analogie. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 19"
+  },
+  {
+    "id": 147,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Par quelle attitude la tolérance commence-t-elle selon le glossaire ?",
+    "options": [
+      "Accueillir une opinion contraire sans rejet automatique",
+      "Approuver nécessairement toute opinion",
+      "Renoncer à toute conviction personnelle",
+      "Refuser toute discussion avec autrui"
+    ],
+    "answer": 0,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : accueillir une opinion contraire sans rejet automatique. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 20"
+  },
+  {
+    "id": 148,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Que désigne le tracé d’une loge ?",
+    "options": [
+      "Le plan de financement du bâtiment uniquement",
+      "Le compte rendu de ses travaux",
+      "La marche du candidat",
+      "La liste des grades supérieurs"
+    ],
+    "answer": 1,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : le compte rendu de ses travaux. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 20"
+  },
+  {
+    "id": 149,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quel est le rôle des vérificateurs aux comptes ?",
+    "options": [
+      "Remplacer le Vénérable lors de toute cérémonie",
+      "Fixer le sens des symboles",
+      "Vérifier la bonne tenue des comptes",
+      "Conduire seuls l’initiation"
+    ],
+    "answer": 2,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : vérifier la bonne tenue des comptes. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 20"
+  },
+  {
+    "id": 150,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Que représente la voûte étoilée du temple ?",
+    "options": [
+      "Le coffre des cotisations",
+      "La porte d’entrée des visiteurs",
+      "Le pupitre de l’Orateur",
+      "Le ciel figuré au plafond"
+    ],
+    "answer": 3,
+    "explanation": "Le glossaire du document fourni définit cette notion ainsi : le ciel figuré au plafond. Cette réponse se rapporte au cadre de ce document.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 20"
+  }
+]);
+
+    const MEMENTO_SOURCES = {"stars": {"name": "Comment allumer une étoile", "file": "12JDY Comment Allumer une étoile FM (1).pdf"}, "cat": {"name": "Catéchisme interprétatif", "file": "catechisme APP.pdf"}, "book": {"name": "Livret de l’apprenti", "file": "Livret de l'App M.pdf"}, "course": {"name": "Cours d’instruction · J. D. Yacor", "file": "JDY- Cours FM d'Instruction Complète.pdf"}};
+    const CATECHISM_ITEMS = [
+  {
+    "title": "Entrer en loge",
+    "category": "Catéchisme",
+    "source": "cat",
+    "pages": [
+      2
+    ],
+    "qa": "D’où vient le visiteur ?\nDe la Loge de Saint-Jean. Il apporte ses salutations, ses souhaits de prospérité et un accueil fraternel.\n\nDans quel but vient-il ?\nPour travailler sur ses passions, accorder sa volonté à ses devoirs et progresser.\n\nÀ l’entrée, il accomplit les usages de marche et de salut, puis attend entre les colonnes l’invitation à prendre place."
+  },
+  {
+    "title": "Être reconnu maçon",
+    "category": "Catéchisme",
+    "source": "cat",
+    "pages": [
+      2,
+      4
+    ],
+    "qa": "Comment répondre à la question de la reconnaissance ?\nLa reconnaissance vient des Frères. Le commentaire du document invite l’apprenti à la modestie et au recours aux lumières d’autrui.\n\nQue représentent signes, paroles et attouchements ?\nUne conduite juste, une parole sincère et une solidarité fraternelle concrète."
+  },
+  {
+    "title": "Liberté et bonnes mœurs",
+    "category": "Catéchisme",
+    "source": "cat",
+    "pages": [
+      2,
+      3
+    ],
+    "qa": "Que signifie être libre dans ce catéchisme ?\nS’affranchir des préjugés pour s’ouvrir à la vie initiatique.\n\nSur quoi repose la valeur d’une personne ?\nSur ses qualités morales et sa constance dans le bien, plutôt que sur sa richesse. La préparation commence dans le cœur et dans l’attention fraternelle portée aux humains."
+  },
+  {
+    "title": "Le mot sacré et la méthode d’étude",
+    "category": "Catéchisme",
+    "source": "cat",
+    "pages": [
+      5
+    ],
+    "qa": "Pourquoi l’apprenti épelle-t-il ?\nLe langage symbolique se comprend progressivement. L’enseignement donne une première indication ; l’élève poursuit lui-même la recherche.\n\nQuel sens le document associe-t-il au mot ?\nLa force fondée en Dieu et la persévérance dans le bien. Le salaire représente le résultat du travail intérieur, c’est-à-dire un perfectionnement progressif de soi."
+  },
+  {
+    "title": "Une loge juste et parfaite",
+    "category": "La loge",
+    "source": "cat",
+    "pages": [
+      3
+    ],
+    "qa": "Quels nombres structurent la loge ?\nTrois officiers la dirigent : le Vénérable Maître et les deux Surveillants. Avec l’Orateur et le Secrétaire, ils forment les cinq lumières décrites dans le texte.\n\nLe document distingue la loge simple, la loge juste et la loge parfaite ; il associe cette dernière à la réunion de sept membres et à la capacité d’initier selon les conditions qu’il précise."
+  },
+  {
+    "title": "Les dimensions du temple",
+    "category": "La loge",
+    "source": "cat",
+    "pages": [
+      6
+    ],
+    "qa": "Quelle est sa forme symbolique ?\nUn carré long : de l’Orient à l’Occident pour la longueur, du Midi au Septentrion pour la largeur, du Zénith au Nadir pour la hauteur.\n\nQue suggèrent ces dimensions ?\nL’universalité du lien maçonnique. L’orientation du temple invite à chercher la lumière et à construire en soi un espace consacré à la vertu."
+  },
+  {
+    "title": "Sagesse, Force et Beauté",
+    "category": "La loge",
+    "source": "cat",
+    "pages": [
+      7
+    ],
+    "qa": "Quels piliers soutiennent symboliquement les travaux ?\nLa Sagesse élabore le projet, la Force permet de le réaliser et la Beauté lui donne harmonie.\n\nIls sont représentés par le Vénérable et les deux Surveillants : trois fonctions complémentaires au service de l’œuvre commune."
+  },
+  {
+    "title": "Midi, minuit et trois ans",
+    "category": "La loge",
+    "source": "cat",
+    "pages": [
+      9
+    ],
+    "qa": "Quand les travaux s’ouvrent-ils et se ferment-ils ?\nÀ midi et à minuit, selon les heures symboliques présentées dans le catéchisme. Elles rappellent l’engagement durable au service du bien commun et l’importance d’agir au moment opportun.\n\nQuel est l’âge de l’apprenti ?\nTrois ans : une invitation à étudier les premiers nombres et leur portée symbolique."
+  },
+  {
+    "title": "La pierre brute et ses outils",
+    "category": "Symboles et travail",
+    "source": "cat",
+    "pages": [
+      10
+    ],
+    "qa": "Que représente la pierre brute ?\nLa personne elle-même, encore à former et à perfectionner.\n\nQuels sont ses outils ?\nLe ciseau figure la décision et la pensée orientée ; le maillet, la volonté qui met cette décision en action. L’apprentissage associe donc réflexion et réalisation."
+  },
+  {
+    "title": "La préparation et les épreuves",
+    "category": "Symboles et travail",
+    "source": "cat",
+    "pages": [
+      7,
+      8
+    ],
+    "qa": "Que signifie le dépouillement ?\nLe texte l’associe à la sincérité, à l’humilité et au détachement de ce qui entrave le perfectionnement.\n\nQuel est le sens des voyages ?\nDes étapes d’apprentissage vers la vérité. Le bandeau rappelle que les préjugés peuvent empêcher de comprendre même lorsque la vérité est proche."
+  },
+  {
+    "title": "Une initiation progressive",
+    "category": "Symboles et travail",
+    "source": "book",
+    "pages": [
+      8,
+      9
+    ],
+    "qa": "Comment le livret décrit-il l’initiation ?\nUne transformation progressive, graduée et lente, transmise par les symboles, les gestes et les paroles.\n\nLa progression ne se réduit pas à une réception : elle demande un travail durable. Les signes de reconnaissance et l’âge symbolique situent l’apprenti dans ce parcours."
+  },
+  {
+    "title": "La marche de l’apprenti",
+    "category": "Symboles et travail",
+    "source": "book",
+    "pages": [
+      9,
+      10
+    ],
+    "qa": "Quelle lecture le livret propose-t-il ?\nLa marche exprime le passage du désordre à l’ordre, du profane au sacré et de la dispersion à la concentration.\n\nLe document décrit une mise à l’ordre, des pieds en équerre, un départ du pied gauche et trois pas distincts. L’attention portée au geste accompagne l’apprentissage intérieur."
+  },
+  {
+    "title": "Le silence comme exercice intérieur",
+    "category": "Symboles et travail",
+    "source": "book",
+    "pages": [
+      11,
+      12
+    ],
+    "qa": "Le silence se limite-t-il à ne pas parler ?\nLe livret le présente comme un retour sur soi : observer ses réactions, apaiser ses passions et identifier ce qui doit être corrigé.\n\nL’équerre rappelle la rectitude morale. L’étude du geste et celle de la conduite quotidienne sont liées."
+  },
+  {
+    "title": "Une fraternité active",
+    "category": "Symboles et travail",
+    "source": "book",
+    "pages": [
+      6,
+      7
+    ],
+    "qa": "Comment pratiquer la bienfaisance ?\nLe livret l’étend à l’aide matérielle, intellectuelle et morale. Elle implique l’assistance, l’exemple et le partage des connaissances.\n\nLa recherche d’une morale commune et la bonne entente entre personnes d’opinions différentes accompagnent l’étude des sciences et des arts."
+  },
+  {
+    "title": "Écouter, obéir, travailler",
+    "category": "Instruction du cours",
+    "source": "course",
+    "pages": [
+      4,
+      5
+    ],
+    "qa": "Quels devoirs le cours met-il en avant ?\nL’écoute, le respect des règles et le travail.\n\nQuelles qualités leur sont associées ?\nLa moralité, l’équité, l’impartialité et l’éveil de la conscience. Le cours relie ainsi la formation à la qualité de la conduite et à la maîtrise de la parole."
+  },
+  {
+    "title": "Les éléments et les principes alchimiques",
+    "category": "Instruction du cours",
+    "source": "course",
+    "pages": [
+      4,
+      5
+    ],
+    "qa": "Quels éléments le cours énumère-t-il ?\nLe feu, la terre, l’air et l’eau.\n\nQuels sont les trois principes ?\nLe soufre, le mercure et le sel. Le tableau du cours les rapproche respectivement de l’âme, de l’esprit et du corps ; il rattache le feu au soufre, l’air et l’eau au mercure, la terre au sel. Il s’agit des correspondances enseignées dans ce document."
+  },
+  {
+    "title": "Le cabinet de réflexion",
+    "category": "Instruction du cours",
+    "source": "course",
+    "pages": [
+      8
+    ],
+    "qa": "Quelle place occupe-t-il dans ce cours ?\nLe commencement de l’initiation : un temps de méditation et de retour en soi, associé à l’épreuve de la terre.\n\nQuel rôle joue le testament philosophique ?\nIl marque une transition entre l’existence profane et une renaissance symbolique. Le cours distingue aussi le profane, le candidat, le postulant, le récipiendaire et le néophyte."
+  },
+  {
+    "title": "Les repères de prière du cours",
+    "category": "Instruction du cours",
+    "source": "course",
+    "pages": [
+      69,
+      70
+    ],
+    "qa": "Quels textes sont proposés ?\nLe cours rassemble notamment le Psaume 51, le prologue de Jean (1, 1–18), le Notre Père et les Psaumes 23 et 133 dans une démarche de prière.\n\nIl décrit aussi une prière intérieure possible en différents lieux, en insistant sur l’humilité, la foi et l’amour. Ces indications appartiennent à l’enseignement spirituel de l’auteur."
+  },
+  {
+    "title": "Les trois figures protectrices",
+    "category": "Instruction du cours",
+    "source": "course",
+    "pages": [
+      71,
+      82
+    ],
+    "qa": "Quelles figures le cours associe-t-il à la personne ?\nL’ange gardien, le chef de décan et le soldat de décan.\n\nLe document propose des tableaux et des exemples fondés sur la date de naissance pour les identifier. Cette fiche résume le système de correspondances de l’auteur, sans effectuer de calcul personnel."
+  },
+  {
+    "title": "Le symbolisme du cierge",
+    "category": "Allumage des étoiles",
+    "source": "stars",
+    "pages": [
+      1
+    ],
+    "qa": "Quel symbolisme ternaire est présenté ?\nLa cire, la mèche et la flamme sont rapprochées du Père, du Fils et du Saint-Esprit, ainsi que du corps, de l’âme et de l’esprit.\n\nQuel principe guide l’allumage ?\nLa transmission de la flamme par un cierge intermédiaire. Le document distingue l’étoile d’allumage de celle destinée au travail."
+  },
+  {
+    "title": "Une étoile ou un triangle",
+    "category": "Allumage des étoiles",
+    "source": "stars",
+    "pages": [
+      1,
+      2
+    ],
+    "qa": "Quelles situations le document distingue-t-il ?\nLe travail avec une seule étoile et celui avec les étoiles d’un triangle. Il décrit un transfert de flamme avec présentation à angle droit et mention du mot du grade après l’allumage.\n\nPour le triangle, il mentionne une batterie accompagnée de Ghimel, Gadol et Guiah. Il distingue l’appel, associé à l’attraction, du renvoi, associé à l’éloignement dans le cadre spirituel décrit par l’auteur."
+  }
+];
+
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+    let userScore = 0;
+    let selectedOption = null;
+    let userAnswers = [];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+      document.querySelectorAll('[data-question-total]').forEach(el => el.textContent = QUIZ_DATA.length);
+      renderCategories();
+      renderCatechism();
+    });
+
+    function navigate(viewName) {
+      document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
+      const target = document.getElementById('view-' + viewName);
+      if (target) {
+        target.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      closeMobileMenu();
+      document.querySelectorAll('[data-mobile-view]').forEach(button => {
+        if (button.dataset.mobileView === viewName) button.setAttribute('aria-current', 'page');
+        else button.removeAttribute('aria-current');
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    let menuScrollStyle = '';
+    function closeMobileMenu() {
+      if (mobileMenu.open) mobileMenu.close();
+      mobileMenu.querySelectorAll('details[open]').forEach(group => group.open = false);
+    }
+    mobileMenuBtn.addEventListener('click', () => {
+      if (mobileMenu.open) return closeMobileMenu();
+      menuScrollStyle = document.body.style.overflow;
+      mobileMenu.showModal();
+      document.body.style.overflow = 'hidden';
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    });
+    document.getElementById('mobileMenuClose').addEventListener('click', closeMobileMenu);
+    mobileMenu.addEventListener('close', () => {
+      document.body.style.overflow = menuScrollStyle;
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    });
+    mobileMenu.addEventListener('click', event => {
+      if (event.target !== mobileMenu) return;
+      const rect = mobileMenu.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeMobileMenu();
+    });
+    window.matchMedia('(min-width: 768px)').addEventListener('change', event => {
+      if (event.matches) closeMobileMenu();
+    });
+    mobileMenu.querySelectorAll('details').forEach(group => {
+      group.addEventListener('toggle', () => {
+        if (!group.open) return;
+        mobileMenu.querySelectorAll('details').forEach(other => {
+          if (other !== group) other.open = false;
+        });
+      });
+    });
+    document.querySelector('[data-mobile-view="home"]').setAttribute('aria-current', 'page');
+
+    function renderCategories() {
+      const grid = document.getElementById('categoriesGrid');
+      const cats = [
+        {
+          id: 'catechism',
+          name: "Catéchisme & Tuilage",
+          desc: "Entrée dans le temple, Saint-Jean, né libre, 3 ans, heures de midi à minuit.",
+          count: QUIZ_DATA.filter(q => q.cat === 'catechism').length,
+          icon: 'book'
+        },
+        {
+          id: 'reflection',
+          name: "Cabinet & Épreuves",
+          desc: "V.I.T.R.I.O.L., alchimie (soufre, mercure, sel), dépouillement des métaux, voyages.",
+          count: QUIZ_DATA.filter(q => q.cat === 'reflection').length,
+          icon: 'skull'
+        },
+        {
+          id: 'tools',
+          name: "Outils, Décors & Symboles",
+          desc: "Maillet, ciseau, niveau, fil à plomb, marche en équerre, acclamation, tablier.",
+          count: QUIZ_DATA.filter(q => q.cat === 'tools').length,
+          icon: 'hammer'
+        },
+        {
+          id: 'officers',
+          name: "Officiers & Organisation",
+          desc: "Vénérable Maître, Surveillants, Orateur, Secrétaire, Couvreur, carré long.",
+          count: QUIZ_DATA.filter(q => q.cat === 'officers').length,
+          icon: 'shield'
+        },
+        {
+          id: 'theurgy',
+          name: "Allumage des Étoiles & Théurgie",
+          desc: "Flamme pure, angle à 90°, Ghimel-Gadol-Guiah, appel et renvoi, AGLA.",
+          count: QUIZ_DATA.filter(q => q.cat === 'theurgy').length,
+          icon: 'flame'
+        },
+        {
+          id: 'occult',
+          name: "Correspondances & Angéologie",
+          desc: "Archanges cardinaux, 7 jours, Croix Kabbalistique, Psaumes 51 et 133, Jean 1.",
+          count: QUIZ_DATA.filter(q => q.cat === 'occult').length,
+          icon: 'sparkles'
+        }
+      ];
+
+      grid.innerHTML = cats.map(c => `
+        <div class="bg-masonic-card border border-masonic-border rounded-xl p-6 hover:border-masonic-gold/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-masonic-blue/40 border border-masonic-gold/20 flex items-center justify-center text-masonic-gold mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="${c.icon}" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-cinzel text-lg font-bold text-white mb-2">${c.name}</h4>
+            <p class="text-xs text-gray-400 font-serif leading-relaxed mb-4">${c.desc}</p>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-masonic-border">
+            <span class="text-xs font-mono text-masonic-gold">${c.count} QCM</span>
+            <button onclick="startQuiz('${c.id}')" class="px-3.5 py-1.5 rounded-lg bg-masonic-blue/60 hover:bg-masonic-gold hover:text-black text-xs font-cinzel font-semibold text-masonic-gold transition-colors flex items-center gap-1.5">
+              <span>Commencer</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function startQuiz(catId) {
+      if (catId === 'all') {
+        currentQuestions = [...QUIZ_DATA];
+      } else {
+        currentQuestions = QUIZ_DATA.filter(q => q.cat === catId);
+      }
+      
+      for (let i = currentQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentQuestions[i], currentQuestions[j]] = [currentQuestions[j], currentQuestions[i]];
+      }
+      currentQuestionIndex = 0;
+      userScore = 0;
+      userAnswers = [];
+
+      navigate('quiz');
+      displayQuestion();
+    }
+
+    function displayQuestion() {
+      const q = currentQuestions[currentQuestionIndex];
+      selectedOption = null;
+
+      document.getElementById('quizCategoryBadge').innerText = q.catName;
+      document.getElementById('quizCounterText').innerText = `Question ${currentQuestionIndex + 1} / ${currentQuestions.length}`;
+      document.getElementById('quizScoreCurrent').innerText = userScore;
+      
+      const progressPct = ((currentQuestionIndex) / currentQuestions.length) * 100;
+      document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
+
+      document.getElementById('questionText').innerText = q.q;
+
+      document.getElementById('explanationContainer').classList.add('hidden');
+      document.getElementById('nextBtn').classList.add('hidden');
+      document.getElementById('nextBtn').classList.remove('flex');
+
+      const container = document.getElementById('optionsContainer');
+      container.innerHTML = q.options.map((opt, idx) => `
+        <button onclick="selectAnswer(${idx})" id="opt-btn-${idx}" class="w-full text-left p-4 rounded-xl border border-masonic-border bg-masonic-bg hover:bg-masonic-blue/30 hover:border-masonic-gold/40 transition-all flex items-center justify-between text-sm sm:text-base text-gray-200">
+          <span class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-lg border border-masonic-border bg-masonic-card flex items-center justify-center font-mono text-xs font-bold text-masonic-gold">
+              ${['A', 'B', 'C', 'D'][idx]}
+            </span>
+            <span>${opt}</span>
+          </span>
+          <span class="opt-status-icon"></span>
+        </button>
+      `).join('');
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function selectAnswer(index) {
+      if (selectedOption !== null) return;
+
+      selectedOption = index;
+      const q = currentQuestions[currentQuestionIndex];
+      const isCorrect = (index === q.answer);
+
+      if (isCorrect) {
+        userScore++;
+      }
+
+      userAnswers.push({
+        question: q,
+        selectedIndex: index,
+        isCorrect: isCorrect
+      });
+
+      document.getElementById('quizScoreCurrent').innerText = userScore;
+
+      q.options.forEach((_, idx) => {
+        const btn = document.getElementById(`opt-btn-${idx}`);
+        btn.classList.remove('hover:bg-masonic-blue/30', 'hover:border-masonic-gold/40');
+        btn.disabled = true;
+
+        if (idx === q.answer) {
+          btn.classList.add('bg-emerald-950/60', 'border-emerald-500/80', 'text-emerald-200');
+          btn.querySelector('.opt-status-icon').innerHTML = '<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>';
+        } else if (idx === index && !isCorrect) {
+          btn.classList.add('bg-red-950/60', 'border-red-500/80', 'text-red-200');
+          btn.querySelector('.opt-status-icon').innerHTML = '<i data-lucide="x-circle" class="w-5 h-5 text-red-400"></i>';
+        } else {
+          btn.classList.add('opacity-40');
+        }
+      });
+
+      const expContainer = document.getElementById('explanationContainer');
+      const expStatus = document.getElementById('explanationStatus');
+      const expContent = document.getElementById('explanationContent');
+      const expIcon = document.getElementById('explanationIcon');
+      const sourceEl = document.getElementById('ritualSource');
+
+      expContainer.classList.remove('hidden');
+
+      if (isCorrect) {
+        expContainer.className = "rounded-xl border border-emerald-500/40 bg-emerald-950/20 p-5 animate-fade-in";
+        expStatus.className = "font-cinzel font-bold text-emerald-400 text-base mb-1";
+        expStatus.innerText = "Juste & Parfait, mon Frère !";
+        expIcon.innerHTML = '<i data-lucide="check" class="w-6 h-6 text-emerald-400"></i>';
+      } else {
+        expContainer.className = "rounded-xl border border-red-500/40 bg-red-950/20 p-5 animate-fade-in";
+        expStatus.className = "font-cinzel font-bold text-red-400 text-base mb-1";
+        expStatus.innerText = "Écueil profane...";
+        expIcon.innerHTML = '<i data-lucide="alert-triangle" class="w-6 h-6 text-red-400"></i>';
+      }
+
+      expContent.innerText = q.explanation;
+      sourceEl.innerText = "Enseignement : " + q.source;
+
+      const nextBtn = document.getElementById('nextBtn');
+      nextBtn.classList.remove('hidden');
+      nextBtn.classList.add('flex');
+      if (currentQuestionIndex === currentQuestions.length - 1) {
+        nextBtn.querySelector('span').innerText = "Voir le Salaire Final";
+      } else {
+        nextBtn.querySelector('span').innerText = "Passer à la suivante";
+      }
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < currentQuestions.length - 1) {
+        currentQuestionIndex++;
+        displayQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function abandonQuiz() {
+      if (userAnswers.length > 0) {
+        showResults();
+      } else {
+        navigate('home');
+      }
+    }
+
+    function showResults() {
+      navigate('results');
+      const total = currentQuestions.length;
+      const score = userScore;
+      const pct = Math.round((score / total) * 100);
+
+      document.getElementById('finalScoreVal').innerText = `${score} / ${total}`;
+      document.getElementById('finalPercentage').innerText = `${pct}% de conformité rituélique`;
+
+      const errors = userAnswers.filter(a => !a.isCorrect);
+      document.getElementById('errorsCount').innerText = errors.length;
+
+      const btnReview = document.getElementById('btnReviewErrors');
+      if (errors.length === 0) {
+        btnReview.classList.add('hidden');
+      } else {
+        btnReview.classList.remove('hidden');
+      }
+
+      const judgment = document.getElementById('finalJudgmentText');
+      if (pct >= 85) {
+        judgment.innerHTML = `<strong>Élévation exemplaire :</strong> Vous avez dégrossi la pierre brute avec une grande justesse. Vos connaissances des demandes, réponses rituelles et mystères théurgiques sont stables et dignes d'un Apprenti instruit.`;
+      } else if (pct >= 60) {
+        judgment.innerHTML = `<strong>Instruction honorable :</strong> L'Apprenti Maçon ne sait qu'épeler, et vos bases sont solides. Continuez votre travail pour polir les détails de la théurgie et du symbolisme des officiers.`;
+      } else {
+        judgment.innerHTML = `<strong>Nécessité de silence et d'écoute :</strong> « Le sage pense beaucoup et parle peu. » Prenez le temps de relire le mémento et de méditer les 3 devoirs (Écouter, Obéir, Travailler).`;
+      }
+    }
+
+    function restartQuiz() {
+      startQuiz('all');
+    }
+
+    function reviewErrors() {
+      const errorQuestions = userAnswers.filter(a => !a.isCorrect).map(a => a.question);
+      if (errorQuestions.length === 0) return;
+
+      currentQuestions = errorQuestions;
+      currentQuestionIndex = 0;
+      userScore = 0;
+      userAnswers = [];
+
+      navigate('quiz');
+      displayQuestion();
+    }
+
+    function escapeMemento(text) {
+      return String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+    function normalizeMemento(text) {
+      return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('fr');
+    }
+    function renderCatechism(filterText = '') {
+      const sourceSelect = document.getElementById('mementoSource');
+      const themeSelect = document.getElementById('mementoTheme');
+      if (sourceSelect.options.length === 1) {
+        Object.entries(MEMENTO_SOURCES).forEach(([key, source]) => sourceSelect.add(new Option(source.name, key)));
+        [...new Set(CATECHISM_ITEMS.map(item => item.category))].forEach(theme => themeSelect.add(new Option(theme, theme)));
+      }
+      const query = normalizeMemento(filterText.trim());
+      const filtered = CATECHISM_ITEMS.filter(item =>
+        (!sourceSelect.value || item.source === sourceSelect.value) &&
+        (!themeSelect.value || item.category === themeSelect.value) &&
+        normalizeMemento([item.title, item.qa, item.category, MEMENTO_SOURCES[item.source].name].join(' ')).includes(query)
+      );
+      document.getElementById('mementoCount').textContent = `${filtered.length} fiche${filtered.length > 1 ? 's' : ''} sur ${CATECHISM_ITEMS.length}`;
+      const list = document.getElementById('catechismList');
+      if (!filtered.length) {
+        list.innerHTML = '<p class="memento-empty">Aucune fiche trouvée. Essayez un autre terme ou changez les filtres.</p>';
+        return;
+      }
+      list.innerHTML = filtered.map(item => {
+        const source = MEMENTO_SOURCES[item.source];
+        const url = encodeURIComponent(source.file) + '#page=' + item.pages[0];
+        return `<article class="memento-card">
+          <span class="memento-category">${escapeMemento(item.category)}</span>
+          <h3>${escapeMemento(item.title)}</h3>
+          <div class="memento-copy">${escapeMemento(item.qa)}</div>
+          <a class="memento-reference" href="${url}" target="_blank" rel="noopener">${escapeMemento(source.name)} · p. ${item.pages.join(', ')} <span aria-hidden="true">↗</span></a>
+        </article>`;
+      }).join('');
+    }
+
+    function filterCatechism() {
+      const text = document.getElementById('catechismSearch').value;
+      renderCatechism(text);
+    }
+  </script>
+</body>
+</html>
