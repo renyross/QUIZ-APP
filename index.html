@@ -443,7 +443,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
           Mémento & Catéchisme du 1er Grade
         </h2>
         <p class="font-cormorant text-gray-400 text-lg italic mb-6">
-          21 fiches de révision tirées des quatre documents de votre bibliothèque. Chaque synthèse indique sa source et les pages de référence.
+          <span data-memento-total></span> fiches de révision : synthèses thématiques et demandes-réponses du catéchisme fourni.
         </p>
 
         <div class="relative mb-6">
@@ -457,6 +457,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
           <span id="mementoCount" role="status" aria-live="polite"></span>
         </div>
         <p class="memento-note">Synthèses des documents fournis. Les formulations et les usages peuvent varier selon les sources. Les références indiquent les pages des documents utilisés pour préparer les fiches.</p>
+        <p class="memento-note">Le catéchisme intégral reprend le texte transmis. Il comporte des variantes : le PDF associe B à « En lui est la force » et place le Premier Surveillant au sud et le Second à l’ouest ; le texte transmis donne d’autres formulations. Ces versions sont conservées séparément.</p>
         <div id="catechismList" class="space-y-4">
           <!-- Dynamique -->
         </div>
@@ -2229,6 +2230,927 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   }
 ]);
 
+    QUIZ_DATA.push(...[
+  {
+    "id": 151,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quel est le lien qui unit les Maçons selon le catéchisme ?",
+    "options": [
+      "La Franc-Maçonnerie",
+      "Une profession commune",
+      "Une origine sociale identique",
+      "Une nationalité commune"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : la Franc-Maçonnerie. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 2"
+  },
+  {
+    "id": 152,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Comment le catéchisme définit-il la Franc-Maçonnerie ?",
+    "options": [
+      "Une corporation réservée aux architectes",
+      "Une alliance universelle œuvrant au perfectionnement intellectuel et moral de l’humanité",
+      "Une administration publique",
+      "Une école limitée à l’art militaire"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : une alliance universelle œuvrant au perfectionnement intellectuel et moral de l’humanité. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 2"
+  },
+  {
+    "id": 153,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Dans quel sens le catéchisme emploie-t-il le mot religion à propos de la Franc-Maçonnerie ?",
+    "options": [
+      "Comme l’obligation d’adhérer à un culte unique",
+      "Comme un parti politique",
+      "Dans le sens large d’un lien qui rapproche les hommes",
+      "Comme le remplacement de toutes les convictions personnelles"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : dans le sens large d’un lien qui rapproche les hommes. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 2"
+  },
+  {
+    "id": 154,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Pourquoi le catéchisme invite-t-il à estimer également le riche et le pauvre vertueux ?",
+    "options": [
+      "Parce que les biens matériels sont identiques",
+      "Parce que toute action se vaut",
+      "Parce que l’ancienneté détermine seule la valeur",
+      "Parce que l’estime repose sur les qualités morales et la constance dans le bien"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : parce que l’estime repose sur les qualités morales et la constance dans le bien. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 2"
+  },
+  {
+    "id": 155,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Où le catéchisme dit-il que le Maçon a été reçu ?",
+    "options": [
+      "Dans une loge juste et parfaite",
+      "Dans une assemblée profane",
+      "Dans une école professionnelle",
+      "Dans une loge en sommeil"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : dans une loge juste et parfaite. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 3"
+  },
+  {
+    "id": 156,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle composition minimale le texte associe-t-il à une loge simple ?",
+    "options": [
+      "Deux Apprentis seuls",
+      "Trois Maçons, dont au moins un Maître",
+      "Cinq Apprentis sans Maître",
+      "Sept Compagnons sans Maître"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : trois Maçons, dont au moins un Maître. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 3"
+  },
+  {
+    "id": 157,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle composition le texte associe-t-il à une loge juste ?",
+    "options": [
+      "Trois Apprentis seuls",
+      "Quatre visiteurs non initiés",
+      "Cinq Maçons, dont trois Maîtres et un Compagnon",
+      "Deux Maîtres uniquement"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : cinq Maçons, dont trois Maîtres et un Compagnon. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 3"
+  },
+  {
+    "id": 158,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quels grades doivent au minimum être représentés parmi les sept membres de la loge parfaite décrite ?",
+    "options": [
+      "Un seul Apprenti et six profanes",
+      "Sept Apprentis uniquement",
+      "Deux Compagnons sans aucun Maître",
+      "Trois Maîtres et deux Compagnons"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : trois Maîtres et deux Compagnons. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 3"
+  },
+  {
+    "id": 159,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Pourquoi le catéchisme rattache-t-il le nom de la loge à Saint-Jean ?",
+    "options": [
+      "Pour rappeler celui qui annonce la lumière et est reconnu comme patron",
+      "Pour désigner le trésorier",
+      "Pour fixer le montant des cotisations",
+      "Pour indiquer le nom de la ville"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : pour rappeler celui qui annonce la lumière et est reconnu comme patron. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 3"
+  },
+  {
+    "id": 160,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que représente la loge dans le catéchisme ?",
+    "options": [
+      "Une simple forteresse militaire",
+      "Le Temple de Salomon réédifié mystiquement",
+      "Un tribunal civil",
+      "Une école de commerce"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : le Temple de Salomon réédifié mystiquement. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 4"
+  },
+  {
+    "id": 161,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle méthode d’enseignement illustre l’épellation alternée du mot sacré ?",
+    "options": [
+      "Donner toutes les réponses sans effort",
+      "Remplacer la réflexion par l’obéissance aveugle",
+      "Guider la recherche personnelle sans imposer des dogmes",
+      "Réserver l’étude au seul Vénérable"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : guider la recherche personnelle sans imposer des dogmes. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 5"
+  },
+  {
+    "id": 162,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que symbolise la colonne J dans le passage du PDF consacré au salaire ?",
+    "options": [
+      "La fin de toute activité",
+      "Le compte des cotisations",
+      "La seule fonction du Couvreur",
+      "L’énergie productrice et le foyer de l’activité humaine"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : l’énergie productrice et le foyer de l’activité humaine. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 5"
+  },
+  {
+    "id": 163,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que désigne le foyer intérieur évoqué après la colonne J ?",
+    "options": [
+      "Le centre conscient auquel se rapporte la conception du moi",
+      "Le foyer matériel de la salle humide",
+      "Le bureau du Secrétaire",
+      "Le registre des présences"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : le centre conscient auquel se rapporte la conception du moi. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 5"
+  },
+  {
+    "id": 164,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Pourquoi la loge est-elle orientée de l’Orient à l’Occident selon le texte ?",
+    "options": [
+      "Pour fixer une hiérarchie sociale",
+      "Pour indiquer la direction de la lumière et inviter à chercher le vrai",
+      "Pour faciliter uniquement le rangement",
+      "Pour éviter toute réflexion symbolique"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : pour indiquer la direction de la lumière et inviter à chercher le vrai. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 6"
+  },
+  {
+    "id": 165,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Pourquoi le Temple de Salomon sert-il d’emblème dans le catéchisme ?",
+    "options": [
+      "Pour exiger de reconstruire matériellement le temple",
+      "Pour enseigner uniquement l’histoire militaire",
+      "Pour inviter chacun à bâtir en soi un temple à la vertu",
+      "Pour remplacer le travail sur soi par la richesse"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : pour inviter chacun à bâtir en soi un temple à la vertu. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 6"
+  },
+  {
+    "id": 166,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Comment le catéchisme définit-il la loge comme lieu de travail ?",
+    "options": [
+      "Une place ouverte à tous les passants",
+      "Une administration électorale",
+      "Un marché public",
+      "Un abri où les Maçons peuvent couvrir leurs travaux"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : un abri où les Maçons peuvent couvrir leurs travaux. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 6"
+  },
+  {
+    "id": 167,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle raison symbolique le texte donne-t-il au travail à couvert ?",
+    "options": [
+      "Concentrer et mûrir les forces avant de les déployer au dehors",
+      "Éviter tout effort intellectuel",
+      "Interdire toute bienfaisance extérieure",
+      "Ne jamais communiquer avec autrui"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : concentrer et mûrir les forces avant de les déployer au dehors. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 6"
+  },
+  {
+    "id": 168,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "À quoi le catéchisme compare-t-il une loge régulièrement couverte ?",
+    "options": [
+      "À une place de marché",
+      "À une cellule organique et à un œuf contenant un être en devenir",
+      "À une armée en campagne",
+      "À un registre comptable"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : à une cellule organique et à un œuf contenant un être en devenir. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 6"
+  },
+  {
+    "id": 169,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quels sont les trois piliers symboliques qui soutiennent la loge ?",
+    "options": [
+      "Richesse, Pouvoir et Renommée",
+      "Feu, Soufre et Métal",
+      "Sagesse, Force et Beauté",
+      "Silence, Nuit et Oubli"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : sagesse, Force et Beauté. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 7"
+  },
+  {
+    "id": 170,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Comment les fonctions des trois piliers se complètent-elles dans le PDF ?",
+    "options": [
+      "La Beauté commande, la Sagesse détruit et la Force observe",
+      "La Force conçoit et la Beauté juge seule",
+      "Les trois remplissent uniquement une fonction décorative",
+      "La Sagesse conçoit, la Force exécute et la Beauté embellit"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : la Sagesse conçoit, la Force exécute et la Beauté embellit. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 7"
+  },
+  {
+    "id": 171,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Pourquoi le récipiendaire a-t-il désiré être reçu Franc-Maçon selon le catéchisme ?",
+    "options": [
+      "Parce qu’il était dans les ténèbres et désirait la lumière",
+      "Pour obtenir un privilège matériel",
+      "Pour éviter l’étude",
+      "Pour imposer ses opinions aux autres"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : parce qu’il était dans les ténèbres et désirait la lumière. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 7"
+  },
+  {
+    "id": 172,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que marque le genou droit découvert lors de la préparation ?",
+    "options": [
+      "Une supériorité sociale",
+      "L’humilité nécessaire à la recherche du vrai",
+      "Une exemption de travail",
+      "La fonction de Secrétaire"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : l’humilité nécessaire à la recherche du vrai. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 7"
+  },
+  {
+    "id": 173,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Qui reçoit le candidat Maçon après les épreuves et le consentement des Frères ?",
+    "options": [
+      "Un visiteur profane",
+      "Le candidat lui-même sans cérémonie",
+      "Le Maître de la loge",
+      "Une autorité civile extérieure"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : le Maître de la loge. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 7"
+  },
+  {
+    "id": 174,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quel engagement suit les épreuves selon le catéchisme ?",
+    "options": [
+      "Ne plus étudier aucun symbole",
+      "Renoncer à la fraternité",
+      "Remplacer le règlement par ses préférences",
+      "Garder les secrets de l’Ordre et agir en Maçon loyal"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : garder les secrets de l’Ordre et agir en Maçon loyal. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 8"
+  },
+  {
+    "id": 175,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "En quoi consistent les secrets de l’Ordre selon ce texte ?",
+    "options": [
+      "Des vérités abstraites dont les symboles donnent une expression sensible",
+      "Uniquement les montants des cotisations",
+      "Des recettes de construction sans sens moral",
+      "La liste des commerces locaux"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : des vérités abstraites dont les symboles donnent une expression sensible. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 8"
+  },
+  {
+    "id": 176,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que rappelle le voile qui empêche de comprendre à l’entrée en loge ?",
+    "options": [
+      "La compréhension est automatique dès l’entrée",
+      "La présence de la vérité ne suffit pas si les illusions et les préjugés aveuglent",
+      "L’étude devient inutile après la réception",
+      "La vérité se réduit aux apparences matérielles"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : la présence de la vérité ne suffit pas si les illusions et les préjugés aveuglent. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 8"
+  },
+  {
+    "id": 177,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Où le PDF situe-t-il le Premier Surveillant dans son instruction ?",
+    "options": [
+      "Au nord, pour tenir les comptes",
+      "À l’est, pour remplacer toujours le Vénérable",
+      "Au sud, pour observer le soleil au méridien et régler travail et repos",
+      "Sur le parvis, pour recevoir les cotisations"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : au sud, pour observer le soleil au méridien et régler travail et repos. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 8"
+  },
+  {
+    "id": 178,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Où le PDF situe-t-il le Second Surveillant dans son instruction ?",
+    "options": [
+      "Au nord, pour diriger la musique",
+      "Dans le cabinet, pour rédiger les candidatures",
+      "À l’est, au-dessus du Vénérable",
+      "À l’ouest, pour aider à ouvrir et fermer et renvoyer les ouvriers satisfaits"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : à l’ouest, pour aider à ouvrir et fermer et renvoyer les ouvriers satisfaits. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 8"
+  },
+  {
+    "id": 179,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle place le PDF attribue-t-il au Second Diacre ?",
+    "options": [
+      "À la gauche du Premier Surveillant",
+      "À la droite du Trésorier",
+      "À la place du Vénérable",
+      "Seul dans le cabinet de réflexion"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : à la gauche du Premier Surveillant. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 8"
+  },
+  {
+    "id": 180,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle mission le passage attribue-t-il au Second Diacre ?",
+    "options": [
+      "Fixer seul tous les règlements",
+      "Transmettre les ordres aux Surveillants et aux officiers pour la bonne exécution des travaux",
+      "Diriger la justice civile",
+      "Remplacer les votes par ses décisions"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : transmettre les ordres aux Surveillants et aux officiers pour la bonne exécution des travaux. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 9"
+  },
+  {
+    "id": 181,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que représentent symboliquement l’Orient et l’Occident dans ce catéchisme ?",
+    "options": [
+      "La richesse et la pauvreté",
+      "Deux grades supplémentaires",
+      "Le monde intelligible et abstrait, puis le monde visible et concret",
+      "Deux méthodes de scrutin"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : le monde intelligible et abstrait, puis le monde visible et concret. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 9"
+  },
+  {
+    "id": 182,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que désigne l’étude des mystères des nombres dans le texte ?",
+    "options": [
+      "Un calcul du montant des cotisations",
+      "Un simple classement par ancienneté",
+      "Une méthode pour éviter le raisonnement",
+      "La réflexion sur les conséquences logiques de leurs propriétés"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : la réflexion sur les conséquences logiques de leurs propriétés. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 9"
+  },
+  {
+    "id": 183,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quel enseignement le catéchisme tire-t-il du nombre Un ?",
+    "options": [
+      "Rien ne peut exister en dehors du Tout",
+      "Tout être est absolument sans lien avec les autres",
+      "Le Tout ne contient aucune unité",
+      "Le nombre Un représente uniquement un officier"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : rien ne peut exister en dehors du Tout. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 10"
+  },
+  {
+    "id": 184,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que représente le nombre Deux dans le raisonnement du texte ?",
+    "options": [
+      "La suppression de toute différence",
+      "Des limites et des oppositions que l’intelligence distingue dans l’Unité",
+      "La réunion des sept membres",
+      "La fin du travail initiatique"
+    ],
+    "answer": 1,
+    "explanation": "Selon le catéchisme fourni : des limites et des oppositions que l’intelligence distingue dans l’Unité. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 10"
+  },
+  {
+    "id": 185,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Pourquoi le nombre Trois symbolise-t-il l’être, la réalité ou la vérité dans ce passage ?",
+    "options": [
+      "Il représente une opposition sans médiation",
+      "Il désigne uniquement les cotisations",
+      "Il exprime un terme de conciliation entre des extrêmes opposés",
+      "Il exclut toute idée de synthèse"
+    ],
+    "answer": 2,
+    "explanation": "Selon le catéchisme fourni : il exprime un terme de conciliation entre des extrêmes opposés. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 10"
+  },
+  {
+    "id": 186,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quel sens le catéchisme donne-t-il à la marche des Apprentis ?",
+    "options": [
+      "La recherche d’une priorité sociale",
+      "Le refus de toute progression",
+      "La simple mesure du sol du temple",
+      "Le zèle à avancer vers celui qui éclaire"
+    ],
+    "answer": 3,
+    "explanation": "Selon le catéchisme fourni : le zèle à avancer vers celui qui éclaire. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 10"
+  },
+  {
+    "id": 187,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle ambition l’Apprenti exprime-t-il à la fin de l’instruction ?",
+    "options": [
+      "Être reçu parmi les Compagnons",
+      "Devenir immédiatement Grand Maître",
+      "Éviter toute nouvelle étude",
+      "Quitter les travaux sans les poursuivre"
+    ],
+    "answer": 0,
+    "explanation": "Selon le catéchisme fourni : être reçu parmi les Compagnons. Cette formulation se rapporte à ce document ; les usages peuvent varier selon les rituels.",
+    "source": "Catéchisme interprétatif du grade d’Apprenti · page PDF 10"
+  }
+]);
+
+    QUIZ_DATA.push(...[
+  {
+    "id": 188,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Selon le livret, comment l’Apprenti demande-t-il exceptionnellement à sortir de la loge ?",
+    "options": [
+      "Il transmet discrètement sa demande par un Frère Maître",
+      "Il interrompt directement tous les échanges",
+      "Il sort sans prévenir",
+      "Il demande aux visiteurs profanes"
+    ],
+    "answer": 0,
+    "explanation": "Dans le livret fourni, la réponse est : il transmet discrètement sa demande par un Frère Maître. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 22"
+  },
+  {
+    "id": 189,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Selon le livret, qui peut accorder ou retirer la parole en loge ?",
+    "options": [
+      "Le dernier arrivé",
+      "Le Vénérable Maître",
+      "N’importe quel visiteur",
+      "Le candidat non initié"
+    ],
+    "answer": 1,
+    "explanation": "Dans le livret fourni, la réponse est : le Vénérable Maître. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 23"
+  },
+  {
+    "id": 190,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Qui peut utiliser le maillet pour conduire les travaux selon le livret ?",
+    "options": [
+      "Tous les visiteurs sans distinction",
+      "Le seul Secrétaire",
+      "Le Vénérable et les deux Surveillants",
+      "Uniquement les Apprentis"
+    ],
+    "answer": 2,
+    "explanation": "Dans le livret fourni, la réponse est : le Vénérable et les deux Surveillants. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 28"
+  },
+  {
+    "id": 191,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quelles tâches le livret attribue-t-il au Secrétaire ?",
+    "options": [
+      "Garder seul la porte du temple",
+      "Diriger la musique uniquement",
+      "Distribuer les grades sans vote",
+      "Convoquer les membres et rédiger le procès-verbal des tenues"
+    ],
+    "answer": 3,
+    "explanation": "Dans le livret fourni, la réponse est : convoquer les membres et rédiger le procès-verbal des tenues. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 28"
+  },
+  {
+    "id": 192,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quel rôle l’Orateur exerce-t-il dans la conduite des débats selon le livret ?",
+    "options": [
+      "Veiller à la loi et donner ses conclusions",
+      "Gérer uniquement le mobilier",
+      "Fixer les recettes des repas",
+      "Remplacer toutes les élections"
+    ],
+    "answer": 0,
+    "explanation": "Dans le livret fourni, la réponse est : veiller à la loi et donner ses conclusions. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 28"
+  },
+  {
+    "id": 193,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Que désigne la voûte d’acier mentionnée dans le livret ?",
+    "options": [
+      "Le plafond peint du temple",
+      "Des glaives levés pour recevoir des dignitaires",
+      "La salle réservée aux repas",
+      "Un coffre contenant les archives"
+    ],
+    "answer": 1,
+    "explanation": "Dans le livret fourni, la réponse est : des glaives levés pour recevoir des dignitaires. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 29"
+  },
+  {
+    "id": 194,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que signifie une excuse « avec obole » dans le livret ?",
+    "options": [
+      "Une dispense définitive de cotisation",
+      "Un refus de toute participation",
+      "Une absence excusée accompagnée d’un don au tronc de solidarité",
+      "Un passage au degré supérieur"
+    ],
+    "answer": 2,
+    "explanation": "Dans le livret fourni, la réponse est : une absence excusée accompagnée d’un don au tronc de solidarité. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 30"
+  },
+  {
+    "id": 195,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quel bijou distingue l’Expert dans la description du livret ?",
+    "options": [
+      "Deux clefs entrecroisées",
+      "Un compas seul",
+      "Une aumônière",
+      "Une épée et une règle entrecroisées surmontées d’un œil"
+    ],
+    "answer": 3,
+    "explanation": "Dans le livret fourni, la réponse est : une épée et une règle entrecroisées surmontées d’un œil. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 32"
+  },
+  {
+    "id": 196,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quel bijou le livret attribue-t-il au Trésorier ?",
+    "options": [
+      "Deux clefs entrecroisées",
+      "Deux plumes en sautoir",
+      "Un fil à plomb",
+      "Une étoile seule"
+    ],
+    "answer": 0,
+    "explanation": "Dans le livret fourni, la réponse est : deux clefs entrecroisées. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 33"
+  },
+  {
+    "id": 197,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Quelle mission le livret confie-t-il au Maître des Cérémonies pendant les déplacements ?",
+    "options": [
+      "Rédiger le procès-verbal pendant la marche",
+      "Escorter et guider les membres dans leurs marches",
+      "Remplacer le vote par une décision personnelle",
+      "Exclure tous les visiteurs"
+    ],
+    "answer": 1,
+    "explanation": "Dans le livret fourni, la réponse est : escorter et guider les membres dans leurs marches. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 33"
+  },
+  {
+    "id": 198,
+    "cat": "officers",
+    "catName": "Officiers & Organisation",
+    "q": "Sous quelle autorité les Apprentis préparent-ils la loge selon le livret ?",
+    "options": [
+      "Celle des visiteurs profanes",
+      "Celle du candidat à l’initiation",
+      "Celle du Maître des Cérémonies",
+      "Celle d’un organisme civil extérieur"
+    ],
+    "answer": 2,
+    "explanation": "Dans le livret fourni, la réponse est : celle du Maître des Cérémonies. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 34"
+  },
+  {
+    "id": 199,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Quelle idée la règle symbolise-t-elle dans le livret ?",
+    "options": [
+      "La richesse",
+      "Le sommeil de la loge",
+      "Le refus de toute mesure",
+      "La rectitude"
+    ],
+    "answer": 3,
+    "explanation": "Dans le livret fourni, la réponse est : la rectitude. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 34"
+  },
+  {
+    "id": 200,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Quelle idée le levier symbolise-t-il dans le livret ?",
+    "options": [
+      "La puissance et le pouvoir",
+      "La passivité",
+      "L’oubli",
+      "La seule ancienneté"
+    ],
+    "answer": 0,
+    "explanation": "Dans le livret fourni, la réponse est : la puissance et le pouvoir. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 34"
+  },
+  {
+    "id": 201,
+    "cat": "reflection",
+    "catName": "Cabinet & Épreuves",
+    "q": "À quelle démarche intérieure le livret rattache-t-il le miroir ?",
+    "options": [
+      "La préparation des comptes",
+      "La concentration et la prise de conscience de soi",
+      "Le classement des cotisations",
+      "La vérification des bulletins de vote"
+    ],
+    "answer": 1,
+    "explanation": "Dans le livret fourni, la réponse est : la concentration et la prise de conscience de soi. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 36"
+  },
+  {
+    "id": 202,
+    "cat": "reflection",
+    "catName": "Cabinet & Épreuves",
+    "q": "Que symbolise le pain dans le passage du livret sur le cabinet ?",
+    "options": [
+      "Le refus de tout effort",
+      "La séparation définitive du corps et de l’esprit",
+      "La fécondité du travail et l’union de la matière et de l’esprit",
+      "L’autorité administrative du Trésorier"
+    ],
+    "answer": 2,
+    "explanation": "Dans le livret fourni, la réponse est : la fécondité du travail et l’union de la matière et de l’esprit. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 36"
+  },
+  {
+    "id": 203,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Quelle fleur le livret associe-t-il à l’Apprenti ?",
+    "options": [
+      "La rose rouge",
+      "Le tournesol",
+      "Le coquelicot",
+      "Le lys"
+    ],
+    "answer": 3,
+    "explanation": "Dans le livret fourni, la réponse est : le lys. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 38"
+  },
+  {
+    "id": 204,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quels archanges le tableau du livret associe-t-il au mardi ?",
+    "options": [
+      "Samaël et Camaël",
+      "Gabriel et Uriel",
+      "Zadkiel et Anaël",
+      "Raphaël et Michaël"
+    ],
+    "answer": 0,
+    "explanation": "Dans le livret fourni, la réponse est : samaël et Camaël. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 40"
+  },
+  {
+    "id": 205,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quel archange le tableau du livret associe-t-il au mercredi ?",
+    "options": [
+      "Gabriel",
+      "Raphaël",
+      "Anaël",
+      "Tzaphkiel"
+    ],
+    "answer": 1,
+    "explanation": "Dans le livret fourni, la réponse est : raphaël. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 40"
+  },
+  {
+    "id": 206,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quel archange le tableau du livret associe-t-il au jeudi ?",
+    "options": [
+      "Michaël",
+      "Uriel",
+      "Zadkiel",
+      "Gabriel"
+    ],
+    "answer": 2,
+    "explanation": "Dans le livret fourni, la réponse est : zadkiel. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 40"
+  },
+  {
+    "id": 207,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quel archange le tableau du livret associe-t-il au vendredi ?",
+    "options": [
+      "Raphaël",
+      "Tzaphkiel",
+      "Zadkiel",
+      "Anaël"
+    ],
+    "answer": 3,
+    "explanation": "Dans le livret fourni, la réponse est : anaël. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 40"
+  },
+  {
+    "id": 208,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quel archange le tableau du livret associe-t-il au samedi ?",
+    "options": [
+      "Tzaphkiel",
+      "Gabriel",
+      "Michaël",
+      "Samaël"
+    ],
+    "answer": 0,
+    "explanation": "Dans le livret fourni, la réponse est : tzaphkiel. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 40"
+  },
+  {
+    "id": 209,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quel chakra le livret associe-t-il au signe d’Apprenti ?",
+    "options": [
+      "Muladhara uniquement",
+      "Vishuddha, à la hauteur de la gorge",
+      "Manipura uniquement",
+      "Ajna uniquement"
+    ],
+    "answer": 1,
+    "explanation": "Dans le livret fourni, la réponse est : vishuddha, à la hauteur de la gorge. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 57"
+  },
+  {
+    "id": 210,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Comment le livret définit-il l’égrégore de la loge ?",
+    "options": [
+      "Un registre administratif",
+      "Un outil de taille",
+      "Une expression occultiste désignant sa conscience collective",
+      "Un grade individuel"
+    ],
+    "answer": 2,
+    "explanation": "Dans le livret fourni, la réponse est : une expression occultiste désignant sa conscience collective. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 60"
+  },
+  {
+    "id": 211,
+    "cat": "tools",
+    "catName": "Outils, Décors & Symboles",
+    "q": "Quelle distinction le livret établit-il entre la loge et la voûte bleue ?",
+    "options": [
+      "La loge figure une cotisation et la voûte un scrutin",
+      "Les deux sont des noms d’officiers",
+      "La loge désigne seulement le repas",
+      "La loge figure le microcosme et la voûte bleue le macrocosme"
+    ],
+    "answer": 3,
+    "explanation": "Dans le livret fourni, la réponse est : la loge figure le microcosme et la voûte bleue le macrocosme. Cette correspondance ou cet usage est propre au cadre présenté par ce document.",
+    "source": "Livret de l’Apprenti Maçon · page PDF 61"
+  }
+]);
+
     const MEMENTO_SOURCES = {"stars": {"name": "Comment allumer une étoile", "file": "12JDY Comment Allumer une étoile FM (1).pdf"}, "cat": {"name": "Catéchisme interprétatif", "file": "catechisme APP.pdf"}, "book": {"name": "Livret de l’apprenti", "file": "Livret de l'App M.pdf"}, "course": {"name": "Cours d’instruction · J. D. Yacor", "file": "JDY- Cours FM d'Instruction Complète.pdf"}};
     const CATECHISM_ITEMS = [
   {
@@ -2431,6 +3353,162 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       2
     ],
     "qa": "Quelles situations le document distingue-t-il ?\nLe travail avec une seule étoile et celui avec les étoiles d’un triangle. Il décrit un transfert de flamme avec présentation à angle droit et mention du mot du grade après l’allumage.\n\nPour le triangle, il mentionne une batterie accompagnée de Ghimel, Gadol et Guiah. Il distingue l’appel, associé à l’attraction, du renvoi, associé à l’éloignement dans le cadre spirituel décrit par l’auteur."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 1 à 8",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Quel est le lien qui nous unit ?\nR. La Franc-Maçonnerie.\n\nD. Qu'est-ce que la Franc-Maçonnerie ?\nR. C'est une alliance universelle d'hommes éclairés, unis pour travailler en commun au perfectionnement intellectuel et moral de l'humanité.\n\nD. La Franc-Maçonnerie est-elle une religion ?\nR. Ce n'est pas une religion dans le sens étroit du mot. Mais, mieux que toute autre institution, elle a pour effet de relier les hommes entre eux ; c'est par ce fait une religion (de religare, relier) dans le sens le plus large et le plus élevé du terme.\n\nD. Etes-vous Maçon ?\nR. Mes frères me reconnaissent pour tel.\n\nD. Pourquoi répondez-vous ainsi ?\nR. Parce qu'un Apprenti-Maçon doit se défier de lui-même et craindre de porter un jugement avant d'avoir fait appel aux lumières de ses Frères.\n\nD. Qu'est-ce qu'un Maçon ?\nR. C'est un homme né libre et de bonnes mœurs, également ami du riche et du pauvre s’ils sont vertueux.\n\nD. Que veut dire né libre ?\nR. L'homme né libre est celui qui, après être mort aux préjugés du vulgaire, s'est vu renaître à la vie nouvelle que confère l'initiation.\n\nD. Pourquoi dites-vous qu'un Maçon est également ami du riche et du pauvre s'ils sont vertueux ?\nR. Pour indiquer que la valeur individuelle doit s'apprécier en raison des qualités morales. L'estime ne doit se mesurer que selon la constance et l'énergie que l'homme apporte à la réalisation du bien."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 9 à 16",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Quels sont les devoirs du Maçon ?\nR. Fuir le vice et pratiquer la vertu.\n\nD. Comment un Maçon doit-il pratiquer la vertu ?\nR. En préférant à toutes choses la Justice et la Vérité.\n\nD. Où avez-vous été reçu Maçon ?\nR. Dans une L? juste et parfaite.\n\nD. Que faut-il pour qu'une L? soit juste et parfaite ?\nR. Trois la dirigent; cinq l’éclairent; sept la rendent juste et parfaite.\n\nD. Expliquez cette réponse.\nR. Les trois sont le Vén? et les deux Surv? — Ces officiers avec l'Orat? et le Sec?, sont les cinq lumières de la L? — Mais il faut que sept membre de la L? au moins soient réunis pour pouvoir procéder à des Initiations régulières. — Sur ces sept, trois au moins, doivent posséder le grade de Maître et deux le grade de Compagnon. Trois Maçons, dont l'un au moins est Maître, constituent une loge simple, apte à prendre des délibérations. — La réunion de cinq Maçons, dont trois Maîtres et un Compagnon, forme une loge juste, compétente en matière d'instruction judiciaire. — Enfin la loge parfaite, composée de sept membres, comme il est dit ci-dessus, possède seule la plénitude de la souveraineté maçonnique.\n\nD. Depuis quand êtes-vous Maçon ?\nR. Depuis que j'ai reçu la lumière.\n\nD. Que signifie cette réponse?\nR. Que nous ne devenons réellement Maçons qu'à partir du jour où notre esprit s'est ouvert à l'intelligence des mystères maçonniques.\n\nD. A quoi reconnaîtrai-je que vous êtes Maçon ?\nR. A mes signes, paroles et attouchements."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 17 à 24",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Comment interprétez-vous cette réponse ?\nR. Un Maçon se reconnaît à sa façon d'agir, toujours équitable et franche (signes) ; à son langage loyal et sincère (paroles) ; enfin à la sollicitude fraternelle qu'il manifeste pour tous ceux à qui il est rattaché par les liens de la solidarité (serrements de main, attouchements).\n\nD. Comment se font les signes des Maçons ?\nR. Par équerre, niveau et perpendiculaire.\n\nD. Expliquez cette réponse.\nR. Le Maçon, dans ses actes, doit s'inspirer des idées de justice et d'équité (Equerre) ; il doit viser au nivellement des inégalités arbitraires (Niveau) ; et contribuer enfin à élever sans cesse le niveau social (Perpendiculaire).\n\nD. Donnez-moi le signe.\nR. ..... (On le donne).\n\nD. Que signifie ce signe ?\nR. Que je préférerais avoir la gorge coupée, plutôt que de révéler les secrets qui m'ont été confiés.\n\nD. Ce signe n'a-t-il pas d'autre signification ?\nR. La main droite, placée en équerre sous la gorge, paraît contenir le bouillonnement des passions qui s'agitent dans la poitrine et préserver ainsi la tête de toute exaltation fébrile, susceptible de compromettre notre lucidité d'esprit. — Le signe d'Apprenti signifie à ce point de vue : Je suis en possession de moi-même et je m'attache à juger tout avec impartialité.\n\nD. Donnez-moi le mot sacré.\nR. Je ne sais ni lire, ni écrire, je ne puis qu'épeler. Dites-moi la première lettre, je vous dirai la seconde.\n\nD. B.\nR. (On donne le mot lettre par lettre)."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 25 à 32",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Que signifie ce mot?\nR. Il établit, il fonde. C'est le nom d'une colonne de bronze dressée à l'entrée du temple de Salomon. Les Apprentis recevaient près d'elle leur salaire.\n\nD. Pourquoi dites-vous : « Je ne sais ni lire ni écrire. » A quoi se rapporte votre ignorance ?\nR. Au langage emblématique employé par la F? M? — Le sens ne s'en discerne que progressivement, et l'Initié, au début de sa carrière, épelle avec difficulté ce qui, plus tard, fera pour lui l'objet d'une lecture courante.\n\nD. Que vous indique la manière d'épeler le mot sacré ?\nR. La méthode d'enseignement de la F? M?, qui sollicite les efforts intellectuels de chacun, tout en évitant d'inculquer des dogmes. — On met le Néophyte sur la voie de la vérité, en lui donnant symboliquement la première lettre du mot sacré ; il doit trouver lui-même la seconde, puis on lui indique la troisième, afin qu'il devine la quatrième.\n\nD. Qu'appelle-t-on salaire en Maçonnerie ?\nR. C'est la récompense du travail, le résultat qu'il produit pour l'ouvrier.\n\nD. Par quoi se traduit le salaire des Maçons ?\nR. Par un perfectionnement graduel de soi-même.\n\nD. Pourquoi les Apprentis reçoivent-ils leur salaire près de la Colonne J ?\nR. Parce qu'elle symbolise l'énergie productrice, le foyer d'où rayonne l’activité humaine.\n\nD. Quel est ce foyer?\nR. C'est le centre conscient auquel se rapporte chez l'individu la conception du moi. — L'Apprenti-Maçon doit s'absorber en lui-même, se replier sur la source initiale de sa pensée, afin de chercher dans la raison pure le point de départ de ses connaissances. C'est pourquoi au début de son initiation il est enfermé dans le sein de la terre, où, rentrant en lui-même, il doit descendre jusque dans les profondeurs du puits où la Vérité se trouve cachée.\n\nD. Quelle est la forme de votre Loge ?\nR. Un carré long."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 33 à 40",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Dans quel sens est sa longueur ?\nR. De l’Orient à l'Occident.\n\nD. Sa largeur ?\nR. Du Midi au Septentrion.\n\nD. Sa hauteur ?\nR. Du Zénith au Nadir.\n\nD. Que veulent dire ces dimensions ?\nR. Que la Franc-Maçonnerie est universelle.\n\nD. Pourquoi votre Loge est-elle située de l'Orient à l'Occident ?\nR. Elle est orientée, comme tous les anciens édifices Sacrés, pour rappeler que la Maçonnerie marque à ses adeptes la direction d'où vient la lumière. Il appartient aux Maçons de s'engager dans la voie tracée afin de marcher par eux-mêmes à la conquête du Vrai. Il est à remarquer que les cathédrales construites par les Francs-Maçons du Moyen-Age ont toujours leur grand axe strictement parallèle à l'équateur terrestre.\n\nD. Qu'entendez-vous par le mot Loge ?\nR. C'est le lieu secret qui sert d'abri aux Maçons pour couvrir leurs travaux.\n\nD. Pourquoi les travaux maçonniques doivent-ils, s’accomplir à couvert ?\nR. Parce que toutes les forces, qui sont destinées à se déployer utilement au dehors, doivent tout d'abord être concentrées sur elles-mêmes, afin qu'après s'être mûries par la compression, elles puissent acquérir leur summum d'énergie expansive.\n\nD. A quoi peut se comparer une loge régulièrement couverte?\nR. A la cellule organique et plus spécialement a l'œuf qui contient un être en puissance de devenir. — Tout cerveau pensant figure en outre un atelier fermé : c'est une assemblée délibérante, abritée contre l'agitation du dehors."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 41 à 48",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Que dites-vous quand les travaux ne sont pas à couvert ?\nR. Il pleut ! (Cette expression permet aux Maçons de s'avertir entre eux, lorsque leur conversation risque d'être surprise par des oreilles profanes.)\n\nD. Qu'est-ce qui soutient votre Loge ?\nR. Trois grands piliers qu'on nomme Sagesse, Force et Beauté, et qui sont symboliquement représentés par le Vén? et les deux Surv?\n\nD. Comment ces piliers allégoriques peuvent-ils soutenir votre Loge, c'est-à-dire présider au travail constructif des Maçons ?\nR. La Sagesse invente, la Force exécute et la Beauté orne.\n\nD. Pourquoi vous êtes-vous fait recevoir Franc-Maçon ?\nR. Parce que j'étais dans les ténèbres et que j’ai désiré la lumière.\n\nD. Expliquez cette réponse.\nR. La société au milieu de laquelle nous vivons n'est qu'à demi civilisée. Les vérités essentielles y sont encore entourées d'ombres épaisses, les préjugés et l'ignorance la tuent, la forée y prime le droit. La plus grande somme de vérités et de lumières ne saurait donc mieux se rencontrer que dans les Temples maçonniques, consacrés au travail et à l'étude par des hommes éprouvés et choisis.\n\nD. Dans quel état étiez-vous quand on a procédé à votre initiation ?\nR. Ni nu, ni vêtu, mais dans un état décent et dépourvu de tous métaux.\n\nD. Pourquoi dans cet état?\nR. Dépouillé d'une partie de mes vêtements, pour rappeler que la vertu n'a pas besoin d'ornements. Le cœur à découvert, en signe de sincérité et de franchise. Le genou droit mit à nu, pour marquer les sentiments d'humilité qui doivent présider à la poursuite du Vrai. Le pied gauche déchaussé, à l'imitation d'une coutume orientale, et par respect pour un lieu qui est saint, parce qu'on y recherche la Vérité . Dépourvu de tous métaux, comme preuve de désintéressement, et pour apprendre à se priver sans regret de tout ce qui peut nuire à notre perfectionnement.\n\nD. Comment avez-vous été introduit en Loge?\nR. Par trois grands coups."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 49 à 56",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Quelle est leur signification ?\nR. Demandez et vous recevrez (la Lumière) ; cherchez et vous trouverez (la Vérité) ; frappez et on vous ouvrira (les portes duTemple).\n\nD. Que vous est-il arrivé après votre introduction dans le Temple ?\nR. Après avoir subi diverses épreuves et du consentement de mes frères, le Maître de la Loge m'a reçu Maçon.\n\nD. Quelles sont ces épreuves et que signifient-elles?\nR. Ces épreuves ont consisté en trois voyages destinés à m'enseigner la route qui conduit à la Vérité.\n\nD. Qu'avez-vous fait après avoir subi les épreuves?\nR. J'ai promis de garder les secrets de l'Ordre et d'agir en toutes circonstances comme un bon et loyal Maçon.\n\nD. En quoi consistent les secrets de l'Ordre ?\nR. Dans la connaissance des vérités abstraites, dont le symbolisme maçonnique est la traduction sensible.\n\nD. Qu'avez-vous aperçu en entrant en Loge ?\nR. Rien que l'esprit humain puisse comprendre : un voile épais me couvrait les yeux.\n\nD. Comment expliquez-vous cette réponse ?\nR. Il ne suffit pas à l'homme d'être mis en présence de la Vérité pour qu'elle lui soit intelligible. La lumière n'éclaire l'esprit humain que lorsque rien ne s'oppose à son rayonnement. Tant que l'illusion et les préjugés nous aveuglent, l'obscurité règne en nous et nous rend insensibles à la splendeur du Vrai.\n\nD. Qu'avez-vous vu en recevant la lumière ?\nR. Le Soleil, la Lune et le Maître de la Loge."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 57 à 64",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Quel rapport symbolique y a-t-il entre ces astres et le M? de la L? ?\nR. Le Soleil représente la raison qui éclaire les intelligences, la Lune figure l'imagination qui revêt les idées d'une forme appropriée, et le Maître de la Loge symbolise le principe conscient qui s'illumine sous la double influence du raisonnement (Soleil) et de l'imagination (Lune).\n\nD. Où se tient le Maître de la Loge ?\nR. A l'Orient.\n\nD. Pourquoi ?\nR. De même que le soleil apparaît à l'Orient pour ouvrir la carrière du jour, de même aussi le Maître se tient a l'Orient pour ouvrir la L? et mettre les ouvriers à l'œuvre.\n\nD. Où se tiennent les Surveillants?\nR. A l'Occident, pour aider le M? de la L? dans ses travaux, payer les ouvriers et les renvoyer contents.\n\nD. Que signifie l'Occident par rapport à l'Orient ?\nR. L'Orient marque la direction d'où provient la lumière, et l'Occident la région sur laquelle elle s'arrête. L'Occident figure par suite le monde visible qui tombe sous les sens, et, d'une manière générale, tout ce qui est concret. L'Orient, au contraire, représente le monde intelligible, qui ne se révèle qu'à l'esprit : en d'autres termes, tout ce qui est abstrait.\n\nD. Où se tiennent les Apprentis ?\nR. Au Septentrion, qui représente la région la moins éclairée, parce qu'ils n'ont encore reçu qu'une instruction élémentaire en Maçonnerie et que, par suite, ils ne sont pas en état de supporter un trop grand jour.\n\nD. A quelle heure les Maçons ouvrent-ils et ferment-ils leurs travaux ?\nR. Allegoriquement les travaux s'ouvrent à Midi et se ferment à Minuit.\n\nD. Que signifient ces heures conventionnelles ?\nR. Elles indiquent que l'homme atteint la moitié de sa carrière, le midi de sa vie, avant de pouvoir être utile à ses semblables, mais que, dès cet instant jusqu'à sa dernière heure, il doit travailler sans relâche au bonheur commun ."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 65 à 72",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Que nous apprend la coutume de s'informer de l'heure avant d'agir?\nR. L'action n'est utile que si elle vient a propos. Les conquêtes du progrès ne s'accomplissent qu'à leur heure. En se montrant trop impatient, on risque de faire avorter ce qui est en voie de préparation. Il faut savoir attendre le moment psychologique : agir trop tôt ou trop tard entraîne un égal insuccès.\n\nD. Quel âge avez-vous ?\nR. Trois ans.\n\nD. Que signifie cette réponse ?\nR. S'informer de l'âge maçonnique d'un F?, c'est lui demander quel est son grade. — L'Apprenti-Maçon a trois ans, parce qu'il doit être initié aux mystères des trois premiers nombres.\n\nD. Quels sont ces mystères ?\nR. Ce sont les conséquences logiques qui se déduisent des propriétés intrinsèques des nombres. La raison se base sur ces notions abstraites lorsqu'elle s'applique à résoudre le problème de l'existence des choses.\n\nD. Qu'avez-vous appris par l'étude du nombre Un ?\nR. Que tout est Un, vu qu'il ne saurait rien exister en dehors du Tout.\n\nD. Comment formulez-vous les principes que vous révèle le nombre Deux ?\nR. L'intelligence humaine assigne artificiellement des bornes à ce qui est Un et sans limites. L'Unité est ainsi renfermée entre deux extrêmes, qui ne sont que de pures abstractions, auxquelles les mots seuls prêtent une fausse apparence de réalité.\n\nD. Que concluez-vous de là ?\nR. Que l'Être, la Réalité ou la Vérité a pour symbole le nombre Trois.\n\nD. Pourquoi?\nR. Parce que l'Être ou Ce qui est nous apparaît comme un troisième et moyen terme, en qui les extrêmes opposés se concilient."
+  },
+  {
+    "title": "Catéchisme intégral · demandes 73 à 78",
+    "category": "Catéchisme intégral",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. A quoi travaillent les Apprentis?\nR. A dégrossir la pierre brute, afin de la dépouiller de ses aspérités et la rapprocher d'une forme en rapport avec sa destination.\n\nD. Quelle est cette pierre brute ?\nR. C'est le produit grossier de la, nature, que l'art doit polir et transformer.\n\nD. Quels sont les outils de l'Apprenti ?\nR. Le Ciseau et le Maillet.\n\nD. Que figurent-ils ?\nR. Le Ciseau représente la pensée arrêtée, les résolutions prises, et le Maillet la volonté qui les met à exécution.\n\nD. Que signifie la marche des Apprentis ?\nR. Le zèle que nous devons montrer en marchant vers celui qui nous éclaire.\n\nD. Avez-vous quelque ambition ?\nR. Une seule, j'aspire à l'honneur d'être reçu parmi les Compagnons."
+  },
+  {
+    "title": "Prendre la parole et demander à sortir",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      22,
+      23
+    ],
+    "qa": "Qui règle la prise de parole ?\nLe livret donne au Vénérable la décision d’accorder ou de retirer la parole. Les demandes passent par le Surveillant de la colonne.\n\nComment l’Apprenti demande-t-il à sortir ?\nIl s’adresse discrètement à un Maître qui transmet sa demande. Le texte réserve sa prise de parole à une invitation du Vénérable. Ces règles décrivent les usages du livret."
+  },
+  {
+    "title": "Le Secrétaire et l’Orateur : des fonctions distinctes",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      28,
+      32
+    ],
+    "qa": "Que fait le Secrétaire ?\nIl prépare les convocations et consigne le déroulement des tenues dans un procès-verbal.\n\nQue fait l’Orateur ?\nIl veille aux règles de l’atelier et formule ses conclusions. Le livret mentionne également l’accueil des nouveaux initiés et les hommages aux membres décédés, avec l’accord de la famille pour les interventions funéraires."
+  },
+  {
+    "title": "L’Expert et le Maître des Cérémonies",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      32,
+      33,
+      34
+    ],
+    "qa": "Quelles sont leurs responsabilités ?\nL’Expert veille au déroulement rituel ; le Maître des Cérémonies accompagne les déplacements et guide les membres.\n\nQuels signes les distinguent dans cette description ?\nL’Expert porte une épée ; son bijou associe une épée, une règle et un œil. Le Maître des Cérémonies utilise une canne et porte deux cannes croisées.\n\nLes Apprentis préparent la loge sous l’autorité du Maître des Cérémonies."
+  },
+  {
+    "title": "Solidarité et usages de la tenue",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      29,
+      30,
+      33
+    ],
+    "qa": "Qu’est-ce qu’une excuse avec obole ?\nUne absence annoncée par écrit, accompagnée d’un don destiné à la solidarité.\n\nQu’est-ce que la voûte d’acier ?\nUn accueil de dignitaires sous des glaives levés.\n\nQuel est le bijou du Trésorier ?\nDeux clefs croisées. Le livret distingue sa fonction de celle de l’Hospitalier, chargé du lien de secours fraternel."
+  },
+  {
+    "title": "La règle, le levier et les symboles du cabinet",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      34,
+      36
+    ],
+    "qa": "La règle\nElle exprime la rectitude.\n\nLe levier\nIl représente la puissance et le pouvoir d’action.\n\nLe miroir\nLe livret le relie à la concentration, à l’observation de soi et à la méditation.\n\nLe pain\nIl évoque la fécondité du travail et la rencontre de la matière et de l’esprit. Il s’agit de lectures symboliques propres au livret."
+  },
+  {
+    "title": "Les jours de la semaine dans le livret",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      40,
+      41
+    ],
+    "qa": "Quel archange le tableau associe-t-il à chaque jour ?\nLundi : Gabriel.\nMardi : Samaël et Camaël.\nMercredi : Raphaël.\nJeudi : Zadkiel.\nVendredi : Anaël.\nSamedi : Tzaphkiel.\nDimanche : Michaël.\n\nCe tableau relève du système spirituel présenté par le livret. Il ne constitue pas une règle commune à tous les rites."
+  },
+  {
+    "title": "Lys, gorge et conscience collective",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      38,
+      57,
+      60
+    ],
+    "qa": "Quelle fleur est associée à l’Apprenti ?\nLe lys.\n\nQuel chakra est rapproché du signe d’Apprenti ?\nVishuddha, situé à la gorge dans le système de correspondances du livret.\n\nQu’est-ce que l’égrégore de la loge ?\nLe document utilise ce terme occultiste pour parler de sa conscience collective. Ces rapprochements sont présentés comme des enseignements du livret."
+  },
+  {
+    "title": "Microcosme, macrocosme et variantes des sources",
+    "category": "Compléments du livret",
+    "source": "book",
+    "pages": [
+      31,
+      37,
+      49,
+      53,
+      61
+    ],
+    "qa": "Quelle image de l’univers la loge propose-t-elle ?\nLe livret présente la loge comme un microcosme ; la voûte bleue représente le macrocosme.\n\nPourquoi identifier les sources ?\nLe livret situe le salaire près de B et formule le lien d’union en termes de fraternité, d’égalité et de liberté. Le catéchisme emploie d’autres formulations.\n\nLe livret présente aussi des positions variables des Surveillants au fil des passages. Sa correspondance mercure–âme et soufre–esprit diffère du tableau du cours d’instruction. Ces variantes doivent être étudiées séparément, sans fabriquer une réponse unique."
   }
 ];
 
@@ -2444,6 +3522,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       if (window.lucide) lucide.createIcons();
       document.querySelectorAll('[data-question-total]').forEach(el => el.textContent = QUIZ_DATA.length);
       renderCategories();
+      document.querySelectorAll('[data-memento-total]').forEach(el => el.textContent = CATECHISM_ITEMS.length);
       renderMobileNavigation();
       renderCatechism();
     });
@@ -2815,7 +3894,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
           <span class="memento-category">${escapeMemento(item.category)}</span>
           <h3>${escapeMemento(item.title)}</h3>
           <div class="memento-copy">${escapeMemento(item.qa)}</div>
-          <p class="memento-reference">${escapeMemento(source.name)} · p. ${item.pages.join(', ')}</p>
+          <p class="memento-reference">${escapeMemento(source.name)}${item.pages.length ? ' · p. ' + item.pages.join(', ') : ' · Texte transmis'}</p>
         </article>`;
       }).join('');
     }
