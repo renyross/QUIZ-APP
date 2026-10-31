@@ -236,6 +236,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
 .memento-reset:hover:enabled { background:#c7aa7210; }
 .memento-reset:disabled { opacity:.35; cursor:default; }
 @media(max-width:600px) { .memento-tools label { flex-basis:100%; } .memento-tools #mementoCount { margin-left:auto; } }
+.chapter-quizzes { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:0 0 26px; }
+.chapter-quizzes > span { font:400 12px Inter,sans-serif; color:#91a3ba; margin-right:6px; }
+.chapter-quizzes button { border:1px solid #c7aa7240; border-radius:8px; background:#c7aa7208; padding:12px 16px; color:#d1b580; font:500 12px Inter,sans-serif; min-height:44px; }
+.chapter-quizzes button:hover { background:#c7aa7220; }
 </style>
 </head>
 <body class="pave-subtil flex flex-col min-h-screen selection:bg-masonic-gold selection:text-black">
@@ -458,11 +462,13 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
         <div class="memento-tools">
           <label for="mementoTheme">Explorer par thème <select id="mementoTheme" onchange="filterCatechism()"><option value="">Tous les thèmes</option></select></label>
           <label for="mementoSource">Affiner par source <select id="mementoSource" onchange="filterCatechism()"><option value="">Toutes les sources</option></select></label>
+          <label for="mementoChapter">Chapitres du livret <select id="mementoChapter" onchange="filterCatechism()"><option value="">Tous les chapitres et sources</option><option value="1">1 · Leçon philosophique</option><option value="2">2 · Leçon pratique</option><option value="3">3 · Instruction au grade d’Apprenti</option></select></label>
           <button type="button" class="memento-reset" onclick="resetMementoFilters()">Réinitialiser</button>
           <span id="mementoCount" role="status" aria-live="polite"></span>
         </div>
         <p class="memento-note">Synthèses des documents fournis. Les formulations et les usages peuvent varier selon les sources. Les références indiquent les pages des documents utilisés pour préparer les fiches.</p>
 
+        <div class="chapter-quizzes" aria-label="Quiz par chapitre du livret"><span>Réviser par chapitre</span><button onclick="startQuiz('chapter:1')">1 · Philosophie</button><button onclick="startQuiz('chapter:2')">2 · Pratique</button><button onclick="startQuiz('chapter:3')">3 · Instruction</button></div>
         <div id="catechismList" class="space-y-4">
           <!-- Dynamique -->
         </div>
@@ -3459,6 +3465,208 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   }
 ]);
 
+    QUIZ_DATA.push(...[
+  {
+    "id": 232,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "À qui s’étend la philanthropie maçonnique ?",
+    "options": [
+      "À tous les humains, sans distinction d’origine, de fortune ou de conviction",
+      "Aux seuls membres du même atelier",
+      "Aux seules personnes exerçant le même métier",
+      "Aux seules personnes de même religion"
+    ],
+    "answer": 0,
+    "chapter": 1,
+    "explanation": "À tous les humains, sans distinction d’origine, de fortune ou de conviction.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 1 · page PDF 4"
+  },
+  {
+    "id": 233,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Sur quels points la morale universelle cherche-t-elle d’abord un accord ?",
+    "options": [
+      "Sur une opinion politique obligatoire",
+      "Sur les principes partagés par les moralistes de différents pays et religions",
+      "Sur une origine sociale commune",
+      "Sur un métier imposé à tous"
+    ],
+    "answer": 1,
+    "chapter": 1,
+    "explanation": "Sur les principes partagés par les moralistes de différents pays et religions.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 1 · page PDF 7"
+  },
+  {
+    "id": 234,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle appartenance un Maçon doit-il s’abstenir de révéler à la place d’autrui ?",
+    "options": [
+      "Sa propre profession publique",
+      "L’adresse publique d’un bâtiment municipal",
+      "L’appartenance maçonnique d’un autre membre",
+      "La date d’un événement public"
+    ],
+    "answer": 2,
+    "chapter": 1,
+    "explanation": "L’appartenance maçonnique d’un autre membre.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 1 · page PDF 11"
+  },
+  {
+    "id": 235,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Que demande symboliquement l’attouchement dans le dialogue de tuilage ?",
+    "options": [
+      "Le versement d’une cotisation",
+      "La lecture des comptes",
+      "La clôture immédiate de la loge",
+      "La communication du mot sacré"
+    ],
+    "answer": 3,
+    "chapter": 1,
+    "explanation": "La communication du mot sacré.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 1 · page PDF 20"
+  },
+  {
+    "id": 236,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quelle famille symbolique est associée à l’eau dans la préparation aux éléments ?",
+    "options": [
+      "Les Ondins et les Ondines",
+      "Les Salamandres",
+      "Les Sylphes",
+      "Les Gnômes"
+    ],
+    "answer": 0,
+    "chapter": 2,
+    "explanation": "Les Ondins et les Ondines.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 2 · page PDF 39"
+  },
+  {
+    "id": 237,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quelle famille symbolique est associée au feu ?",
+    "options": [
+      "Les Ondins",
+      "Les Salamandres",
+      "Les Sylphes",
+      "Les Gnômes"
+    ],
+    "answer": 1,
+    "chapter": 2,
+    "explanation": "Les Salamandres.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 2 · page PDF 40"
+  },
+  {
+    "id": 238,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Quelle famille symbolique est associée à l’air ?",
+    "options": [
+      "Les Salamandres",
+      "Les Ondines",
+      "Les Sylphes",
+      "Les Gnômes"
+    ],
+    "answer": 2,
+    "chapter": 2,
+    "explanation": "Les Sylphes.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 2 · page PDF 40"
+  },
+  {
+    "id": 239,
+    "cat": "occult",
+    "catName": "Correspondances & Angéologie",
+    "q": "Où se place Gabriel dans la représentation du bouclier des Archanges ?",
+    "options": [
+      "Devant soi",
+      "À droite",
+      "À gauche",
+      "Derrière soi"
+    ],
+    "answer": 3,
+    "chapter": 2,
+    "explanation": "Derrière soi.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 2 · page PDF 41"
+  },
+  {
+    "id": 240,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quelle est la couleur de votre degré?",
+    "options": [
+      "Blanche",
+      "Rouge",
+      "Noire",
+      "Verte"
+    ],
+    "answer": 0,
+    "chapter": 3,
+    "explanation": "Blanche.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 3 · page PDF 57"
+  },
+  {
+    "id": 241,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quel est l’endroit où se centralise toutes les forces de la L...?",
+    "options": [
+      "Dans la salle humide",
+      "À l’autel du serment",
+      "Sur le parvis",
+      "Dans les archives du Trésorier"
+    ],
+    "answer": 1,
+    "chapter": 3,
+    "explanation": "À l’autel du serment.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 3 · page PDF 59"
+  },
+  {
+    "id": 242,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Quel est le devoir de l’Apprenti Maçon?",
+    "options": [
+      "Rechercher des privilèges matériels",
+      "Éviter toute écoute d’autrui",
+      "Débarrasser son esprit des obstacles intellectuels et moraux à la lumière",
+      "Faire prévaloir son opinion sans examen"
+    ],
+    "answer": 2,
+    "chapter": 3,
+    "explanation": "Débarrasser son esprit des obstacles intellectuels et moraux à la lumière.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 3 · page PDF 60"
+  },
+  {
+    "id": 243,
+    "cat": "catechism",
+    "catName": "Catéchisme & Tuilage",
+    "q": "Qu’est-ce-que vous dîtes avant d’allumer un charbon?",
+    "options": [
+      "BETHEL",
+      "OLIAL",
+      "OSIAS",
+      "AOUM"
+    ],
+    "answer": 3,
+    "chapter": 3,
+    "explanation": "AOUM.",
+    "source": "Livret de l’Apprenti Maçon · chapitre 3 · page PDF 61"
+  }
+]);
+
+    QUIZ_DATA.forEach(question => {
+      if (!question.chapter && question.source.startsWith('Livret de l’Apprenti Maçon')) {
+        const page = Number(question.source.match(/page PDF (\d+)/)?.[1]);
+        if (page) question.chapter = page < 38 ? 1 : page < 49 ? 2 : 3;
+      }
+    });
+
     const MEMENTO_SOURCES = {"stars": {"name": "Comment allumer une étoile", "file": "12JDY Comment Allumer une étoile FM (1).pdf"}, "cat": {"name": "Catéchisme interprétatif", "file": "catechisme APP.pdf"}, "book": {"name": "Livret de l’apprenti", "file": "Livret de l'App M.pdf"}, "course": {"name": "Cours d’instruction · J. D. Yacor", "file": "JDY- Cours FM d'Instruction Complète.pdf"}};
     const CATECHISM_ITEMS = [
   {
@@ -3562,7 +3770,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       8,
       9
     ],
-    "qa": "L’initiation\nUne transformation progressive, graduée et lente, transmise par les symboles, les gestes et les paroles.\n\nElle demande un travail durable : apprendre à réfléchir, mettre en pratique les enseignements et corriger sa conduite. Les grades jalonnent cette progression."
+    "qa": "L’initiation\nUne transformation progressive, graduée et lente, transmise par les symboles, les gestes et les paroles.\n\nElle demande un travail durable : apprendre à réfléchir, mettre en pratique les enseignements et corriger sa conduite. Les grades jalonnent cette progression.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "La marche de l’apprenti",
@@ -3572,7 +3783,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       9,
       10
     ],
-    "qa": "La marche de l’Apprenti\nElle exprime le passage du désordre à l’ordre, du profane au sacré et de la dispersion à la concentration.\n\nÀ l’ordre, les pieds en équerre, l’Apprenti part du pied gauche et accomplit trois pas distincts. L’attention au geste accompagne la recherche de la lumière et l’apprentissage de la maîtrise de soi."
+    "qa": "La marche de l’Apprenti\nElle exprime le passage du désordre à l’ordre, du profane au sacré et de la dispersion à la concentration.\n\nÀ l’ordre, les pieds en équerre, l’Apprenti part du pied gauche et accomplit trois pas distincts. L’attention au geste accompagne la recherche de la lumière et l’apprentissage de la maîtrise de soi.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le silence comme exercice intérieur",
@@ -3582,7 +3796,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       11,
       12
     ],
-    "qa": "Le silence\nLe silence permet un retour sur soi : observer ses réactions, apaiser ses passions et reconnaître ce qui doit être corrigé.\n\nIl développe l’écoute et la réflexion. L’équerre rappelle la rectitude morale : la précision du geste et la droiture de la conduite participent du même travail."
+    "qa": "Le silence\nLe silence permet un retour sur soi : observer ses réactions, apaiser ses passions et reconnaître ce qui doit être corrigé.\n\nIl développe l’écoute et la réflexion. L’équerre rappelle la rectitude morale : la précision du geste et la droiture de la conduite participent du même travail.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Une fraternité active",
@@ -3592,7 +3809,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       6,
       7
     ],
-    "qa": "La bienfaisance\nElle comprend l’aide matérielle, intellectuelle et morale : secourir, transmettre ses connaissances et agir par l’exemple.\n\nLa fraternité se construit dans l’attention aux autres et la bonne entente entre personnes de convictions différentes. L’étude des sciences et des arts accompagne ce perfectionnement."
+    "qa": "La bienfaisance\nElle comprend l’aide matérielle, intellectuelle et morale : secourir, transmettre ses connaissances et agir par l’exemple.\n\nLa fraternité se construit dans l’attention aux autres et la bonne entente entre personnes de convictions différentes. L’étude des sciences et des arts accompagne ce perfectionnement.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Écouter, obéir, travailler",
@@ -3740,7 +3960,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       22,
       23
     ],
-    "qa": "La prise de parole\nLe Vénérable accorde ou retire la parole. Les demandes passent par le Surveillant de la colonne. L’Apprenti parle lorsqu’il y est invité.\n\nDemander à sortir\nL’Apprenti s’adresse discrètement à un Maître qui transmet sa demande au Vénérable."
+    "qa": "La prise de parole\nLe Vénérable accorde ou retire la parole. Les demandes passent par le Surveillant de la colonne. L’Apprenti parle lorsqu’il y est invité.\n\nDemander à sortir\nL’Apprenti s’adresse discrètement à un Maître qui transmet sa demande au Vénérable.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le Secrétaire et l’Orateur : des fonctions distinctes",
@@ -3750,7 +3973,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       28,
       32
     ],
-    "qa": "Le Secrétaire\nIl prépare les convocations et consigne les tenues dans un procès-verbal.\n\nL’Orateur\nIl veille aux règles de l’atelier et formule ses conclusions. Il accueille les nouveaux initiés et prononce les hommages aux membres décédés. Les interventions auprès de la famille se font avec son accord."
+    "qa": "Le Secrétaire\nIl prépare les convocations et consigne les tenues dans un procès-verbal.\n\nL’Orateur\nIl veille aux règles de l’atelier et formule ses conclusions. Il accueille les nouveaux initiés et prononce les hommages aux membres décédés. Les interventions auprès de la famille se font avec son accord.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "L’Expert et le Maître des Cérémonies",
@@ -3761,7 +3987,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       33,
       34
     ],
-    "qa": "L’Expert\nIl veille au déroulement rituel. Il porte une épée ; son bijou réunit une épée, une règle et un œil.\n\nLe Maître des Cérémonies\nIl accompagne les déplacements et guide les membres. Il utilise une canne ; son bijou représente deux cannes croisées. Les Apprentis préparent la loge sous son autorité."
+    "qa": "L’Expert\nIl veille au déroulement rituel. Il porte une épée ; son bijou réunit une épée, une règle et un œil.\n\nLe Maître des Cérémonies\nIl accompagne les déplacements et guide les membres. Il utilise une canne ; son bijou représente deux cannes croisées. Les Apprentis préparent la loge sous son autorité.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Solidarité et usages de la tenue",
@@ -3772,7 +4001,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       30,
       33
     ],
-    "qa": "L’excuse avec obole\nUne absence annoncée par écrit, accompagnée d’un don au tronc de solidarité.\n\nLa voûte d’acier\nUn accueil des dignitaires sous des glaives levés.\n\nLe Trésorier\nIl porte deux clefs croisées et veille aux finances.\n\nL’Hospitalier\nIl contribue au secours fraternel et à l’attention portée aux membres dans le besoin."
+    "qa": "L’excuse avec obole\nUne absence annoncée par écrit, accompagnée d’un don au tronc de solidarité.\n\nLa voûte d’acier\nUn accueil des dignitaires sous des glaives levés.\n\nLe Trésorier\nIl porte deux clefs croisées et veille aux finances.\n\nL’Hospitalier\nIl contribue au secours fraternel et à l’attention portée aux membres dans le besoin.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le miroir : se connaître",
@@ -3781,7 +4013,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       36
     ],
-    "qa": "Le miroir\nIl invite à la concentration et à la prise de conscience de soi. Se regarder devient une image du travail intérieur : reconnaître ses réactions, discerner ses défauts et chercher à les dépasser.\n\nSon usage symbolique\nIl soutient la méditation et rappelle que le perfectionnement commence par l’observation de soi."
+    "qa": "Le miroir\nIl invite à la concentration et à la prise de conscience de soi. Se regarder devient une image du travail intérieur : reconnaître ses réactions, discerner ses défauts et chercher à les dépasser.\n\nSon usage symbolique\nIl soutient la méditation et rappelle que le perfectionnement commence par l’observation de soi.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Les correspondances des jours",
@@ -3791,7 +4026,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       40,
       41
     ],
-    "qa": "Les correspondances des jours\nLundi : Gabriel.\nMardi : Samaël et Camaël.\nMercredi : Raphaël.\nJeudi : Zadkiel.\nVendredi : Anaël.\nSamedi : Tzaphkiel.\nDimanche : Michaël."
+    "qa": "Les correspondances des jours\nLundi : Gabriel.\nMardi : Samaël et Camaël.\nMercredi : Raphaël.\nJeudi : Zadkiel.\nVendredi : Anaël.\nSamedi : Tzaphkiel.\nDimanche : Michaël.",
+    "chapters": [
+      2
+    ]
   },
   {
     "title": "Lys, gorge et conscience collective",
@@ -3802,7 +4040,11 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       57,
       60
     ],
-    "qa": "La fleur de l’Apprenti\nLe lys.\n\nD. Quel est le nom du Chakras qui correspond au signe d’Apprenti?\nR. Vishuddha, à la hauteur de la gorge.\n\nD. Qu’appelle ton égrégore?\nR. La conscience collective de la loge, désignée par un terme d’origine occultiste."
+    "qa": "La fleur de l’Apprenti\nLe lys.\n\nD. Quel est le nom du Chakras qui correspond au signe d’Apprenti?\nR. Vishuddha, à la hauteur de la gorge.\n\nD. Qu’appelle ton égrégore?\nR. La conscience collective de la loge, désignée par un terme d’origine occultiste.",
+    "chapters": [
+      2,
+      3
+    ]
   },
   {
     "title": "Microcosme et macrocosme",
@@ -3815,7 +4057,11 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       53,
       61
     ],
-    "qa": "D. Qu’est-ce-qu’une Loge représente symboliquement?\nR. L’univers en petit : le microcosme.\n\nD. Pourquoi?\nR. Ses dimensions s’étendent de l’Orient à l’Occident, du Midi au Septentrion et du Zénith au Nadir.\n\nD. Que représente la voute bleu du Temple?\nR. Le macrocosme, c’est-à-dire l’univers dans sa totalité."
+    "qa": "D. Qu’est-ce-qu’une Loge représente symboliquement?\nR. L’univers en petit : le microcosme.\n\nD. Pourquoi?\nR. Ses dimensions s’étendent de l’Orient à l’Occident, du Midi au Septentrion et du Zénith au Nadir.\n\nD. Que représente la voute bleu du Temple?\nR. Le macrocosme, c’est-à-dire l’univers dans sa totalité.",
+    "chapters": [
+      1,
+      3
+    ]
   },
   {
     "title": "Le tablier blanc : travail et pureté",
@@ -3825,7 +4071,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       35,
       21
     ],
-    "qa": "Le tablier\nIl représente le travail maçonnique. Sa blancheur évoque la pureté, l’innocence, l’amitié et le changement d’attitude attendu de l’Apprenti.\n\nLe porter\nL’Apprenti porte la bavette relevée. Le tablier rappelle que l’engagement se manifeste par un travail régulier sur soi et par la transformation de la conduite."
+    "qa": "Le tablier\nIl représente le travail maçonnique. Sa blancheur évoque la pureté, l’innocence, l’amitié et le changement d’attitude attendu de l’Apprenti.\n\nLe porter\nL’Apprenti porte la bavette relevée. Le tablier rappelle que l’engagement se manifeste par un travail régulier sur soi et par la transformation de la conduite.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le crâne et la tombe : mort et renaissance",
@@ -3835,7 +4084,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       35,
       36
     ],
-    "qa": "Le crâne\nIl rappelle la mortalité humaine et le dépouillement de ce qui attache aux seules apparences.\n\nLa tombe\nElle représente la fin symbolique de l’état profane et la possibilité d’une renaissance. La semence qui disparaît pour donner une plante exprime cette transformation.\n\nAu cabinet de réflexion\nCes images invitent à considérer le sens de sa vie, ses engagements et ce que l’on souhaite changer en soi."
+    "qa": "Le crâne\nIl rappelle la mortalité humaine et le dépouillement de ce qui attache aux seules apparences.\n\nLa tombe\nElle représente la fin symbolique de l’état profane et la possibilité d’une renaissance. La semence qui disparaît pour donner une plante exprime cette transformation.\n\nAu cabinet de réflexion\nCes images invitent à considérer le sens de sa vie, ses engagements et ce que l’on souhaite changer en soi.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le coq : vigilance et lumière",
@@ -3844,7 +4096,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       36
     ],
-    "qa": "Le coq\nIl symbolise la vigilance et la force. Associé à Hermès, Thoth ou Mercure, il évoque une conduite des âmes à travers les ténèbres.\n\nLe travail intérieur\nIl invite à rester attentif et à sortir de l’ignorance. L’annonce du jour accompagne symboliquement l’attente de la lumière."
+    "qa": "Le coq\nIl symbolise la vigilance et la force. Associé à Hermès, Thoth ou Mercure, il évoque une conduite des âmes à travers les ténèbres.\n\nLe travail intérieur\nIl invite à rester attentif et à sortir de l’ignorance. L’annonce du jour accompagne symboliquement l’attente de la lumière.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le pain : fécondité du travail",
@@ -3853,7 +4108,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       36
     ],
-    "qa": "Le pain\nIl évoque l’ascension de l’âme, la fécondité du travail et la sagesse de la terre.\n\nMatière et esprit\nIl représente l’union de la terre et du ciel. Sa présence au cabinet de réflexion invite à relier les besoins matériels à la recherche intérieure."
+    "qa": "Le pain\nIl évoque l’ascension de l’âme, la fécondité du travail et la sagesse de la terre.\n\nMatière et esprit\nIl représente l’union de la terre et du ciel. Sa présence au cabinet de réflexion invite à relier les besoins matériels à la recherche intérieure.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "La règle : rectitude",
@@ -3862,7 +4120,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       34
     ],
-    "qa": "La règle\nElle symbolise la rectitude. Outil du tracé droit, elle donne une image concrète d’une conduite guidée par des principes cohérents.\n\nLe travail intérieur\nElle invite à accorder ses actes à ses résolutions et à garder une direction dans le travail de perfectionnement."
+    "qa": "La règle\nElle symbolise la rectitude. Outil du tracé droit, elle donne une image concrète d’une conduite guidée par des principes cohérents.\n\nLe travail intérieur\nElle invite à accorder ses actes à ses résolutions et à garder une direction dans le travail de perfectionnement.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le levier : puissance d’action",
@@ -3871,7 +4132,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       34
     ],
-    "qa": "Le levier\nIl symbolise la puissance et le pouvoir. L’outil permet de mettre une force en action pour déplacer ce qui résiste.\n\nLe travail intérieur\nIl invite à réfléchir aux moyens d’agir et à employer sa force avec discernement."
+    "qa": "Le levier\nIl symbolise la puissance et le pouvoir. L’outil permet de mettre une force en action pour déplacer ce qui résiste.\n\nLe travail intérieur\nIl invite à réfléchir aux moyens d’agir et à employer sa force avec discernement.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "La truelle : fraternité et pardon",
@@ -3880,7 +4144,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       34
     ],
-    "qa": "La truelle\nElle symbolise l’amour fraternel et la tolérance. Elle évoque ce qui relie les pierres de l’édifice et permet une construction commune.\n\nPasser la truelle\nCette expression signifie pardonner et oublier les offenses. Elle invite à apaiser les différends et à préserver le lien fraternel."
+    "qa": "La truelle\nElle symbolise l’amour fraternel et la tolérance. Elle évoque ce qui relie les pierres de l’édifice et permet une construction commune.\n\nPasser la truelle\nCette expression signifie pardonner et oublier les offenses. Elle invite à apaiser les différends et à préserver le lien fraternel.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "L’épée flamboyante : autorité spirituelle",
@@ -3889,7 +4156,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       30
     ],
-    "qa": "L’épée flamboyante\nElle représente l’autorité spirituelle du Vénérable Maître. Elle évoque les chérubins gardiens du chemin de l’Arbre de Vie.\n\nSon usage\nPlacée sur le plateau du Vénérable, elle intervient dans la consécration lors de l’initiation. Elle se distingue du maillet, qui exprime son pouvoir temporel."
+    "qa": "L’épée flamboyante\nElle représente l’autorité spirituelle du Vénérable Maître. Elle évoque les chérubins gardiens du chemin de l’Arbre de Vie.\n\nSon usage\nPlacée sur le plateau du Vénérable, elle intervient dans la consécration lors de l’initiation. Elle se distingue du maillet, qui exprime son pouvoir temporel.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "L’épée de l’Expert et celle du Couvreur",
@@ -3899,7 +4169,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       32,
       33
     ],
-    "qa": "L’Expert\nIl tient son épée de la main droite. À l’ordre, la pointe est dirigée vers le ciel et la garde se trouve à hauteur du menton. Son bijou associe une épée, une règle et un œil.\n\nLe Couvreur\nIl garde l’entrée du temple. Son épée, tenue de la main droite avec la pointe en bas, exprime une position défensive. Elle accompagne la protection des travaux contre les indiscrétions.\n\nUn même objet, deux fonctions\nL’épée prend son sens dans la responsabilité de l’officier qui la porte."
+    "qa": "L’Expert\nIl tient son épée de la main droite. À l’ordre, la pointe est dirigée vers le ciel et la garde se trouve à hauteur du menton. Son bijou associe une épée, une règle et un œil.\n\nLe Couvreur\nIl garde l’entrée du temple. Son épée, tenue de la main droite avec la pointe en bas, exprime une position défensive. Elle accompagne la protection des travaux contre les indiscrétions.\n\nUn même objet, deux fonctions\nL’épée prend son sens dans la responsabilité de l’officier qui la porte.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "La canne du Maître des Cérémonies",
@@ -3909,7 +4182,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       33,
       34
     ],
-    "qa": "La canne\nElle est le signe de la fonction du Maître des Cérémonies, qui la tient de la main droite.\n\nSon usage\nElle accompagne la conduite des déplacements et l’escorte des membres dans leurs marches. Le bijou de l’officier représente deux cannes entrecroisées.\n\nPréparer et ordonner\nCette fonction relie la préparation de la loge à la bonne exécution des mouvements rituels."
+    "qa": "La canne\nElle est le signe de la fonction du Maître des Cérémonies, qui la tient de la main droite.\n\nSon usage\nElle accompagne la conduite des déplacements et l’escorte des membres dans leurs marches. Le bijou de l’officier représente deux cannes entrecroisées.\n\nPréparer et ordonner\nCette fonction relie la préparation de la loge à la bonne exécution des mouvements rituels.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Les bijoux des officiers : reconnaître les fonctions",
@@ -3922,7 +4198,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       33,
       34
     ],
-    "qa": "Les trois bijoux mobiles\nVénérable Maître : l’équerre.\nPremier Surveillant : le niveau.\nSecond Surveillant : la perpendiculaire ou le fil à plomb.\n\nLes autres fonctions\nOrateur : livre ouvert ou soleil rayonnant.\nSecrétaire : deux plumes entrecroisées.\nTrésorier : deux clefs entrecroisées.\nHospitalier : aumônière ornée d’un cœur.\nExpert : épée et règle entrecroisées, surmontées d’un œil.\nMaître des Cérémonies : deux cannes entrecroisées.\nCouvreur : épée.\n\nLe bijou rend la fonction identifiable ; il rappelle une responsabilité au service de l’atelier."
+    "qa": "Les trois bijoux mobiles\nVénérable Maître : l’équerre.\nPremier Surveillant : le niveau.\nSecond Surveillant : la perpendiculaire ou le fil à plomb.\n\nLes autres fonctions\nOrateur : livre ouvert ou soleil rayonnant.\nSecrétaire : deux plumes entrecroisées.\nTrésorier : deux clefs entrecroisées.\nHospitalier : aumônière ornée d’un cœur.\nExpert : épée et règle entrecroisées, surmontées d’un œil.\nMaître des Cérémonies : deux cannes entrecroisées.\nCouvreur : épée.\n\nLe bijou rend la fonction identifiable ; il rappelle une responsabilité au service de l’atelier.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le pavé mosaïque : les opposés",
@@ -3931,7 +4210,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       35
     ],
-    "qa": "Le pavé mosaïque\nUn damier rectangulaire situé au centre du temple ou entre les Surveillants. Le contraste de ses cases évoque le bien et le mal.\n\nLe travail intérieur\nIl invite à reconnaître les oppositions de l’existence et à rechercher une conduite droite. La marche rituelle demande attention et maîtrise des déplacements."
+    "qa": "Le pavé mosaïque\nUn damier rectangulaire situé au centre du temple ou entre les Surveillants. Le contraste de ses cases évoque le bien et le mal.\n\nLe travail intérieur\nIl invite à reconnaître les oppositions de l’existence et à rechercher une conduite droite. La marche rituelle demande attention et maîtrise des déplacements.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le progrès : avancer avec patience",
@@ -3940,7 +4222,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       5
     ],
-    "qa": "Le progrès moral\nIl se construit dans le bien et dans la pratique des vertus. Une amélioration durable demande réflexion, constance et patience.\n\nAméliorer avec discernement\nLa nouveauté ne suffit pas à rendre une démarche meilleure. Chaque changement demande d’en examiner les effets et de l’intégrer à un travail suivi."
+    "qa": "Le progrès moral\nIl se construit dans le bien et dans la pratique des vertus. Une amélioration durable demande réflexion, constance et patience.\n\nAméliorer avec discernement\nLa nouveauté ne suffit pas à rendre une démarche meilleure. Chaque changement demande d’en examiner les effets et de l’intégrer à un travail suivi.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le Grand Architecte et l’immortalité de l’âme",
@@ -3950,7 +4235,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       5,
       6
     ],
-    "qa": "Les bases spirituelles\nL’existence de Dieu et l’immortalité de l’âme structurent cette conception spirituelle du parcours maçonnique.\n\nLe Grand Architecte de l’Univers\nCette appellation évoque le principe créateur à travers l’image de l’architecte. Elle renvoie à l’ordre, à l’intelligence et à l’harmonie de la création.\n\nL’immortalité de l’âme\nElle exprime l’espérance d’une existence poursuivie au-delà de la mort et d’un approfondissement de la connaissance."
+    "qa": "Les bases spirituelles\nL’existence de Dieu et l’immortalité de l’âme structurent cette conception spirituelle du parcours maçonnique.\n\nLe Grand Architecte de l’Univers\nCette appellation évoque le principe créateur à travers l’image de l’architecte. Elle renvoie à l’ordre, à l’intelligence et à l’harmonie de la création.\n\nL’immortalité de l’âme\nElle exprime l’espérance d’une existence poursuivie au-delà de la mort et d’un approfondissement de la connaissance.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Sciences et arts : comprendre et relier",
@@ -3959,7 +4247,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       7
     ],
-    "qa": "L’étude des sciences\nElle contribue à la connaissance du monde et au développement du raisonnement.\n\nL’étude des arts\nElle nourrit la sensibilité et l’intelligence des formes symboliques.\n\nLe but commun\nFaire vivre ensemble des personnes de convictions différentes et relier le savoir à une conduite vertueuse."
+    "qa": "L’étude des sciences\nElle contribue à la connaissance du monde et au développement du raisonnement.\n\nL’étude des arts\nElle nourrit la sensibilité et l’intelligence des formes symboliques.\n\nLe but commun\nFaire vivre ensemble des personnes de convictions différentes et relier le savoir à une conduite vertueuse.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "La présence dans la marche",
@@ -3969,7 +4260,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       13,
       18
     ],
-    "qa": "D. Que signifie pour moi le « sérieux du visage » lors de la marche de l’Apprenti ?\nR. La concentration sur le geste, la présence au moment et le respect de sa solennité.\n\nLes trois pas d’égale distance\nLe triangle équilatéral en donne une image géométrique. La régularité des pas exprime une progression harmonieuse : apprendre à poser chaque étape avant de vouloir aller plus vite."
+    "qa": "D. Que signifie pour moi le « sérieux du visage » lors de la marche de l’Apprenti ?\nR. La concentration sur le geste, la présence au moment et le respect de sa solennité.\n\nLes trois pas d’égale distance\nLe triangle équilatéral en donne une image géométrique. La régularité des pas exprime une progression harmonieuse : apprendre à poser chaque étape avant de vouloir aller plus vite.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Les fenêtres et le flambeau",
@@ -3978,7 +4272,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       15
     ],
-    "qa": "Les trois fenêtres\nElles figurent à l’Orient, au Midi et à l’Occident sur le tableau de loge. Elles participent à la lecture du temple par les directions de la lumière.\n\nLe flambeau à trois branches\nPlacé sur le plateau du Vénérable, il reprend la présence du nombre trois dans l’organisation symbolique des travaux."
+    "qa": "Les trois fenêtres\nElles figurent à l’Orient, au Midi et à l’Occident sur le tableau de loge. Elles participent à la lecture du temple par les directions de la lumière.\n\nLe flambeau à trois branches\nPlacé sur le plateau du Vénérable, il reprend la présence du nombre trois dans l’organisation symbolique des travaux.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Les ternaires de la conscience",
@@ -3988,7 +4285,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       16,
       17
     ],
-    "qa": "Les niveaux de conscience\nMatériel, astral et mental.\n\nLes dimensions de l’univers\nPhysique, psychique et spirituelle.\n\nLes expressions humaines\nLa pensée, la parole et l’action.\n\nLa complémentarité\nLe ternaire invite à dépasser une opposition fermée entre deux termes. La rencontre de points de vue différents peut faire émerger une compréhension plus large."
+    "qa": "Les niveaux de conscience\nMatériel, astral et mental.\n\nLes dimensions de l’univers\nPhysique, psychique et spirituelle.\n\nLes expressions humaines\nLa pensée, la parole et l’action.\n\nLa complémentarité\nLe ternaire invite à dépasser une opposition fermée entre deux termes. La rencontre de points de vue différents peut faire émerger une compréhension plus large.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Les noms et leurs significations",
@@ -3999,7 +4299,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       39,
       46
     ],
-    "qa": "Raphaël\nGuérisseur de Dieu.\n\nGabriel\nMessager de Dieu.\n\nBETHEL\nMaison de Dieu.\n\nOSIAS\nFeu de Dieu.\n\nOLIAL\nDieu est fort.\n\nCes significations permettent de relier les noms à leur rôle dans le vocabulaire symbolique et les formules de travail."
+    "qa": "Raphaël\nGuérisseur de Dieu.\n\nGabriel\nMessager de Dieu.\n\nBETHEL\nMaison de Dieu.\n\nOSIAS\nFeu de Dieu.\n\nOLIAL\nDieu est fort.\n\nCes significations permettent de relier les noms à leur rôle dans le vocabulaire symbolique et les formules de travail.",
+    "chapters": [
+      2
+    ]
   },
   {
     "title": "Les anges associés aux trois piliers",
@@ -4008,7 +4311,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "pages": [
       54
     ],
-    "qa": "D. Quel ange qui marche avec ses Trois grands piliers?\nR. Uriel, Samaël et Anaël.\n\nLe groupe des trois anges accompagne celui de Sagesse, Force et Beauté. La réponse rassemble les trois noms ; elle ne détaille pas ici une attribution individuelle à chaque pilier."
+    "qa": "D. Quel ange qui marche avec ses Trois grands piliers?\nR. Uriel, Samaël et Anaël.\n\nLe groupe des trois anges accompagne celui de Sagesse, Force et Beauté. La réponse rassemble les trois noms ; elle ne détaille pas ici une attribution individuelle à chaque pilier.",
+    "chapters": [
+      3
+    ]
   },
   {
     "title": "L’équerre : matière et rectitude",
@@ -4020,7 +4326,10 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       28,
       34
     ],
-    "qa": "L’équerre\nElle symbolise la matière, la droiture et la rectitude morale. L’angle droit donne une image de la justesse recherchée dans les actes.\n\nSon usage\nElle appartient aux trois Grandes Lumières avec le Volume de la Loi Sacrée et le compas. Elle est aussi le bijou du Vénérable Maître. Les pieds en équerre et les angles marqués dans les gestes rappellent cette exigence de droiture.\n\nLe travail intérieur\nAccorder sa conduite à ses engagements, agir avec justice et corriger ce qui s’écarte de ses principes."
+    "qa": "L’équerre\nElle symbolise la matière, la droiture et la rectitude morale. L’angle droit donne une image de la justesse recherchée dans les actes.\n\nSon usage\nElle appartient aux trois Grandes Lumières avec le Volume de la Loi Sacrée et le compas. Elle est aussi le bijou du Vénérable Maître. Les pieds en équerre et les angles marqués dans les gestes rappellent cette exigence de droiture.\n\nLe travail intérieur\nAccorder sa conduite à ses engagements, agir avec justice et corriger ce qui s’écarte de ses principes.",
+    "chapters": [
+      1
+    ]
   },
   {
     "title": "Le compas : esprit et mesure",
@@ -4030,7 +4339,55 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       14,
       34
     ],
-    "qa": "Le compas\nIl symbolise l’esprit. Outil de tracé du cercle, il permet de reporter une distance autour d’un centre.\n\nSa place\nIl appartient aux trois Grandes Lumières avec le Volume de la Loi Sacrée et l’équerre. Le compas et l’équerre rapprochent symboliquement l’esprit et la matière.\n\nLe travail intérieur\nLa mesure et le centre offrent des images pour réfléchir à l’orientation de sa pensée et à la cohérence de son action."
+    "qa": "Le compas\nIl symbolise l’esprit. Outil de tracé du cercle, il permet de reporter une distance autour d’un centre.\n\nSa place\nIl appartient aux trois Grandes Lumières avec le Volume de la Loi Sacrée et l’équerre. Le compas et l’équerre rapprochent symboliquement l’esprit et la matière.\n\nLe travail intérieur\nLa mesure et le centre offrent des images pour réfléchir à l’orientation de sa pensée et à la cohérence de son action.",
+    "chapters": [
+      1
+    ]
+  },
+  {
+    "title": "Chapitre 1 · Leçon philosophique",
+    "category": "Devoirs & fraternité",
+    "source": "book",
+    "pages": [
+      4,
+      7,
+      11,
+      20
+    ],
+    "chapters": [
+      1
+    ],
+    "qa": "La philanthropie\nL’amour de l’humanité dépasse les différences de naissance, de fortune, de pays et de convictions.\n\nLa morale universelle\nElle recherche les principes communs et s’efforce de dissiper les malentendus entre opinions différentes.\n\nLa discrétion\nL’appartenance d’un autre membre ne doit pas être dévoilée à sa place.\n\nLe tuilage\nL’attouchement introduit la demande du mot sacré. L’apprentissage associe ainsi réflexion morale, discipline personnelle et usages de reconnaissance."
+  },
+  {
+    "title": "Chapitre 2 · Leçon pratique",
+    "category": "Prière & pratique rituelle",
+    "source": "book",
+    "pages": [
+      39,
+      40,
+      41,
+      42
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Les familles symboliques des éléments\nTerre : Gnômes.\nEau : Ondins et Ondines.\nFeu : Salamandres.\nAir : Sylphes.\n\nLe bouclier des Archanges\nRaphaël devant soi, Gabriel derrière soi, Michaël à droite et Uriel à gauche.\n\nLa structure du travail\nLa préparation et la purification précèdent la prière. Le déroulement comprend les invocations, les demandes et une fermeture. Il distingue les gestes, les paroles et les correspondances de chaque étape."
+  },
+  {
+    "title": "Chapitre 3 · Instruction au grade d’Apprenti",
+    "category": "Catéchisme & tuilage",
+    "source": "book",
+    "pages": [
+      57,
+      59,
+      60,
+      61
+    ],
+    "chapters": [
+      3
+    ],
+    "qa": "D. Quelle est la couleur de votre degré?\nR. Blanche.\n\nD. Quel est l’endroit où se centralise toutes les forces de la L...?\nR. À l’autel du serment.\n\nD. Quel est le devoir de l’Apprenti Maçon?\nR. Se perfectionner intellectuellement et moralement, enlever ce qui empêche la lumière de parvenir à l’esprit et écouter chacun avec bienveillance. La discipline du silence aide à apprendre à penser.\n\nD. Qu’est-ce-que vous dîtes avant d’allumer un charbon?\nR. AOUM."
   }
 ];
 
@@ -4128,6 +4485,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       const themes = MEMENTO_THEMES;
       document.getElementById('catechismSearch').value = '';
       document.getElementById('mementoSource').value = '';
+      document.getElementById('mementoChapter').value = '';
       document.getElementById('mementoTheme').value = themes[themeIndex] || '';
       filterCatechism();
       navigate('catechism');
@@ -4202,7 +4560,9 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     }
 
     function startQuiz(catId, limit = null) {
-      if (catId === 'all') {
+      if (String(catId).startsWith('chapter:')) {
+        currentQuestions = QUIZ_DATA.filter(q => q.chapter === Number(catId.split(':')[1]));
+      } else if (catId === 'all') {
         currentQuestions = [...QUIZ_DATA];
       } else {
         currentQuestions = QUIZ_DATA.filter(q => q.cat === catId);
@@ -4396,6 +4756,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     function renderCatechism(filterText = '') {
       const sourceSelect = document.getElementById('mementoSource');
       const themeSelect = document.getElementById('mementoTheme');
+      const chapter = Number(document.getElementById('mementoChapter').value);
       if (sourceSelect.options.length === 1) {
         Object.entries(MEMENTO_SOURCES).forEach(([key, source]) => sourceSelect.add(new Option(source.name, key)));
         MEMENTO_THEMES.forEach(theme => themeSelect.add(new Option(theme, theme)));
@@ -4404,14 +4765,16 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       Array.from(themeSelect.options).forEach(option => {
         const count = CATECHISM_ITEMS.filter(item =>
           (!option.value || item.category === option.value) &&
-          (!sourceSelect.value || item.source === sourceSelect.value) &&
+          (!chapter || item.chapters?.includes(chapter)) &&
+        (!sourceSelect.value || item.source === sourceSelect.value) &&
           normalizeMemento([item.title, item.qa, item.category, MEMENTO_SOURCES[item.source].name].join(' ')).includes(query)
         ).length;
         option.textContent = `${option.value || 'Tous les thèmes'} (${count})`;
         option.disabled = count === 0 && option.value !== themeSelect.value;
       });
-      document.querySelector('.memento-reset').disabled = !query && !sourceSelect.value && !themeSelect.value;
+      document.querySelector('.memento-reset').disabled = !query && !sourceSelect.value && !themeSelect.value && !chapter;
       const filtered = CATECHISM_ITEMS.filter(item =>
+        (!chapter || item.chapters?.includes(chapter)) &&
         (!sourceSelect.value || item.source === sourceSelect.value) &&
         (!themeSelect.value || item.category === themeSelect.value) &&
         normalizeMemento([item.title, item.qa, item.category, MEMENTO_SOURCES[item.source].name].join(' ')).includes(query)
@@ -4436,6 +4799,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     function resetMementoFilters() {
       document.getElementById('catechismSearch').value = '';
       document.getElementById('mementoSource').value = '';
+      document.getElementById('mementoChapter').value = '';
       document.getElementById('mementoTheme').value = '';
       filterCatechism();
     }
