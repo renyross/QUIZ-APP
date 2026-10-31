@@ -221,6 +221,17 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
 @media(min-height:850px) { .mobile-menu-group summary { min-height:120px; } }
 @media(max-width:360px) { .mobile-menu-top { padding:18px; } .mobile-menu-eyebrow { font-size:9px; } .mobile-menu-brand { gap:8px; } .mobile-menu-group summary { font-size:20px; } }
 
+
+.mobile-menu-links .mobile-home-link { justify-content:space-between; min-height:88px; padding:24px 0; border:0; border-radius:0; font:400 clamp(20px,4.6vw,30px)/1.35 Inter,sans-serif; color:#e6eaf0; letter-spacing:-.035em; }
+.mobile-menu-links .mobile-home-link[aria-current="page"] { background:transparent; color:#d1b580; }
+.mobile-home-link > span { font-size:22px; color:#c7aa72; }
+.mobile-menu-group summary small { display:block; margin-top:9px; color:#8497b0; font:400 11px/1.5 Inter,sans-serif; letter-spacing:0; }
+.mobile-submenu a { display:flex; align-items:center; justify-content:space-between; gap:12px; color:#b3c0d2; font:400 14px/1.6 Inter,sans-serif; padding:12px 0; min-height:46px; text-decoration:none; }
+.mobile-submenu a:hover { color:#d1b580; }
+.mobile-count { flex-shrink:0; margin-left:auto; color:#ac976f; font:400 10px/1.5 Inter,sans-serif; white-space:nowrap; }
+.mobile-menu-cta small { display:block; color:#9dabbc; font:400 11px/1.5 Inter,sans-serif; margin-top:6px; }
+.mobile-menu-group summary { min-height:108px; }
+
 </style>
 </head>
 <body class="pave-subtil flex flex-col min-h-screen selection:bg-masonic-gold selection:text-black">
@@ -264,34 +275,8 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
         <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Fermer le menu" autofocus><span aria-hidden="true"></span></button>
       </div>
       <div class="mobile-menu-content">
-        <nav class="mobile-menu-links" aria-label="Navigation mobile">
-          <details class="mobile-menu-group">
-            <summary>Les ateliers<span class="mobile-chevron" aria-hidden="true"></span></summary>
-            <div class="mobile-submenu">
-              <button data-mobile-view="home" onclick="navigate('home')">Voir tous les ateliers <span aria-hidden="true">↗</span></button>
-              <button onclick="startQuiz('catechism')">Catéchisme & tuilage</button>
-              <button onclick="startQuiz('reflection')">Cabinet & épreuves</button>
-              <button onclick="startQuiz('officers')">Officiers & organisation</button>
-            </div>
-          </details>
-          <details class="mobile-menu-group">
-            <summary>Symbolisme<span class="mobile-chevron" aria-hidden="true"></span></summary>
-            <div class="mobile-submenu"><button onclick="startQuiz('tools')">Outils, décors & symboles <span aria-hidden="true">↗</span></button></div>
-          </details>
-          <details class="mobile-menu-group">
-            <summary>Spiritualité<span class="mobile-chevron" aria-hidden="true"></span></summary>
-            <div class="mobile-submenu"><button onclick="startQuiz('theurgy')">Allumage des étoiles & théurgie</button><button onclick="startQuiz('occult')">Correspondances & angéologie</button></div>
-          </details>
-          <details class="mobile-menu-group">
-            <summary>Mémento & catéchisme<span class="mobile-chevron" aria-hidden="true"></span></summary>
-            <div class="mobile-submenu"><button data-mobile-view="catechism" onclick="navigate('catechism')">Consulter les 21 fiches <span aria-hidden="true">↗</span></button><p>Synthèses et références aux quatre documents de votre bibliothèque.</p></div>
-          </details>
-          <details class="mobile-menu-group">
-            <summary>Votre évaluation<span class="mobile-chevron" aria-hidden="true"></span></summary>
-            <div class="mobile-submenu"><button data-mobile-view="quiz" onclick="startQuiz('all')">Passer l’examen complet <span aria-hidden="true">↗</span></button><p><span data-question-total></span> questions avec corrections expliquées.</p></div>
-          </details>
-        </nav>
-        <button class="mobile-menu-cta" onclick="startQuiz('all')"><span>Commencer le grand examen</span><span aria-hidden="true">↗</span></button>
+        <nav id="mobileDataNavigation" class="mobile-menu-links" aria-label="Navigation mobile"></nav>
+        <button class="mobile-menu-cta" data-mobile-view="quiz" onclick="startQuiz('all')"><span>Passer le grand examen<small><span data-question-total></span> questions · Tous les ateliers</small></span><span aria-hidden="true">↗</span></button>
       </div>
     </dialog>
   </header>
@@ -2459,6 +2444,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       if (window.lucide) lucide.createIcons();
       document.querySelectorAll('[data-question-total]').forEach(el => el.textContent = QUIZ_DATA.length);
       renderCategories();
+      renderMobileNavigation();
       renderCatechism();
     });
 
@@ -2504,15 +2490,41 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     window.matchMedia('(min-width: 768px)').addEventListener('change', event => {
       if (event.matches) closeMobileMenu();
     });
-    mobileMenu.querySelectorAll('details').forEach(group => {
-      group.addEventListener('toggle', () => {
-        if (!group.open) return;
-        mobileMenu.querySelectorAll('details').forEach(other => {
-          if (other !== group) other.open = false;
+    function renderMobileNavigation() {
+      const categories = [...new Map(QUIZ_DATA.map(q => [q.cat, q.catName])).entries()];
+      const themes = [...new Set(CATECHISM_ITEMS.map(item => item.category))];
+      const nav = document.getElementById('mobileDataNavigation');
+      nav.innerHTML = `
+        <button class="mobile-home-link" data-mobile-view="home" aria-current="page" onclick="navigate('home')">Accueil <span aria-hidden="true">↗</span></button>
+        <details class="mobile-menu-group">
+          <summary><span>Les ateliers<small>${categories.length} thèmes · ${QUIZ_DATA.length} questions</small></span><span class="mobile-chevron" aria-hidden="true"></span></summary>
+          <div class="mobile-submenu">${categories.map(([id, name]) => `<button onclick="startQuiz('${id}')">${escapeMemento(name)}<span class="mobile-count">${QUIZ_DATA.filter(q => q.cat === id).length} QCM</span></button>`).join('')}</div>
+        </details>
+        <details class="mobile-menu-group">
+          <summary><span>Mémento & catéchisme<small>${CATECHISM_ITEMS.length} fiches de révision</small></span><span class="mobile-chevron" aria-hidden="true"></span></summary>
+          <div class="mobile-submenu"><button data-mobile-view="catechism" onclick="openMobileMemento()">Toutes les fiches <span aria-hidden="true">↗</span></button>${themes.map((theme, index) => `<button onclick="openMobileMemento(${index})">${escapeMemento(theme)}<span class="mobile-count">${CATECHISM_ITEMS.filter(item => item.category === theme).length}</span></button>`).join('')}</div>
+        </details>
+        <details class="mobile-menu-group">
+          <summary><span>Les documents<small>${Object.keys(MEMENTO_SOURCES).length} PDF de référence</small></span><span class="mobile-chevron" aria-hidden="true"></span></summary>
+          <div class="mobile-submenu">${Object.values(MEMENTO_SOURCES).map(source => `<a href="${encodeURIComponent(source.file)}" target="_blank" rel="noopener" onclick="closeMobileMenu()">${escapeMemento(source.name)}<span class="mobile-count">PDF ↗</span></a>`).join('')}</div>
+        </details>`;
+      nav.querySelectorAll('details').forEach(group => {
+        group.addEventListener('toggle', () => {
+          if (group.open) nav.querySelectorAll('details').forEach(other => {
+            if (other !== group) other.open = false;
+          });
         });
       });
-    });
-    document.querySelector('[data-mobile-view="home"]').setAttribute('aria-current', 'page');
+    }
+
+    function openMobileMemento(themeIndex) {
+      const themes = [...new Set(CATECHISM_ITEMS.map(item => item.category))];
+      document.getElementById('catechismSearch').value = '';
+      document.getElementById('mementoSource').value = '';
+      document.getElementById('mementoTheme').value = themes[themeIndex] || '';
+      filterCatechism();
+      navigate('catechism');
+    }
 
     function renderCategories() {
       const grid = document.getElementById('categoriesGrid');
