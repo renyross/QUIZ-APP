@@ -443,7 +443,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
           Mémento & Catéchisme du 1er Grade
         </h2>
         <p class="font-cormorant text-gray-400 text-lg italic mb-6">
-          21 fiches de révision tirées des quatre documents de votre bibliothèque. Chaque synthèse renvoie aux pages du PDF source.
+          21 fiches de révision tirées des quatre documents de votre bibliothèque. Chaque synthèse indique sa source et les pages de référence.
         </p>
 
         <div class="relative mb-6">
@@ -456,7 +456,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
           <label for="mementoTheme">Thème <select id="mementoTheme" onchange="filterCatechism()"><option value="">Tous les thèmes</option></select></label>
           <span id="mementoCount" role="status" aria-live="polite"></span>
         </div>
-        <p class="memento-note">Synthèses des documents fournis. Les formulations et les usages peuvent varier selon les sources. Les liens indiquent les pages du fichier PDF.</p>
+        <p class="memento-note">Synthèses des documents fournis. Les formulations et les usages peuvent varier selon les sources. Les références indiquent les pages des documents utilisés pour préparer les fiches.</p>
         <div id="catechismList" class="space-y-4">
           <!-- Dynamique -->
         </div>
@@ -2505,8 +2505,12 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
           <div class="mobile-submenu"><button data-mobile-view="catechism" onclick="openMobileMemento()">Toutes les fiches <span aria-hidden="true">↗</span></button>${themes.map((theme, index) => `<button onclick="openMobileMemento(${index})">${escapeMemento(theme)}<span class="mobile-count">${CATECHISM_ITEMS.filter(item => item.category === theme).length}</span></button>`).join('')}</div>
         </details>
         <details class="mobile-menu-group">
-          <summary><span>Les documents<small>${Object.keys(MEMENTO_SOURCES).length} PDF de référence</small></span><span class="mobile-chevron" aria-hidden="true"></span></summary>
-          <div class="mobile-submenu">${Object.values(MEMENTO_SOURCES).map(source => `<a href="${encodeURIComponent(source.file)}" target="_blank" rel="noopener" onclick="closeMobileMenu()">${escapeMemento(source.name)}<span class="mobile-count">PDF ↗</span></a>`).join('')}</div>
+          <summary><span>Entraînement<small>Choisissez votre rythme</small></span><span class="mobile-chevron" aria-hidden="true"></span></summary>
+          <div class="mobile-submenu">
+            <button onclick="startQuiz('all', 10)">Session express<span class="mobile-count">10 questions</span></button>
+            <button onclick="startQuiz('all', 20)">Révision approfondie<span class="mobile-count">20 questions</span></button>
+            <button onclick="startQuiz('all')">Examen complet<span class="mobile-count">${QUIZ_DATA.length} questions</span></button>
+          </div>
         </details>`;
       nav.querySelectorAll('details').forEach(group => {
         group.addEventListener('toggle', () => {
@@ -2594,7 +2598,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       if (window.lucide) lucide.createIcons();
     }
 
-    function startQuiz(catId) {
+    function startQuiz(catId, limit = null) {
       if (catId === 'all') {
         currentQuestions = [...QUIZ_DATA];
       } else {
@@ -2605,6 +2609,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
         const j = Math.floor(Math.random() * (i + 1));
         [currentQuestions[i], currentQuestions[j]] = [currentQuestions[j], currentQuestions[i]];
       }
+      if (Number.isInteger(limit) && limit > 0) currentQuestions = currentQuestions.slice(0, limit);
       currentQuestionIndex = 0;
       userScore = 0;
       userAnswers = [];
@@ -2806,12 +2811,11 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       }
       list.innerHTML = filtered.map(item => {
         const source = MEMENTO_SOURCES[item.source];
-        const url = encodeURIComponent(source.file) + '#page=' + item.pages[0];
         return `<article class="memento-card">
           <span class="memento-category">${escapeMemento(item.category)}</span>
           <h3>${escapeMemento(item.title)}</h3>
           <div class="memento-copy">${escapeMemento(item.qa)}</div>
-          <a class="memento-reference" href="${url}" target="_blank" rel="noopener">${escapeMemento(source.name)} · p. ${item.pages.join(', ')} <span aria-hidden="true">↗</span></a>
+          <p class="memento-reference">${escapeMemento(source.name)} · p. ${item.pages.join(', ')}</p>
         </article>`;
       }).join('');
     }
