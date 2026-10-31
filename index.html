@@ -240,6 +240,9 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
 .chapter-quizzes > span { font:400 12px Inter,sans-serif; color:#91a3ba; margin-right:6px; }
 .chapter-quizzes button { border:1px solid #c7aa7240; border-radius:8px; background:#c7aa7208; padding:12px 16px; color:#d1b580; font:500 12px Inter,sans-serif; min-height:44px; }
 .chapter-quizzes button:hover { background:#c7aa7220; }
+.memento-theme-heading { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:16px; margin:20px 0 2px; padding-bottom:12px; border-bottom:1px solid #ffffff15; color:#dfca9e; font:500 17px/1.5 Inter,sans-serif; }
+.memento-theme-heading span { flex-shrink:0; color:#879bb5; font:400 11px Inter,sans-serif; }
+.memento-theme-heading:first-child { margin-top:0; }
 </style>
 </head>
 <body class="pave-subtil flex flex-col min-h-screen selection:bg-masonic-gold selection:text-black">
@@ -4572,67 +4575,17 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     const MEMENTO_SOURCES = {"stars": {"name": "Comment allumer une étoile", "file": "12JDY Comment Allumer une étoile FM (1).pdf"}, "cat": {"name": "Catéchisme interprétatif", "file": "catechisme APP.pdf"}, "book": {"name": "Livret de l’apprenti", "file": "Livret de l'App M.pdf"}, "course": {"name": "Cours d’instruction · J. D. Yacor", "file": "JDY- Cours FM d'Instruction Complète.pdf"}};
     const CATECHISM_ITEMS = [
   {
-    "title": "Entrer en loge",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
+    "title": "La philosophie maçonnique",
+    "category": "Philosophie & connaissance de soi",
+    "source": "book",
     "pages": [
-      2
+      4,
+      7
     ],
-    "qa": "D. Mon frère d’où venez-vous ?\nR. De la loge de Saint-Jean Vénérable Maître.\n\nD. Que fait-on à la loge de saint Jean ?\nR. On y élève des Temples à la vertu et l’on y creuse des cachots pour les vices.\n\nD. Qu’apportez-vous ?\nR. Salut, prospérité et bon accueil à tous les Frères.\n\nD. Que venez-vous faire ici ?\nR. Vaincre mes passions, soumettre ma volonté à mes devoirs et faire de nouveaux progrès dans la Franc-Maçonnerie."
-  },
-  {
-    "title": "La Franc-Maçonnerie : lien et définition",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
-    "pages": [],
-    "qa": "D. Quel est le lien qui nous unit ?\nR. La Franc-Maçonnerie.\n\nD. Qu'est-ce que la Franc-Maçonnerie ?\nR. C'est une alliance universelle d'hommes éclairés, unis pour travailler en commun au perfectionnement intellectuel et moral de l'humanité.\n\nD. La Franc-Maçonnerie est-elle une religion ?\nR. Ce n'est pas une religion dans le sens étroit du mot. Mais, mieux que toute autre institution, elle a pour effet de relier les hommes entre eux ; c'est par ce fait une religion (de religare, relier) dans le sens le plus large et le plus élevé du terme."
-  },
-  {
-    "title": "Le mot sacré et la méthode d’étude",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
-    "pages": [
-      5
+    "chapters": [
+      1
     ],
-    "qa": "D. Donnez-moi le mot sacré.\nR. Je ne sais ni lire, ni écrire, je ne puis qu'épeler. Dites-moi la première lettre, je vous dirai la seconde.\n\nD. B.\nR. (On donne le mot lettre par lettre).\n\nD. Que signifie ce mot?\nR. Il établit, il fonde. C'est le nom d'une colonne de bronze dressée à l'entrée du temple de Salomon. Les Apprentis recevaient près d'elle leur salaire.\n\nD. Pourquoi dites-vous : « Je ne sais ni lire ni écrire. » A quoi se rapporte votre ignorance ?\nR. Au langage emblématique employé par la F? M? — Le sens ne s'en discerne que progressivement, et l'Initié, au début de sa carrière, épelle avec difficulté ce qui, plus tard, fera pour lui l'objet d'une lecture courante.\n\nD. Que vous indique la manière d'épeler le mot sacré ?\nR. La méthode d'enseignement de la F? M?, qui sollicite les efforts intellectuels de chacun, tout en évitant d'inculquer des dogmes. — On met le Néophyte sur la voie de la vérité, en lui donnant symboliquement la première lettre du mot sacré ; il doit trouver lui-même la seconde, puis on lui indique la troisième, afin qu'il devine la quatrième."
-  },
-  {
-    "title": "Le salaire et le foyer intérieur",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
-    "pages": [],
-    "qa": "D. Qu'appelle-t-on salaire en Maçonnerie ?\nR. C'est la récompense du travail, le résultat qu'il produit pour l'ouvrier.\n\nD. Par quoi se traduit le salaire des Maçons ?\nR. Par un perfectionnement graduel de soi-même.\n\nD. Pourquoi les Apprentis reçoivent-ils leur salaire près de la Colonne J ?\nR. Parce qu'elle symbolise l'énergie productrice, le foyer d'où rayonne l’activité humaine.\n\nD. Quel est ce foyer?\nR. C'est le centre conscient auquel se rapporte chez l'individu la conception du moi. — L'Apprenti-Maçon doit s'absorber en lui-même, se replier sur la source initiale de sa pensée, afin de chercher dans la raison pure le point de départ de ses connaissances. C'est pourquoi au début de son initiation il est enfermé dans le sein de la terre, où, rentrant en lui-même, il doit descendre jusque dans les profondeurs du puits où la Vérité se trouve cachée."
-  },
-  {
-    "title": "Le signe d’Apprenti : engagement et maîtrise",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
-    "pages": [],
-    "qa": "D. Donnez-moi le signe.\nR. ..... (On le donne).\n\nD. Que signifie ce signe ?\nR. Que je préférerais avoir la gorge coupée, plutôt que de révéler les secrets qui m'ont été confiés.\n\nD. Ce signe n'a-t-il pas d'autre signification ?\nR. La main droite, placée en équerre sous la gorge, paraît contenir le bouillonnement des passions qui s'agitent dans la poitrine et préserver ainsi la tête de toute exaltation fébrile, susceptible de compromettre notre lucidité d'esprit. — Le signe d'Apprenti signifie à ce point de vue : Je suis en possession de moi-même et je m'attache à juger tout avec impartialité."
-  },
-  {
-    "title": "Les secrets et le langage symbolique",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
-    "pages": [],
-    "qa": "D. En quoi consistent les secrets de l'Ordre ?\nR. Dans la connaissance des vérités abstraites, dont le symbolisme maçonnique est la traduction sensible."
-  },
-  {
-    "title": "L’aspiration au grade de Compagnon",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
-    "pages": [],
-    "qa": "D. Avez-vous quelque ambition ?\nR. Une seule, j'aspire à l'honneur d'être reçu parmi les Compagnons."
-  },
-  {
-    "title": "Être reconnu maçon",
-    "category": "Catéchisme & tuilage",
-    "source": "cat",
-    "pages": [
-      2,
-      4
-    ],
-    "qa": "D. Etes-vous Maçon ?\nR. Mes frères me reconnaissent pour tel.\n\nD. Pourquoi répondez-vous ainsi ?\nR. Parce qu'un Apprenti-Maçon doit se défier de lui-même et craindre de porter un jugement avant d'avoir fait appel aux lumières de ses Frères.\n\nD. A quoi reconnaîtrai-je que vous êtes Maçon ?\nR. A mes signes, paroles et attouchements.\n\nD. Comment interprétez-vous cette réponse ?\nR. Un Maçon se reconnaît à sa façon d'agir, toujours équitable et franche (signes) ; à son langage loyal et sincère (paroles) ; enfin à la sollicitude fraternelle qu'il manifeste pour tous ceux à qui il est rattaché par les liens de la solidarité (serrements de main, attouchements).\n\nD. Comment se font les signes des Maçons ?\nR. Par équerre, niveau et perpendiculaire.\n\nD. Expliquez cette réponse.\nR. Le Maçon, dans ses actes, doit s'inspirer des idées de justice et d'équité (Equerre) ; il doit viser au nivellement des inégalités arbitraires (Niveau) ; et contribuer enfin à élever sans cesse le niveau social (Perpendiculaire)."
+    "qa": "Une démarche symbolique\nLa philosophie maçonnique recherche, dans les symboles, des points de rencontre entre différentes pensées. Elle remonte des effets aux causes et relie la connaissance du monde à celle de l’être humain.\n\nConcilier les pensées\nL’étude de systèmes philosophiques différents cherche leurs accords sur les principes de moralité et sur le bonheur commun.\n\nPratiquer les vertus\nLa réflexion prend sens dans l’action : joindre l’exemple aux enseignements et transformer ses connaissances en conduite vertueuse."
   },
   {
     "title": "Le Grand Architecte et l’immortalité de l’âme",
@@ -4655,6 +4608,20 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       5
     ],
     "qa": "Le progrès moral\nIl se construit dans le bien et dans la pratique des vertus. Une amélioration durable demande réflexion, constance et patience.\n\nAméliorer avec discernement\nLa nouveauté ne suffit pas à rendre une démarche meilleure. Chaque changement demande d’en examiner les effets et de l’intégrer à un travail suivi.",
+    "chapters": [
+      1
+    ]
+  },
+  {
+    "title": "Les ternaires de la conscience",
+    "category": "Philosophie & connaissance de soi",
+    "source": "book",
+    "pages": [
+      14,
+      16,
+      17
+    ],
+    "qa": "Les niveaux de conscience\nMatériel, astral et mental.\n\nLes dimensions de l’univers\nPhysique, psychique et spirituelle.\n\nLes expressions humaines\nLa pensée, la parole et l’action.\n\nLa complémentarité\nLe ternaire invite à dépasser une opposition fermée entre deux termes. La rencontre de points de vue différents peut faire émerger une compréhension plus large.\n\nVoir, entendre et parler\nCes trois facultés forment un autre exemple du ternaire. Leur rapprochement invite à examiner la réception, la compréhension et l’expression.\n\nLa réception de l’Apprenti\nLe Vénérable crée, constitue et reçoit par trois touches : épaule gauche, épaule droite et tête.",
     "chapters": [
       1
     ]
@@ -4684,21 +4651,21 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     ]
   },
   {
-    "title": "Une initiation progressive",
-    "category": "Philosophie & connaissance de soi",
+    "title": "Assiduité et respect des règles",
+    "category": "Devoirs & fraternité",
     "source": "book",
     "pages": [
-      8,
-      9
+      23,
+      24
     ],
-    "qa": "D. Depuis quand êtes-vous Maçon ?\nR. Depuis que j'ai reçu la lumière.\n\nD. Que signifie cette réponse?\nR. Que nous ne devenons réellement Maçons qu'à partir du jour où notre esprit s'est ouvert à l'intelligence des mystères maçonniques.\n\nD. Pourquoi vous êtes-vous fait recevoir Franc-Maçon ?\nR. Parce que j'étais dans les ténèbres et que j’ai désiré la lumière.\n\nD. Expliquez cette réponse.\nR. La société au milieu de laquelle nous vivons n'est qu'à demi civilisée. Les vérités essentielles y sont encore entourées d'ombres épaisses, les préjugés et l'ignorance la tuent, la forée y prime le droit. La plus grande somme de vérités et de lumières ne saurait donc mieux se rencontrer que dans les Temples maçonniques, consacrés au travail et à l'étude par des hommes éprouvés et choisis.",
     "chapters": [
       1
-    ]
+    ],
+    "qa": "Le respect des règles\nLes statuts, le règlement intérieur et les rituels organisent le travail de l’atelier. Leur étude permet de comprendre les engagements pris.\n\nL’assiduité\nLa présence régulière aux tenues est un devoir. Chaque membre participe à l’œuvre collective et à sa qualité.\n\nLa responsabilité commune\nChaque pierre possède sa place dans le temple en construction. L’apprentissage se poursuit dans la conduite quotidienne."
   },
   {
     "title": "Le silence comme exercice intérieur",
-    "category": "Devoirs, silence & fraternité",
+    "category": "Devoirs & fraternité",
     "source": "book",
     "pages": [
       11,
@@ -4711,7 +4678,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Liberté et bonnes mœurs",
-    "category": "Devoirs, silence & fraternité",
+    "category": "Devoirs & fraternité",
     "source": "cat",
     "pages": [
       2,
@@ -4720,8 +4687,22 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "qa": "D. Qu'est-ce qu'un Maçon ?\nR. C'est un homme né libre et de bonnes mœurs, également ami du riche et du pauvre s’ils sont vertueux.\n\nD. Que veut dire né libre ?\nR. L'homme né libre est celui qui, après être mort aux préjugés du vulgaire, s'est vu renaître à la vie nouvelle que confère l'initiation.\n\nD. Pourquoi dites-vous qu'un Maçon est également ami du riche et du pauvre s'ils sont vertueux ?\nR. Pour indiquer que la valeur individuelle doit s'apprécier en raison des qualités morales. L'estime ne doit se mesurer que selon la constance et l'énergie que l'homme apporte à la réalisation du bien."
   },
   {
+    "title": "Liberté, Égalité, Fraternité",
+    "category": "Devoirs & fraternité",
+    "source": "book",
+    "pages": [
+      7,
+      18,
+      24
+    ],
+    "chapters": [
+      1
+    ],
+    "qa": "Liberté\nDévelopper sa pensée et s’engager librement dans le travail initiatique.\n\nÉgalité\nReconnaître les mêmes droits naturels, sans hiérarchie de naissance.\n\nFraternité\nConstruire une relation d’entraide et de respect, nourrie par la tolérance.\n\nUne devise philosophique\nCes trois termes orientent le perfectionnement personnel et la vie commune, au-delà d’une simple formule politique."
+  },
+  {
     "title": "Une fraternité active",
-    "category": "Devoirs, silence & fraternité",
+    "category": "Devoirs & fraternité",
     "source": "book",
     "pages": [
       4,
@@ -4736,7 +4717,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Écouter, obéir, travailler",
-    "category": "Devoirs, silence & fraternité",
+    "category": "Devoirs & fraternité",
     "source": "course",
     "pages": [
       4,
@@ -4745,8 +4726,96 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "qa": "Les trois devoirs\nÉcouter : recevoir l’enseignement avec attention.\nObéir : respecter les règles librement acceptées.\nTravailler : mettre en pratique et poursuivre son perfectionnement.\n\nLes qualités à cultiver sont la moralité, l’équité, l’impartialité et l’éveil de la conscience. La maîtrise de la parole fait partie de cette discipline.\n\nD. Quels sont les devoirs du Maçon ?\nR. Fuir le vice et pratiquer la vertu.\n\nD. Comment un Maçon doit-il pratiquer la vertu ?\nR. En préférant à toutes choses la Justice et la Vérité."
   },
   {
+    "title": "Entrer en loge",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [
+      2
+    ],
+    "qa": "D. Mon frère d’où venez-vous ?\nR. De la loge de Saint-Jean Vénérable Maître.\n\nD. Que fait-on à la loge de saint Jean ?\nR. On y élève des Temples à la vertu et l’on y creuse des cachots pour les vices.\n\nD. Qu’apportez-vous ?\nR. Salut, prospérité et bon accueil à tous les Frères.\n\nD. Que venez-vous faire ici ?\nR. Vaincre mes passions, soumettre ma volonté à mes devoirs et faire de nouveaux progrès dans la Franc-Maçonnerie."
+  },
+  {
+    "title": "La Franc-Maçonnerie : lien et définition",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Quel est le lien qui nous unit ?\nR. La Franc-Maçonnerie.\n\nD. Qu'est-ce que la Franc-Maçonnerie ?\nR. C'est une alliance universelle d'hommes éclairés, unis pour travailler en commun au perfectionnement intellectuel et moral de l'humanité.\n\nD. La Franc-Maçonnerie est-elle une religion ?\nR. Ce n'est pas une religion dans le sens étroit du mot. Mais, mieux que toute autre institution, elle a pour effet de relier les hommes entre eux ; c'est par ce fait une religion (de religare, relier) dans le sens le plus large et le plus élevé du terme."
+  },
+  {
+    "title": "Le dialogue de reconnaissance du livret",
+    "category": "Catéchisme & reconnaissance",
+    "source": "book",
+    "pages": [
+      49
+    ],
+    "chapters": [
+      3
+    ],
+    "qa": "D. Y a-t-il quelque chose entre vous et moi?\nR. Oui Vénérable Maître.\n\nD. Quel est-il mon F..?\nR. Un secret : la Franc-maçonnerie.\n\nD. Je présume que vous êtes Franc-maçon?\nR. J’ai été reçu et admis comme tel par mes Frères Maîtres et Compagnons.\n\nD. Quel est le lien qui nous unit?\nR. La fraternité dans l’égalité et la liberté."
+  },
+  {
+    "title": "Le mot sacré et la méthode d’étude",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [
+      5
+    ],
+    "qa": "D. Donnez-moi le mot sacré.\nR. Je ne sais ni lire, ni écrire, je ne puis qu'épeler. Dites-moi la première lettre, je vous dirai la seconde.\n\nD. B.\nR. (On donne le mot lettre par lettre).\n\nD. Que signifie ce mot?\nR. Il établit, il fonde. C'est le nom d'une colonne de bronze dressée à l'entrée du temple de Salomon. Les Apprentis recevaient près d'elle leur salaire.\n\nD. Pourquoi dites-vous : « Je ne sais ni lire ni écrire. » A quoi se rapporte votre ignorance ?\nR. Au langage emblématique employé par la F? M? — Le sens ne s'en discerne que progressivement, et l'Initié, au début de sa carrière, épelle avec difficulté ce qui, plus tard, fera pour lui l'objet d'une lecture courante.\n\nD. Que vous indique la manière d'épeler le mot sacré ?\nR. La méthode d'enseignement de la F? M?, qui sollicite les efforts intellectuels de chacun, tout en évitant d'inculquer des dogmes. — On met le Néophyte sur la voie de la vérité, en lui donnant symboliquement la première lettre du mot sacré ; il doit trouver lui-même la seconde, puis on lui indique la troisième, afin qu'il devine la quatrième."
+  },
+  {
+    "title": "Le salaire et le foyer intérieur",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Qu'appelle-t-on salaire en Maçonnerie ?\nR. C'est la récompense du travail, le résultat qu'il produit pour l'ouvrier.\n\nD. Par quoi se traduit le salaire des Maçons ?\nR. Par un perfectionnement graduel de soi-même.\n\nD. Pourquoi les Apprentis reçoivent-ils leur salaire près de la Colonne J ?\nR. Parce qu'elle symbolise l'énergie productrice, le foyer d'où rayonne l’activité humaine.\n\nD. Quel est ce foyer?\nR. C'est le centre conscient auquel se rapporte chez l'individu la conception du moi. — L'Apprenti-Maçon doit s'absorber en lui-même, se replier sur la source initiale de sa pensée, afin de chercher dans la raison pure le point de départ de ses connaissances. C'est pourquoi au début de son initiation il est enfermé dans le sein de la terre, où, rentrant en lui-même, il doit descendre jusque dans les profondeurs du puits où la Vérité se trouve cachée."
+  },
+  {
+    "title": "Le signe d’Apprenti : engagement et maîtrise",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Donnez-moi le signe.\nR. ..... (On le donne).\n\nD. Que signifie ce signe ?\nR. Que je préférerais avoir la gorge coupée, plutôt que de révéler les secrets qui m'ont été confiés.\n\nD. Ce signe n'a-t-il pas d'autre signification ?\nR. La main droite, placée en équerre sous la gorge, paraît contenir le bouillonnement des passions qui s'agitent dans la poitrine et préserver ainsi la tête de toute exaltation fébrile, susceptible de compromettre notre lucidité d'esprit. — Le signe d'Apprenti signifie à ce point de vue : Je suis en possession de moi-même et je m'attache à juger tout avec impartialité."
+  },
+  {
+    "title": "Le tuilage et l’attouchement",
+    "category": "Catéchisme & reconnaissance",
+    "source": "book",
+    "pages": [
+      20,
+      21
+    ],
+    "chapters": [
+      1
+    ],
+    "qa": "L’attouchement\nPrendre réciproquement la main droite et exercer une pression du pouce recourbé sur la jointure qui unit l’index à la main. Cet usage appartient au tuilage en loge.\n\nD. Avez-vous quelque chose à me communiquer ?\n\nD. Qu’est ceci ?\nR. C’est l’attouchement d’Apprenti Franc-Maçon.\n\nD. Que signifie-t-il ?\nR. C’est la demande du Mot Sacré.\n\nD. Donnez-moi ce mot.\nR. Je ne sais ni lire ni écrire, je ne sais qu’épeler, donnez-moi la première lettre, je vous donnerai la suivante."
+  },
+  {
+    "title": "Les secrets et le langage symbolique",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. En quoi consistent les secrets de l'Ordre ?\nR. Dans la connaissance des vérités abstraites, dont le symbolisme maçonnique est la traduction sensible."
+  },
+  {
+    "title": "L’aspiration au grade de Compagnon",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Avez-vous quelque ambition ?\nR. Une seule, j'aspire à l'honneur d'être reçu parmi les Compagnons."
+  },
+  {
+    "title": "Être reconnu maçon",
+    "category": "Catéchisme & reconnaissance",
+    "source": "cat",
+    "pages": [
+      2,
+      4
+    ],
+    "qa": "D. Etes-vous Maçon ?\nR. Mes frères me reconnaissent pour tel.\n\nD. Pourquoi répondez-vous ainsi ?\nR. Parce qu'un Apprenti-Maçon doit se défier de lui-même et craindre de porter un jugement avant d'avoir fait appel aux lumières de ses Frères.\n\nD. A quoi reconnaîtrai-je que vous êtes Maçon ?\nR. A mes signes, paroles et attouchements.\n\nD. Comment interprétez-vous cette réponse ?\nR. Un Maçon se reconnaît à sa façon d'agir, toujours équitable et franche (signes) ; à son langage loyal et sincère (paroles) ; enfin à la sollicitude fraternelle qu'il manifeste pour tous ceux à qui il est rattaché par les liens de la solidarité (serrements de main, attouchements).\n\nD. Comment se font les signes des Maçons ?\nR. Par équerre, niveau et perpendiculaire.\n\nD. Expliquez cette réponse.\nR. Le Maçon, dans ses actes, doit s'inspirer des idées de justice et d'équité (Equerre) ; il doit viser au nivellement des inégalités arbitraires (Niveau) ; et contribuer enfin à élever sans cesse le niveau social (Perpendiculaire)."
+  },
+  {
     "title": "La marche de l’apprenti",
-    "category": "Initiation, cabinet & voyages",
+    "category": "Initiation & marche",
     "source": "book",
     "pages": [
       9,
@@ -4763,7 +4832,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "La préparation et les épreuves",
-    "category": "Initiation, cabinet & voyages",
+    "category": "Initiation & marche",
     "source": "cat",
     "pages": [
       7,
@@ -4772,8 +4841,33 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "qa": "D. Dans quel état étiez-vous quand on a procédé à votre initiation ?\nR. Ni nu, ni vêtu, mais dans un état décent et dépourvu de tous métaux.\n\nD. Pourquoi dans cet état?\nR. Dépouillé d'une partie de mes vêtements, pour rappeler que la vertu n'a pas besoin d'ornements. Le cœur à découvert, en signe de sincérité et de franchise. Le genou droit mit à nu, pour marquer les sentiments d'humilité qui doivent présider à la poursuite du Vrai. Le pied gauche déchaussé, à l'imitation d'une coutume orientale, et par respect pour un lieu qui est saint, parce qu'on y recherche la Vérité . Dépourvu de tous métaux, comme preuve de désintéressement, et pour apprendre à se priver sans regret de tout ce qui peut nuire à notre perfectionnement.\n\nD. Comment avez-vous été introduit en Loge?\nR. Par trois grands coups.\n\nD. Quelle est leur signification ?\nR. Demandez et vous recevrez (la Lumière) ; cherchez et vous trouverez (la Vérité) ; frappez et on vous ouvrira (les portes duTemple).\n\nD. Que vous est-il arrivé après votre introduction dans le Temple ?\nR. Après avoir subi diverses épreuves et du consentement de mes frères, le Maître de la Loge m'a reçu Maçon.\n\nD. Quelles sont ces épreuves et que signifient-elles?\nR. Ces épreuves ont consisté en trois voyages destinés à m'enseigner la route qui conduit à la Vérité.\n\nD. Qu'avez-vous fait après avoir subi les épreuves?\nR. J'ai promis de garder les secrets de l'Ordre et d'agir en toutes circonstances comme un bon et loyal Maçon.\n\nD. Qu'avez-vous aperçu en entrant en Loge ?\nR. Rien que l'esprit humain puisse comprendre : un voile épais me couvrait les yeux.\n\nD. Comment expliquez-vous cette réponse ?\nR. Il ne suffit pas à l'homme d'être mis en présence de la Vérité pour qu'elle lui soit intelligible. La lumière n'éclaire l'esprit humain que lorsque rien ne s'oppose à son rayonnement. Tant que l'illusion et les préjugés nous aveuglent, l'obscurité règne en nous et nous rend insensibles à la splendeur du Vrai."
   },
   {
+    "title": "Une initiation progressive",
+    "category": "Initiation & marche",
+    "source": "book",
+    "pages": [
+      8,
+      9
+    ],
+    "qa": "D. Depuis quand êtes-vous Maçon ?\nR. Depuis que j'ai reçu la lumière.\n\nD. Que signifie cette réponse?\nR. Que nous ne devenons réellement Maçons qu'à partir du jour où notre esprit s'est ouvert à l'intelligence des mystères maçonniques.\n\nD. Pourquoi vous êtes-vous fait recevoir Franc-Maçon ?\nR. Parce que j'étais dans les ténèbres et que j’ai désiré la lumière.\n\nD. Expliquez cette réponse.\nR. La société au milieu de laquelle nous vivons n'est qu'à demi civilisée. Les vérités essentielles y sont encore entourées d'ombres épaisses, les préjugés et l'ignorance la tuent, la forée y prime le droit. La plus grande somme de vérités et de lumières ne saurait donc mieux se rencontrer que dans les Temples maçonniques, consacrés au travail et à l'étude par des hommes éprouvés et choisis.",
+    "chapters": [
+      1
+    ]
+  },
+  {
+    "title": "La cruche au cabinet de réflexion",
+    "category": "Cabinet de réflexion",
+    "source": "book",
+    "pages": [
+      36
+    ],
+    "chapters": [
+      1
+    ],
+    "qa": "La cruche\nElle fait partie des objets du cabinet de réflexion.\n\nLa mention associée\n« Symbole d’adoration anthropologie ». La formulation ne développe pas davantage sa signification ; aucun sens plus précis n’est ajouté ici."
+  },
+  {
     "title": "Le cabinet de réflexion",
-    "category": "Initiation, cabinet & voyages",
+    "category": "Cabinet de réflexion",
     "source": "course",
     "pages": [
       8
@@ -4782,7 +4876,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Le coq : vigilance et lumière",
-    "category": "Initiation, cabinet & voyages",
+    "category": "Cabinet de réflexion",
     "source": "book",
     "pages": [
       36
@@ -4794,7 +4888,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Le crâne et la tombe : mort et renaissance",
-    "category": "Initiation, cabinet & voyages",
+    "category": "Cabinet de réflexion",
     "source": "book",
     "pages": [
       35,
@@ -4807,7 +4901,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Le miroir : se connaître",
-    "category": "Initiation, cabinet & voyages",
+    "category": "Cabinet de réflexion",
     "source": "book",
     "pages": [
       3,
@@ -4823,7 +4917,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Le pain : fécondité du travail",
-    "category": "Initiation, cabinet & voyages",
+    "category": "Cabinet de réflexion",
     "source": "book",
     "pages": [
       36
@@ -4835,28 +4929,28 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "La place des Apprentis",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [],
     "qa": "D. Où se tiennent les Apprentis ?\nR. Au Septentrion, qui représente la région la moins éclairée, parce qu'ils n'ont encore reçu qu'une instruction élémentaire en Maçonnerie et que, par suite, ils ne sont pas en état de supporter un trop grand jour."
   },
   {
     "title": "Le Soleil, la Lune et le Maître",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [],
     "qa": "D. Qu'avez-vous vu en recevant la lumière ?\nR. Le Soleil, la Lune et le Maître de la Loge.\n\nD. Quel rapport symbolique y a-t-il entre ces astres et le M? de la L? ?\nR. Le Soleil représente la raison qui éclaire les intelligences, la Lune figure l'imagination qui revêt les idées d'une forme appropriée, et le Maître de la Loge symbolise le principe conscient qui s'illumine sous la double influence du raisonnement (Soleil) et de l'imagination (Lune)."
   },
   {
     "title": "Le travail à couvert",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [],
     "qa": "D. Qu'entendez-vous par le mot Loge ?\nR. C'est le lieu secret qui sert d'abri aux Maçons pour couvrir leurs travaux.\n\nD. Pourquoi les travaux maçonniques doivent-ils, s’accomplir à couvert ?\nR. Parce que toutes les forces, qui sont destinées à se déployer utilement au dehors, doivent tout d'abord être concentrées sur elles-mêmes, afin qu'après s'être mûries par la compression, elles puissent acquérir leur summum d'énergie expansive.\n\nD. A quoi peut se comparer une loge régulièrement couverte?\nR. A la cellule organique et plus spécialement a l'œuf qui contient un être en puissance de devenir. — Tout cerveau pensant figure en outre un atelier fermé : c'est une assemblée délibérante, abritée contre l'agitation du dehors.\n\nD. Que dites-vous quand les travaux ne sont pas à couvert ?\nR. Il pleut ! (Cette expression permet aux Maçons de s'avertir entre eux, lorsque leur conversation risque d'être surprise par des oreilles profanes.)"
   },
   {
     "title": "Les dimensions du temple",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [
       6
@@ -4865,7 +4959,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Les fenêtres et le flambeau",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "book",
     "pages": [
       15
@@ -4877,14 +4971,14 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Les nombres Un, Deux et Trois",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [],
     "qa": "D. Quel âge avez-vous ?\nR. Trois ans.\n\nD. Que signifie cette réponse ?\nR. S'informer de l'âge maçonnique d'un F?, c'est lui demander quel est son grade. — L'Apprenti-Maçon a trois ans, parce qu'il doit être initié aux mystères des trois premiers nombres.\n\nD. Quels sont ces mystères ?\nR. Ce sont les conséquences logiques qui se déduisent des propriétés intrinsèques des nombres. La raison se base sur ces notions abstraites lorsqu'elle s'applique à résoudre le problème de l'existence des choses.\n\nD. Qu'avez-vous appris par l'étude du nombre Un ?\nR. Que tout est Un, vu qu'il ne saurait rien exister en dehors du Tout.\n\nD. Comment formulez-vous les principes que vous révèle le nombre Deux ?\nR. L'intelligence humaine assigne artificiellement des bornes à ce qui est Un et sans limites. L'Unité est ainsi renfermée entre deux extrêmes, qui ne sont que de pures abstractions, auxquelles les mots seuls prêtent une fausse apparence de réalité.\n\nD. Que concluez-vous de là ?\nR. Que l'Être, la Réalité ou la Vérité a pour symbole le nombre Trois.\n\nD. Pourquoi?\nR. Parce que l'Être ou Ce qui est nous apparaît comme un troisième et moyen terme, en qui les extrêmes opposés se concilient."
   },
   {
     "title": "L’autel du serment",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "book",
     "pages": [
       59
@@ -4895,8 +4989,20 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "qa": "D. Quel est l’endroit où se centralise toutes les forces de la L...?\nR. À l’autel du serment.\n\nL’autel forme un point de convergence symbolique des travaux. Il rappelle l’engagement pris et la responsabilité de chacun dans l’œuvre commune."
   },
   {
+    "title": "L’origine de la symbolique maçonnique",
+    "category": "Le temple & les nombres",
+    "source": "book",
+    "pages": [
+      57
+    ],
+    "chapters": [
+      3
+    ],
+    "qa": "D. D’où provient la symbolique maçonnique?\nR. Des bâtisseurs du Temple de Salomon."
+  },
+  {
     "title": "Microcosme et macrocosme",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "book",
     "pages": [
       31,
@@ -4913,7 +5019,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Midi, minuit et trois ans",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [
       9
@@ -4922,7 +5028,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Sagesse, Force et Beauté",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [
       7
@@ -4931,7 +5037,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Une loge juste et parfaite",
-    "category": "La loge, le temple & les nombres",
+    "category": "Le temple & les nombres",
     "source": "cat",
     "pages": [
       3
@@ -5013,7 +5119,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "La canne du Maître des Cérémonies",
-    "category": "Décors & symboles du temple",
+    "category": "Décors & insignes",
     "source": "book",
     "pages": [
       33,
@@ -5025,8 +5131,23 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     ]
   },
   {
+    "title": "Le lys et Vishuddha",
+    "category": "Décors & insignes",
+    "source": "book",
+    "pages": [
+      38,
+      57,
+      60
+    ],
+    "qa": "Le lys\nLa fleur associée à l’Apprenti.\n\nD. Quel est le nom du Chakras qui correspond au signe d’Apprenti?\nR. Vishuddha, à la hauteur de la gorge.",
+    "chapters": [
+      2,
+      3
+    ]
+  },
+  {
     "title": "Le pavé mosaïque : les opposés",
-    "category": "Décors & symboles du temple",
+    "category": "Décors & insignes",
     "source": "book",
     "pages": [
       35
@@ -5038,7 +5159,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Le tablier blanc : travail et pureté",
-    "category": "Décors & symboles du temple",
+    "category": "Décors & insignes",
     "source": "book",
     "pages": [
       21,
@@ -5053,7 +5174,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Les bijoux des officiers : reconnaître les fonctions",
-    "category": "Décors & symboles du temple",
+    "category": "Décors & insignes",
     "source": "book",
     "pages": [
       28,
@@ -5068,8 +5189,20 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     ]
   },
   {
+    "title": "Les trois lumières : équerre, Bible et étoile",
+    "category": "Décors & insignes",
+    "source": "book",
+    "pages": [
+      61
+    ],
+    "chapters": [
+      3
+    ],
+    "qa": "D. Quelles sont les 3 lumières dans la Loge?\nR. Équerre, Bible et étoile.\n\nCette énumération est distincte des trois Grandes Lumières : le Volume de la Loi Sacrée, l’équerre et le compas."
+  },
+  {
     "title": "L’épée de l’Expert et celle du Couvreur",
-    "category": "Décors & symboles du temple",
+    "category": "Décors & insignes",
     "source": "book",
     "pages": [
       32,
@@ -5082,7 +5215,7 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "L’épée flamboyante : autorité spirituelle",
-    "category": "Décors & symboles du temple",
+    "category": "Décors & insignes",
     "source": "book",
     "pages": [
       30
@@ -5093,8 +5226,21 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     ]
   },
   {
+    "title": "Entrer et sortir en cours de tenue",
+    "category": "Officiers & tenue",
+    "source": "book",
+    "pages": [
+      19,
+      20
+    ],
+    "chapters": [
+      1
+    ],
+    "qa": "Entrer\nRevêtir son tablier et ses gants avant de demander l’entrée. Après autorisation, se placer à l’ordre entre les colonnes, face à l’Orient. Accomplir les trois pas, faire le signe pénal et attendre l’invitation à prendre place. Le Maître des Cérémonies guide le déplacement vers la colonne du Nord.\n\nSortir\nAprès la demande transmise par un Maître et l’autorisation du Vénérable, attendre le Maître des Cérémonies à l’ordre. Le suivre dans le sens solaire en marquant les angles. Entre les colonnes, saluer le Vénérable par le signe pénal, puis sortir en pivotant à droite, sans reprendre l’ordre.\n\nArriver en retard\nAccomplir les trois pas et saluer le Vénérable puis les Surveillants avant de rejoindre sa place."
+  },
+  {
     "title": "Le Secrétaire et l’Orateur : des fonctions distinctes",
-    "category": "Officiers & vie en loge",
+    "category": "Officiers & tenue",
     "source": "book",
     "pages": [
       28,
@@ -5107,479 +5253,14 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
   },
   {
     "title": "Le Vénérable à l’Orient",
-    "category": "Officiers & vie en loge",
+    "category": "Officiers & tenue",
     "source": "cat",
     "pages": [],
     "qa": "D. Où se tient le Maître de la Loge ?\nR. A l'Orient.\n\nD. Pourquoi ?\nR. De même que le soleil apparaît à l'Orient pour ouvrir la carrière du jour, de même aussi le Maître se tient a l'Orient pour ouvrir la L? et mettre les ouvriers à l'œuvre."
   },
   {
-    "title": "Les Surveillants : place et mission",
-    "category": "Officiers & vie en loge",
-    "source": "cat",
-    "pages": [],
-    "qa": "D. Où se tiennent les Surveillants?\nR. A l'Occident, pour aider le M? de la L? dans ses travaux, payer les ouvriers et les renvoyer contents."
-  },
-  {
-    "title": "L’Expert et le Maître des Cérémonies",
-    "category": "Officiers & vie en loge",
-    "source": "book",
-    "pages": [
-      32,
-      33,
-      34
-    ],
-    "qa": "L’Expert\nIl veille au déroulement rituel et assiste le Vénérable dans l’exécution des cérémonies.\n\nLe Maître des Cérémonies\nIl escorte les membres, guide leurs déplacements et organise la préparation de la loge par les Apprentis.\n\nLa suppléance\nEn l’absence du Vénérable et des deux Surveillants, l’Expert remplace le Vénérable.\n\nLa transmission du mot\nLe Maître des Cérémonies transmet le mot du Premier au Second Surveillant. Il siège devant le plateau du Trésorier, du côté du Midi.",
-    "chapters": [
-      1
-    ]
-  },
-  {
-    "title": "Prendre la parole et demander à sortir",
-    "category": "Officiers & vie en loge",
-    "source": "book",
-    "pages": [
-      22,
-      23
-    ],
-    "qa": "La prise de parole\nLe Vénérable accorde ou retire la parole. Les demandes passent par le Surveillant de la colonne. L’Apprenti parle lorsqu’il y est invité.\n\nDemander à sortir\nL’Apprenti s’adresse discrètement à un Maître qui transmet sa demande au Vénérable.",
-    "chapters": [
-      1
-    ]
-  },
-  {
-    "title": "Solidarité et usages de la tenue",
-    "category": "Officiers & vie en loge",
-    "source": "book",
-    "pages": [
-      15,
-      29,
-      30,
-      33
-    ],
-    "qa": "L’excuse avec obole\nUne absence annoncée par écrit, accompagnée d’un don au tronc de solidarité.\n\nLa voûte d’acier\nUn accueil des dignitaires sous des glaives levés.\n\nLe rituel de table\nLe Premier Surveillant demande la parole pour proposer une « santé » en l’honneur du Vénérable. Un visiteur honoré demeure assis pendant la santé qui lui est dédiée.\n\nGants et serment\nLes gants sont retirés pour le serment et la chaîne d’union. Lors d’un serment, la loge se tient debout et à l’ordre.\n\nLa chaîne d’union\nSa libération est décrite par trois frictions des mains entrelacées.",
-    "chapters": [
-      1
-    ]
-  },
-  {
-    "title": "Le lys et Vishuddha",
-    "category": "Éléments, alchimie & correspondances",
-    "source": "book",
-    "pages": [
-      38,
-      57,
-      60
-    ],
-    "qa": "Le lys\nLa fleur associée à l’Apprenti.\n\nD. Quel est le nom du Chakras qui correspond au signe d’Apprenti?\nR. Vishuddha, à la hauteur de la gorge.",
-    "chapters": [
-      2,
-      3
-    ]
-  },
-  {
-    "title": "Les familles symboliques des éléments",
-    "category": "Éléments, alchimie & correspondances",
-    "source": "book",
-    "pages": [
-      39,
-      40
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Terre\nGnômes.\n\nEau\nOndins et Ondines.\n\nFeu\nSalamandres.\n\nAir\nSylphes.\n\nCes figures relient chaque élément à une famille symbolique dans le travail de préparation et d’harmonisation."
-  },
-  {
-    "title": "Les ternaires de la conscience",
-    "category": "Éléments, alchimie & correspondances",
-    "source": "book",
-    "pages": [
-      14,
-      16,
-      17
-    ],
-    "qa": "Les niveaux de conscience\nMatériel, astral et mental.\n\nLes dimensions de l’univers\nPhysique, psychique et spirituelle.\n\nLes expressions humaines\nLa pensée, la parole et l’action.\n\nLa complémentarité\nLe ternaire invite à dépasser une opposition fermée entre deux termes. La rencontre de points de vue différents peut faire émerger une compréhension plus large.\n\nVoir, entendre et parler\nCes trois facultés forment un autre exemple du ternaire. Leur rapprochement invite à examiner la réception, la compréhension et l’expression.\n\nLa réception de l’Apprenti\nLe Vénérable crée, constitue et reçoit par trois touches : épaule gauche, épaule droite et tête.",
-    "chapters": [
-      1
-    ]
-  },
-  {
-    "title": "Les éléments et les principes alchimiques",
-    "category": "Éléments, alchimie & correspondances",
-    "source": "course",
-    "pages": [
-      4,
-      5
-    ],
-    "qa": "Les quatre éléments\nLe feu, la terre, l’air et l’eau.\n\nLes trois principes alchimiques\nSoufre : âme et feu.\nMercure : esprit, air et eau.\nSel : corps et terre.\n\nCes correspondances relient le travail symbolique sur la matière aux dimensions de l’être."
-  },
-  {
-    "title": "Le bouclier des Archanges",
-    "category": "Anges & noms symboliques",
-    "source": "book",
-    "pages": [
-      41
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "La disposition des Archanges\nRaphaël devant soi.\nGabriel derrière soi.\nMichaël à droite.\nUriel à gauche.\n\nL’axe vertical\nMalkuth représente la stabilité aux pieds ; la Shekinah, la présence lumineuse au-dessus de la tête.\n\nCette représentation organise symboliquement l’espace autour de soi."
-  },
-  {
-    "title": "Les anges associés aux trois piliers",
-    "category": "Anges & noms symboliques",
-    "source": "book",
-    "pages": [
-      54
-    ],
-    "qa": "D. Quel ange qui marche avec ses Trois grands piliers?\nR. Uriel, Samaël et Anaël.\n\nLe groupe des trois anges accompagne celui de Sagesse, Force et Beauté. La réponse rassemble les trois noms ; elle ne détaille pas ici une attribution individuelle à chaque pilier.",
-    "chapters": [
-      3
-    ]
-  },
-  {
-    "title": "Les correspondances des jours",
-    "category": "Anges & noms symboliques",
-    "source": "book",
-    "pages": [
-      40,
-      41
-    ],
-    "qa": "Lundi\nMantra : MEM. Psaume : 130. Archange : Gabriel. Couleurs : violet et argent.\n\nMardi\nMantra : KHEI. Psaume : 38. Archanges : Samaël et Camaël. Couleur : rouge.\n\nMercredi\nMantra : EH. Psaume : 102. Archange : Rafael. Couleur : orange.\n\nJeudi\nMantra : EHM. Psaume : 6. Archange : Zadkiel. Couleurs : bleu et violet.\n\nVendredi\nMantra : THOT. Psaume : 51. Archange : Anaël. Couleur : vert.\n\nSamedi\nMantra : RA. Archange : Tzaphkiel. Couleurs : indigo et noir. Aucun psaume n’est indiqué dans ce tableau pour le samedi.\n\nDimanche\nMantra : OM. Psaume : 132. Archange : Michaël. Couleurs : or et jaune.",
-    "chapters": [
-      2
-    ]
-  },
-  {
-    "title": "Les noms et leurs significations",
-    "category": "Anges & noms symboliques",
-    "source": "book",
-    "pages": [
-      38,
-      39,
-      46,
-      47
-    ],
-    "qa": "Raphaël\nGuérisseur de Dieu : RAPHA, médecin ; EL, Dieu.\n\nGabriel\nMessager de Dieu : GABRI, messager ; EL, Dieu.\n\nUriel\nManifestation ou présence de Dieu : URI, manifestation ou présence ; EL, Dieu.\n\nMichaël\nComme ou semblable à Dieu : MICHA, semblable ou comme ; EL, Dieu.\n\nBETHEL : maison de Dieu.\nOSIAS : feu de Dieu.\nOLIAL : Dieu est fort.\nZOROBABEL : dispersion de la confusion.\n\nATMAS : frappez, on vous ouvrira les portes du temple.\nBOUDHI : demandez et vous recevrez la lumière.\nMANAS : cherchez et vous trouverez la vérité.\nOUZAI OUZAI SEMPER OUZAI : grand, tu es grand, tu es grand.",
-    "chapters": [
-      2
-    ]
-  },
-  {
-    "title": "Les trois figures protectrices",
-    "category": "Anges & noms symboliques",
-    "source": "course",
-    "pages": [
-      71,
-      82
-    ],
-    "qa": "Les trois figures protectrices\nL’ange gardien, le chef de décan et le soldat de décan.\n\nLeur identification repose sur les correspondances de la date de naissance. L’étude distingue le rôle de chaque figure et les périodes auxquelles elle est associée."
-  },
-  {
-    "title": "Le charbon et la parole d’allumage",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      61
-    ],
-    "chapters": [
-      3
-    ],
-    "qa": "D. Qu’est-ce-que vous dîtes avant d’allumer un charbon?\nR. AOUM.\n\nCette parole accompagne l’allumage du charbon. Elle se distingue des formules utilisées pour l’allumage d’une étoile ou d’un cierge."
-  },
-  {
-    "title": "Le cierge : symbolisme et allumage",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "stars",
-    "pages": [
-      1,
-      2
-    ],
-    "qa": "Le symbolisme du cierge\nLa cire, la mèche et la flamme représentent le Père, le Fils et le Saint-Esprit ; elles évoquent aussi le corps, l’âme et l’esprit.\n\nLa flamme est transmise par un cierge intermédiaire. L’étoile d’allumage transmet le feu à l’étoile destinée au travail.\n\nComment allumer une étoile ?\nAllumer d’abord l’étoile d’allumage, puis transmettre la flamme à l’étoile de travail présentée à angle droit. Prononcer ensuite le mot du grade.\n\nLe travail peut employer une seule étoile ou les étoiles d’un triangle. La batterie du triangle s’accompagne de Ghimel, Gadol et Guiah.\n\nL’appel correspond à l’intention d’attirer ; le renvoi, à celle d’éloigner."
-  },
-  {
-    "title": "Les repères de prière",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "course",
-    "pages": [
-      69,
-      70
-    ],
-    "qa": "Les repères de prière\nPsaume 51 : purification.\nJean 1, 1–18 : méditation sur la Parole et la lumière.\nNotre Père : prière et élévation intérieure.\nPsaumes 23 et 133 : confiance et fraternité.\n\nLa prière intérieure peut accompagner différents moments de la journée. Elle demande humilité, foi et amour."
-  },
-  {
-    "title": "Préparer et fermer le travail rituel",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      41,
-      42
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Le canevas de travail\n1. Électrifier l’espace.\n2. Purifier les opérants par les quatre éléments ; Psaume 51.\n3. À l’ordre, vibrer les mantras OM, AUM, OM MANI PADME HUM ou IAH.\n4. Croix cabalistique.\n5. Musique de haute vibration.\n6. À la porte, placer une étoile sur les demandes ; Psaume 24.\n7. Notre Père des Initiés.\n8. Salutation des portes : AGLA.\n9. Bénédiction du pantacle et des objets.\n10. Psaume du jour ou autre.\n11. Allumage.\n12. Encenser et parfumer.\n13. Minutes spirituelles et demandes.\n14. Offrande.\n15. Bibliomancie.\n16. À l’ordre, signe, batterie et acclamation.\n17. Fermeture.\n18. Effacement du pantacle."
-  },
-  {
-    "title": "Les quatre Archanges : portes, couleurs et psaumes",
-    "category": "Anges & noms symboliques",
-    "source": "book",
-    "pages": [
-      38,
-      39
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Raphaël\nPorte : Orient. Élément : air. Couleur : jaune. Psaumes : 19 ou 46.\n\nGabriel\nPorte : Occident. Élément : eau. Couleur : bleu. Psaumes : 9 ou 15.\n\nUriel\nPorte : Septentrion. Élément : terre. Couleur : vert. Psaumes : 8 ou 29.\n\nMichaël\nPorte : Midi. Élément : feu. Couleur : rouge. Psaumes : 110 ou 17.\n\nCes correspondances servent de repères pour l’étude des directions et de leurs associations symboliques."
-  },
-  {
-    "title": "AGLA : la salutation des portes",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      38
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "AGLA\nA : Atha — à toi.\nG : Gibor — le royaume.\nL : Leolam — la gloire.\nA : Adonaï — pour les siècles et les siècles.\n\nLa succession des quatre noms accompagne la salutation des portes. Ces associations reprennent la formulation de cette leçon pratique ; elles se distinguent des traductions données dans le tracé de la croix kabbalistique."
-  },
-  {
-    "title": "Les prières d’harmonisation avec les éléments",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      39,
-      40
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Terre\nTerre tu es ma chair en Zain des Gnômes. Sois aussi ma protectrice pendant cette journée ou nuit. Je t’en supplie Seigneur, toi Adonaï Ha Aretz, que ta toute-puissance m’assiste, qu’elle me garde, m’harmonise dans la matrice et me garde de tous malheurs. Qu’il en soit ainsi selon la volonté d’Adonaï Meleck.\n\nEau\nPar le Mem des Ondins et des Ondines, que cette eau m’harmonise et me protège de toute noyade par Shaddaï El Chai.\n\nFeu\nPar le Schin des Salamandres, que ce feu incréé m’harmonise et me garde de tout feu dévorateur et dévastateur de Jéhovah.\n\nAir et encens\nPar Aleph des Sylphes, que l’air renouvelle mes cellules et par Métatron que je ne sois jamais asphyxié ni tombé en syncope par IEVE.\n\nCes paroles expriment une intention spirituelle d’harmonisation et de protection."
-  },
-  {
-    "title": "Sacrer et consacrer une bougie",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      41
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Pour sacrer une bougie\nBACCHOUR — NIAH — ZIAH — DIAH.\n\nConsécration\nPar le Dieu d’Abraham, d’Isaac et de Jacob, Seigneur, daigne bénir cette créature de cire afin qu’elle soit purifiée et qu’elle chasse tous les mauvais esprits tant visibles qu’invisibles par ton saint nom ELOIM.\n\nParoles sur la bougie\nIAH — IAOH — IAHOHAH.\n\nÀ l’allumage\nFIAT LUX ou SCHIN.\n\nLa consécration exprime la destination spirituelle de la bougie avant son utilisation."
-  },
-  {
-    "title": "La croix kabbalistique : gestes et paroles",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      43,
-      44,
-      45
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "La main\nReplier l’annulaire et l’auriculaire ; étendre l’index et le majeur en geste de bénédiction.\n\n1. Front\nATOH : à toi. Visualiser une lumière blanche qui descend et pénètre la tête.\n\n2. Bas du pubis\nVE MALKUTH : le royaume. Visualiser la lumière qui descend le long de l’axe du corps jusqu’aux pieds.\n\n3. Épaule droite\nVE GUEBURAH : la puissance.\n\n4. Épaule gauche\nVE GUEDULAH : la gloire. Visualiser la ligne horizontale qui traverse la poitrine et rejoint l’axe vertical.\n\n5. Mains réunies sur la poitrine\nLE OLAM. AMEM : pour les siècles des siècles, qu’il en soit ainsi.\n\nLe sens symbolique\nLa croix représente l’équilibre des quatre éléments autour de l’esprit. Les images de lumière accompagnent la concentration et l’intention de purification ; les effets évoqués relèvent de la croyance spirituelle."
-  },
-  {
-    "title": "Trois coups, trois pas et prise de place",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      45,
-      46
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Les trois coups\nPremier coup : Atma.\nDeuxième coup : Buddhi.\nTroisième coup : Manas.\n\nAvant les trois pas\nAbraham, Isaac, Jacob, au nom de toutes les cérémonies mystiques et religieuses qui ont été célébrées dans ce temple, je viens chercher ma délivrance.\n\nLes trois pas\nDieu d’Abraham.\nDieu d’Isaac.\nDieu de Jacob.\n\nEn prenant place\nAccompagnez-moi Seigneur pour que je prenne place parmi mes frères : ABRAHAM, ISAAC, JACOB."
-  },
-  {
-    "title": "Les salutations aux trois lumières",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      46
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Première lumière\nMon Père, je vous adore. Donnez-moi de la sagesse.\n\nDeuxième lumière\nLe Fils est à moi. Fortifiez-moi Seigneur.\n\nTroisième lumière\nRendez-moi beau comme un ange. Le Saint-Esprit est à vous.\n\nLa succession des salutations associe la demande de sagesse, celle de force et celle de beauté aux trois lumières."
-  },
-  {
-    "title": "Les paroles du travail sur la pierre brute",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      46,
-      47
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "Premier coup\nBETHEL, je viens chercher ma force.\n\nDeuxième coup\nOLIAL, je vois ma force.\n\nTroisième coup\nOSIAS, je prends ma force.\n\nGeste symbolique final\nZorobabel, ma force est en moi.\n\nLors de l’offrande\nATMAS, MANASE, suivi de la demande.\n\nCes paroles accompagnent les gestes symboliques du travail sur soi et l’intention de l’offrande."
-  },
-  {
-    "title": "Le Notre Père des Initiés",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      47,
-      48
-    ],
-    "chapters": [
-      2
-    ],
-    "qa": "EL, mon Dieu, notre Père, de quelque nom qu’on t’appelle et qui es aux cieux, c’est-à-dire au sommet spirituel de l’univers, émane de toi, comme générateur d’âme, générateur de force spirituelle et d’énergie.\n\nQue ton nom soit sanctifié, béni de tous, car il symbolise l’amour, l’ordre et la nécessité d’ascension vers la perfection qu’il représente.\n\nQue ton règne arrive, car il faut que les religions et les sciences s’entendent, œuvre à laquelle je veux et je dois travailler.\n\nQue ta sainte volonté soit faite sur la terre comme dans les mondes habités et dans l’espace infini.\n\nDonne-nous le pain quotidien, donne-le à nous tous et à moi, pain du corps et pain de l’esprit, puisque nous avons tous une âme à soigner pour accomplir notre élévation spirituelle.\n\nPardonne-nous nos offenses et donne-nous la force de pardonner les offenses qui nous ont été faites.\n\nNe nous laisse pas succomber à la tentation et ne les multiplie pas trop, Seigneur, car tu sais notre faiblesse. Donne-nous l’énergie de résister aux passions.\n\nDélivre-nous du malin et du mal qu’ont créé les hommes et dont ils t’accusent injustement, puisque la perfection ne peut engendrer l’imperfection.\n\nQu’il en soit ainsi pour mon bien et celui des autres, car c’est à toi qu’appartiennent le règne, la puissance et la gloire dans les siècles et les siècles.\n\nAmen, Amen, Amen. Selah !"
-  },
-  {
-    "title": "Le dialogue de reconnaissance du livret",
-    "category": "Catéchisme & tuilage",
-    "source": "book",
-    "pages": [
-      49
-    ],
-    "chapters": [
-      3
-    ],
-    "qa": "D. Y a-t-il quelque chose entre vous et moi?\nR. Oui Vénérable Maître.\n\nD. Quel est-il mon F..?\nR. Un secret : la Franc-maçonnerie.\n\nD. Je présume que vous êtes Franc-maçon?\nR. J’ai été reçu et admis comme tel par mes Frères Maîtres et Compagnons.\n\nD. Quel est le lien qui nous unit?\nR. La fraternité dans l’égalité et la liberté."
-  },
-  {
-    "title": "L’origine de la symbolique maçonnique",
-    "category": "La loge, le temple & les nombres",
-    "source": "book",
-    "pages": [
-      57
-    ],
-    "chapters": [
-      3
-    ],
-    "qa": "D. D’où provient la symbolique maçonnique?\nR. Des bâtisseurs du Temple de Salomon."
-  },
-  {
-    "title": "Les trois lumières : équerre, Bible et étoile",
-    "category": "Décors & symboles du temple",
-    "source": "book",
-    "pages": [
-      61
-    ],
-    "chapters": [
-      3
-    ],
-    "qa": "D. Quelles sont les 3 lumières dans la Loge?\nR. Équerre, Bible et étoile.\n\nCette énumération est distincte des trois Grandes Lumières : le Volume de la Loi Sacrée, l’équerre et le compas."
-  },
-  {
-    "title": "La philosophie maçonnique",
-    "category": "Philosophie & connaissance de soi",
-    "source": "book",
-    "pages": [
-      4,
-      7
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "Une démarche symbolique\nLa philosophie maçonnique recherche, dans les symboles, des points de rencontre entre différentes pensées. Elle remonte des effets aux causes et relie la connaissance du monde à celle de l’être humain.\n\nConcilier les pensées\nL’étude de systèmes philosophiques différents cherche leurs accords sur les principes de moralité et sur le bonheur commun.\n\nPratiquer les vertus\nLa réflexion prend sens dans l’action : joindre l’exemple aux enseignements et transformer ses connaissances en conduite vertueuse."
-  },
-  {
-    "title": "Liberté, Égalité, Fraternité",
-    "category": "Devoirs, silence & fraternité",
-    "source": "book",
-    "pages": [
-      7,
-      18,
-      24
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "Liberté\nDévelopper sa pensée et s’engager librement dans le travail initiatique.\n\nÉgalité\nReconnaître les mêmes droits naturels, sans hiérarchie de naissance.\n\nFraternité\nConstruire une relation d’entraide et de respect, nourrie par la tolérance.\n\nUne devise philosophique\nCes trois termes orientent le perfectionnement personnel et la vie commune, au-delà d’une simple formule politique."
-  },
-  {
-    "title": "Assiduité et respect des règles",
-    "category": "Devoirs, silence & fraternité",
-    "source": "book",
-    "pages": [
-      23,
-      24
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "Le respect des règles\nLes statuts, le règlement intérieur et les rituels organisent le travail de l’atelier. Leur étude permet de comprendre les engagements pris.\n\nL’assiduité\nLa présence régulière aux tenues est un devoir. Chaque membre participe à l’œuvre collective et à sa qualité.\n\nLa responsabilité commune\nChaque pierre possède sa place dans le temple en construction. L’apprentissage se poursuit dans la conduite quotidienne."
-  },
-  {
-    "title": "Entrer et sortir en cours de tenue",
-    "category": "Officiers & vie en loge",
-    "source": "book",
-    "pages": [
-      19,
-      20
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "Entrer\nRevêtir son tablier et ses gants avant de demander l’entrée. Après autorisation, se placer à l’ordre entre les colonnes, face à l’Orient. Accomplir les trois pas, faire le signe pénal et attendre l’invitation à prendre place. Le Maître des Cérémonies guide le déplacement vers la colonne du Nord.\n\nSortir\nAprès la demande transmise par un Maître et l’autorisation du Vénérable, attendre le Maître des Cérémonies à l’ordre. Le suivre dans le sens solaire en marquant les angles. Entre les colonnes, saluer le Vénérable par le signe pénal, puis sortir en pivotant à droite, sans reprendre l’ordre.\n\nArriver en retard\nAccomplir les trois pas et saluer le Vénérable puis les Surveillants avant de rejoindre sa place."
-  },
-  {
-    "title": "Le tuilage et l’attouchement",
-    "category": "Catéchisme & tuilage",
-    "source": "book",
-    "pages": [
-      20,
-      21
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "L’attouchement\nPrendre réciproquement la main droite et exercer une pression du pouce recourbé sur la jointure qui unit l’index à la main. Cet usage appartient au tuilage en loge.\n\nD. Avez-vous quelque chose à me communiquer ?\n\nD. Qu’est ceci ?\nR. C’est l’attouchement d’Apprenti Franc-Maçon.\n\nD. Que signifie-t-il ?\nR. C’est la demande du Mot Sacré.\n\nD. Donnez-moi ce mot.\nR. Je ne sais ni lire ni écrire, je ne sais qu’épeler, donnez-moi la première lettre, je vous donnerai la suivante."
-  },
-  {
-    "title": "Batteries et acclamations",
-    "category": "Prière, étoiles & pratique rituelle",
-    "source": "book",
-    "pages": [
-      21,
-      29
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "La batterie\nREAA : trois coups lents et distincts.\nRite d’York : trois coups rapides.\n\nL’acclamation écossaise\nHOUZZAI, HOUZZAI, HOUZZAI, prononcé Houzzé.\n\nL’acclamation du rite d’York\nHOUZZAI, HOUZZAI, SAMPER HOUZZAI.\n\nLa posture\nDebout, pieds en équerre, bras gauche le long du corps, bras droit horizontal devant soi et pouce écarté en équerre.\n\nAutre formule de l’organisation des travaux\nVivat, vivat, semper vivat. Les formes sont distinguées selon le passage et le rite étudiés."
-  },
-  {
-    "title": "Obédiences, rites et maçonnerie bleue",
-    "category": "Officiers & vie en loge",
-    "source": "book",
-    "pages": [
-      25,
-      26,
-      27
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "L’obédience\nUn corps administratif regroupant des loges sur un territoire et organisant leur activité. Grand Orient et Grande Loge désignent des organisations distinctes.\n\nLa maçonnerie bleue\nLes trois premiers grades : Apprenti, Compagnon et Maître.\n\nLes rites\nIls organisent les formes et le déroulement des cérémonies. Les usages varient selon les rites.\n\nLes colonnes\nRite français : J pour les Apprentis, B pour les Compagnons.\nREAA : B pour les Apprentis, J pour les Compagnons.\n\nLe contrôle des ateliers\nUn Grand Inspecteur transmet un rapport annuel au Grand Orateur dans l’organisation présentée."
-  },
-  {
-    "title": "Les corps supérieurs",
-    "category": "Officiers & vie en loge",
-    "source": "book",
-    "pages": [
-      26,
-      27
-    ],
-    "chapters": [
-      1
-    ],
-    "qa": "L’approfondissement après les trois grades\nLes corps supérieurs proposent une poursuite graduelle de l’étude initiatique.\n\nLoges de Perfection\nDu 4e au 14e degré.\n\nChapitres\nDu 15e au 18e degré, dans la subdivision décrite.\n\nAréopages\nDu 19e au 30e degré.\n\nSuprême Conseil\nL’organisation présentée regroupe les 31e à 33e degrés sous un Souverain Grand Commandeur. Ces découpages correspondent à cette présentation des corps supérieurs."
-  },
-  {
     "title": "Les officiers : places et responsabilités",
-    "category": "Officiers & vie en loge",
+    "category": "Officiers & tenue",
     "source": "book",
     "pages": [
       29,
@@ -5594,20 +5275,107 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
     "qa": "Le Vénérable\nÀ l’Orient, sur un plateau surélevé de trois marches. Son fauteuil est la Chaire de Salomon.\n\nLe Premier Surveillant\nResponsable des Compagnons et de la colonne du Midi ; plateau à deux marches.\n\nLe Second Surveillant\nResponsable des Apprentis et de la colonne du Septentrion ; plateau à une marche.\n\nLe Couvreur\nGardien intérieur de la porte, traditionnellement le Vénérable sortant de charge.\n\nLe Trésorier\nPlateau à gauche de l’Orateur.\n\nL’Hospitalier\nPlateau à droite du Secrétaire, face au Trésorier.\n\nL’Économe\nResponsable des banquets et du matériel ; bijou représentant un parchemin orné d’un œil.\n\nLa parole sous la responsabilité d’un Maître\nUn Maître peut se lever à l’ordre pour couvrir la prise de parole d’un Apprenti ou d’un Compagnon.\n\nLes positions des Surveillants varient entre les passages : leur place à l’Occident et la fonction au Midi sont conservées comme des formulations distinctes."
   },
   {
-    "title": "La cruche au cabinet de réflexion",
-    "category": "Initiation, cabinet & voyages",
+    "title": "Les Surveillants : place et mission",
+    "category": "Officiers & tenue",
+    "source": "cat",
+    "pages": [],
+    "qa": "D. Où se tiennent les Surveillants?\nR. A l'Occident, pour aider le M? de la L? dans ses travaux, payer les ouvriers et les renvoyer contents."
+  },
+  {
+    "title": "L’Expert et le Maître des Cérémonies",
+    "category": "Officiers & tenue",
     "source": "book",
     "pages": [
-      36
+      32,
+      33,
+      34
+    ],
+    "qa": "L’Expert\nIl veille au déroulement rituel et assiste le Vénérable dans l’exécution des cérémonies.\n\nLe Maître des Cérémonies\nIl escorte les membres, guide leurs déplacements et organise la préparation de la loge par les Apprentis.\n\nLa suppléance\nEn l’absence du Vénérable et des deux Surveillants, l’Expert remplace le Vénérable.\n\nLa transmission du mot\nLe Maître des Cérémonies transmet le mot du Premier au Second Surveillant. Il siège devant le plateau du Trésorier, du côté du Midi.",
+    "chapters": [
+      1
+    ]
+  },
+  {
+    "title": "Prendre la parole et demander à sortir",
+    "category": "Officiers & tenue",
+    "source": "book",
+    "pages": [
+      22,
+      23
+    ],
+    "qa": "La prise de parole\nLe Vénérable accorde ou retire la parole. Les demandes passent par le Surveillant de la colonne. L’Apprenti parle lorsqu’il y est invité.\n\nDemander à sortir\nL’Apprenti s’adresse discrètement à un Maître qui transmet sa demande au Vénérable.",
+    "chapters": [
+      1
+    ]
+  },
+  {
+    "title": "Solidarité et usages de la tenue",
+    "category": "Officiers & tenue",
+    "source": "book",
+    "pages": [
+      15,
+      29,
+      30,
+      33
+    ],
+    "qa": "L’excuse avec obole\nUne absence annoncée par écrit, accompagnée d’un don au tronc de solidarité.\n\nLa voûte d’acier\nUn accueil des dignitaires sous des glaives levés.\n\nLe rituel de table\nLe Premier Surveillant demande la parole pour proposer une « santé » en l’honneur du Vénérable. Un visiteur honoré demeure assis pendant la santé qui lui est dédiée.\n\nGants et serment\nLes gants sont retirés pour le serment et la chaîne d’union. Lors d’un serment, la loge se tient debout et à l’ordre.\n\nLa chaîne d’union\nSa libération est décrite par trois frictions des mains entrelacées.",
+    "chapters": [
+      1
+    ]
+  },
+  {
+    "title": "Les corps supérieurs",
+    "category": "Rites, grades & obédiences",
+    "source": "book",
+    "pages": [
+      26,
+      27
     ],
     "chapters": [
       1
     ],
-    "qa": "La cruche\nElle fait partie des objets du cabinet de réflexion.\n\nLa mention associée\n« Symbole d’adoration anthropologie ». La formulation ne développe pas davantage sa signification ; aucun sens plus précis n’est ajouté ici."
+    "qa": "L’approfondissement après les trois grades\nLes corps supérieurs proposent une poursuite graduelle de l’étude initiatique.\n\nLoges de Perfection\nDu 4e au 14e degré.\n\nChapitres\nDu 15e au 18e degré, dans la subdivision décrite.\n\nAréopages\nDu 19e au 30e degré.\n\nSuprême Conseil\nL’organisation présentée regroupe les 31e à 33e degrés sous un Souverain Grand Commandeur. Ces découpages correspondent à cette présentation des corps supérieurs."
+  },
+  {
+    "title": "Obédiences, rites et maçonnerie bleue",
+    "category": "Rites, grades & obédiences",
+    "source": "book",
+    "pages": [
+      25,
+      26,
+      27
+    ],
+    "chapters": [
+      1
+    ],
+    "qa": "L’obédience\nUn corps administratif regroupant des loges sur un territoire et organisant leur activité. Grand Orient et Grande Loge désignent des organisations distinctes.\n\nLa maçonnerie bleue\nLes trois premiers grades : Apprenti, Compagnon et Maître.\n\nLes rites\nIls organisent les formes et le déroulement des cérémonies. Les usages varient selon les rites.\n\nLes colonnes\nRite français : J pour les Apprentis, B pour les Compagnons.\nREAA : B pour les Apprentis, J pour les Compagnons.\n\nLe contrôle des ateliers\nUn Grand Inspecteur transmet un rapport annuel au Grand Orateur dans l’organisation présentée."
+  },
+  {
+    "title": "Les familles symboliques des éléments",
+    "category": "Éléments & alchimie",
+    "source": "book",
+    "pages": [
+      39,
+      40
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Terre\nGnômes.\n\nEau\nOndins et Ondines.\n\nFeu\nSalamandres.\n\nAir\nSylphes.\n\nCes figures relient chaque élément à une famille symbolique dans le travail de préparation et d’harmonisation."
+  },
+  {
+    "title": "Les éléments et les principes alchimiques",
+    "category": "Éléments & alchimie",
+    "source": "course",
+    "pages": [
+      4,
+      5
+    ],
+    "qa": "Les quatre éléments\nLe feu, la terre, l’air et l’eau.\n\nLes trois principes alchimiques\nSoufre : âme et feu.\nMercure : esprit, air et eau.\nSel : corps et terre.\n\nCes correspondances relient le travail symbolique sur la matière aux dimensions de l’être."
   },
   {
     "title": "Sel, mercure et soufre : correspondances du livret",
-    "category": "Éléments, alchimie & correspondances",
+    "category": "Éléments & alchimie",
     "source": "book",
     "pages": [
       37
@@ -5616,10 +5384,245 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
       1
     ],
     "qa": "Le sel\nSymbole du savoir et de l’élément terre.\n\nLe mercure\nSymbole de l’âme.\n\nLe soufre\nSymbole de l’esprit et de sa capacité de transformation.\n\nDeux systèmes de correspondances\nCette association mercure–âme et soufre–esprit est distincte du tableau du cours d’instruction, qui associe le mercure à l’esprit et le soufre à l’âme. Les deux lectures ne doivent pas être confondues."
+  },
+  {
+    "title": "Le bouclier des Archanges",
+    "category": "Anges & correspondances",
+    "source": "book",
+    "pages": [
+      41
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "La disposition des Archanges\nRaphaël devant soi.\nGabriel derrière soi.\nMichaël à droite.\nUriel à gauche.\n\nL’axe vertical\nMalkuth représente la stabilité aux pieds ; la Shekinah, la présence lumineuse au-dessus de la tête.\n\nCette représentation organise symboliquement l’espace autour de soi."
+  },
+  {
+    "title": "Les anges associés aux trois piliers",
+    "category": "Anges & correspondances",
+    "source": "book",
+    "pages": [
+      54
+    ],
+    "qa": "D. Quel ange qui marche avec ses Trois grands piliers?\nR. Uriel, Samaël et Anaël.\n\nLe groupe des trois anges accompagne celui de Sagesse, Force et Beauté. La réponse rassemble les trois noms ; elle ne détaille pas ici une attribution individuelle à chaque pilier.",
+    "chapters": [
+      3
+    ]
+  },
+  {
+    "title": "Les correspondances des jours",
+    "category": "Anges & correspondances",
+    "source": "book",
+    "pages": [
+      40,
+      41
+    ],
+    "qa": "Lundi\nMantra : MEM. Psaume : 130. Archange : Gabriel. Couleurs : violet et argent.\n\nMardi\nMantra : KHEI. Psaume : 38. Archanges : Samaël et Camaël. Couleur : rouge.\n\nMercredi\nMantra : EH. Psaume : 102. Archange : Rafael. Couleur : orange.\n\nJeudi\nMantra : EHM. Psaume : 6. Archange : Zadkiel. Couleurs : bleu et violet.\n\nVendredi\nMantra : THOT. Psaume : 51. Archange : Anaël. Couleur : vert.\n\nSamedi\nMantra : RA. Archange : Tzaphkiel. Couleurs : indigo et noir. Aucun psaume n’est indiqué dans ce tableau pour le samedi.\n\nDimanche\nMantra : OM. Psaume : 132. Archange : Michaël. Couleurs : or et jaune.",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "title": "Les noms et leurs significations",
+    "category": "Anges & correspondances",
+    "source": "book",
+    "pages": [
+      38,
+      39,
+      46,
+      47
+    ],
+    "qa": "Raphaël\nGuérisseur de Dieu : RAPHA, médecin ; EL, Dieu.\n\nGabriel\nMessager de Dieu : GABRI, messager ; EL, Dieu.\n\nUriel\nManifestation ou présence de Dieu : URI, manifestation ou présence ; EL, Dieu.\n\nMichaël\nComme ou semblable à Dieu : MICHA, semblable ou comme ; EL, Dieu.\n\nBETHEL : maison de Dieu.\nOSIAS : feu de Dieu.\nOLIAL : Dieu est fort.\nZOROBABEL : dispersion de la confusion.\n\nATMAS : frappez, on vous ouvrira les portes du temple.\nBOUDHI : demandez et vous recevrez la lumière.\nMANAS : cherchez et vous trouverez la vérité.\nOUZAI OUZAI SEMPER OUZAI : grand, tu es grand, tu es grand.",
+    "chapters": [
+      2
+    ]
+  },
+  {
+    "title": "Les quatre Archanges : portes, couleurs et psaumes",
+    "category": "Anges & correspondances",
+    "source": "book",
+    "pages": [
+      38,
+      39
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Raphaël\nPorte : Orient. Élément : air. Couleur : jaune. Psaumes : 19 ou 46.\n\nGabriel\nPorte : Occident. Élément : eau. Couleur : bleu. Psaumes : 9 ou 15.\n\nUriel\nPorte : Septentrion. Élément : terre. Couleur : vert. Psaumes : 8 ou 29.\n\nMichaël\nPorte : Midi. Élément : feu. Couleur : rouge. Psaumes : 110 ou 17.\n\nCes correspondances servent de repères pour l’étude des directions et de leurs associations symboliques."
+  },
+  {
+    "title": "Les trois figures protectrices",
+    "category": "Anges & correspondances",
+    "source": "course",
+    "pages": [
+      71,
+      82
+    ],
+    "qa": "Les trois figures protectrices\nL’ange gardien, le chef de décan et le soldat de décan.\n\nLeur identification repose sur les correspondances de la date de naissance. L’étude distingue le rôle de chaque figure et les périodes auxquelles elle est associée."
+  },
+  {
+    "title": "Le Notre Père des Initiés",
+    "category": "Prières & méditation",
+    "source": "book",
+    "pages": [
+      47,
+      48
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "EL, mon Dieu, notre Père, de quelque nom qu’on t’appelle et qui es aux cieux, c’est-à-dire au sommet spirituel de l’univers, émane de toi, comme générateur d’âme, générateur de force spirituelle et d’énergie.\n\nQue ton nom soit sanctifié, béni de tous, car il symbolise l’amour, l’ordre et la nécessité d’ascension vers la perfection qu’il représente.\n\nQue ton règne arrive, car il faut que les religions et les sciences s’entendent, œuvre à laquelle je veux et je dois travailler.\n\nQue ta sainte volonté soit faite sur la terre comme dans les mondes habités et dans l’espace infini.\n\nDonne-nous le pain quotidien, donne-le à nous tous et à moi, pain du corps et pain de l’esprit, puisque nous avons tous une âme à soigner pour accomplir notre élévation spirituelle.\n\nPardonne-nous nos offenses et donne-nous la force de pardonner les offenses qui nous ont été faites.\n\nNe nous laisse pas succomber à la tentation et ne les multiplie pas trop, Seigneur, car tu sais notre faiblesse. Donne-nous l’énergie de résister aux passions.\n\nDélivre-nous du malin et du mal qu’ont créé les hommes et dont ils t’accusent injustement, puisque la perfection ne peut engendrer l’imperfection.\n\nQu’il en soit ainsi pour mon bien et celui des autres, car c’est à toi qu’appartiennent le règne, la puissance et la gloire dans les siècles et les siècles.\n\nAmen, Amen, Amen. Selah !"
+  },
+  {
+    "title": "Les prières d’harmonisation avec les éléments",
+    "category": "Prières & méditation",
+    "source": "book",
+    "pages": [
+      39,
+      40
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Terre\nTerre tu es ma chair en Zain des Gnômes. Sois aussi ma protectrice pendant cette journée ou nuit. Je t’en supplie Seigneur, toi Adonaï Ha Aretz, que ta toute-puissance m’assiste, qu’elle me garde, m’harmonise dans la matrice et me garde de tous malheurs. Qu’il en soit ainsi selon la volonté d’Adonaï Meleck.\n\nEau\nPar le Mem des Ondins et des Ondines, que cette eau m’harmonise et me protège de toute noyade par Shaddaï El Chai.\n\nFeu\nPar le Schin des Salamandres, que ce feu incréé m’harmonise et me garde de tout feu dévorateur et dévastateur de Jéhovah.\n\nAir et encens\nPar Aleph des Sylphes, que l’air renouvelle mes cellules et par Métatron que je ne sois jamais asphyxié ni tombé en syncope par IEVE.\n\nCes paroles expriment une intention spirituelle d’harmonisation et de protection."
+  },
+  {
+    "title": "Les repères de prière",
+    "category": "Prières & méditation",
+    "source": "course",
+    "pages": [
+      69,
+      70
+    ],
+    "qa": "Les repères de prière\nPsaume 51 : purification.\nJean 1, 1–18 : méditation sur la Parole et la lumière.\nNotre Père : prière et élévation intérieure.\nPsaumes 23 et 133 : confiance et fraternité.\n\nLa prière intérieure peut accompagner différents moments de la journée. Elle demande humilité, foi et amour."
+  },
+  {
+    "title": "AGLA : la salutation des portes",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      38
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "AGLA\nA : Atha — à toi.\nG : Gibor — le royaume.\nL : Leolam — la gloire.\nA : Adonaï — pour les siècles et les siècles.\n\nLa succession des quatre noms accompagne la salutation des portes. Ces associations reprennent la formulation de cette leçon pratique ; elles se distinguent des traductions données dans le tracé de la croix kabbalistique."
+  },
+  {
+    "title": "Batteries et acclamations",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      21,
+      29
+    ],
+    "chapters": [
+      1
+    ],
+    "qa": "La batterie\nREAA : trois coups lents et distincts.\nRite d’York : trois coups rapides.\n\nL’acclamation écossaise\nHOUZZAI, HOUZZAI, HOUZZAI, prononcé Houzzé.\n\nL’acclamation du rite d’York\nHOUZZAI, HOUZZAI, SAMPER HOUZZAI.\n\nLa posture\nDebout, pieds en équerre, bras gauche le long du corps, bras droit horizontal devant soi et pouce écarté en équerre.\n\nAutre formule de l’organisation des travaux\nVivat, vivat, semper vivat. Les formes sont distinguées selon le passage et le rite étudiés."
+  },
+  {
+    "title": "La croix kabbalistique : gestes et paroles",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      43,
+      44,
+      45
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "La main\nReplier l’annulaire et l’auriculaire ; étendre l’index et le majeur en geste de bénédiction.\n\n1. Front\nATOH : à toi. Visualiser une lumière blanche qui descend et pénètre la tête.\n\n2. Bas du pubis\nVE MALKUTH : le royaume. Visualiser la lumière qui descend le long de l’axe du corps jusqu’aux pieds.\n\n3. Épaule droite\nVE GUEBURAH : la puissance.\n\n4. Épaule gauche\nVE GUEDULAH : la gloire. Visualiser la ligne horizontale qui traverse la poitrine et rejoint l’axe vertical.\n\n5. Mains réunies sur la poitrine\nLE OLAM. AMEM : pour les siècles des siècles, qu’il en soit ainsi.\n\nLe sens symbolique\nLa croix représente l’équilibre des quatre éléments autour de l’esprit. Les images de lumière accompagnent la concentration et l’intention de purification ; les effets évoqués relèvent de la croyance spirituelle."
+  },
+  {
+    "title": "Le charbon et la parole d’allumage",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      61
+    ],
+    "chapters": [
+      3
+    ],
+    "qa": "D. Qu’est-ce-que vous dîtes avant d’allumer un charbon?\nR. AOUM.\n\nCette parole accompagne l’allumage du charbon. Elle se distingue des formules utilisées pour l’allumage d’une étoile ou d’un cierge."
+  },
+  {
+    "title": "Le cierge : symbolisme et allumage",
+    "category": "Gestes & travail rituel",
+    "source": "stars",
+    "pages": [
+      1,
+      2
+    ],
+    "qa": "Le symbolisme du cierge\nLa cire, la mèche et la flamme représentent le Père, le Fils et le Saint-Esprit ; elles évoquent aussi le corps, l’âme et l’esprit.\n\nLa flamme est transmise par un cierge intermédiaire. L’étoile d’allumage transmet le feu à l’étoile destinée au travail.\n\nComment allumer une étoile ?\nAllumer d’abord l’étoile d’allumage, puis transmettre la flamme à l’étoile de travail présentée à angle droit. Prononcer ensuite le mot du grade.\n\nLe travail peut employer une seule étoile ou les étoiles d’un triangle. La batterie du triangle s’accompagne de Ghimel, Gadol et Guiah.\n\nL’appel correspond à l’intention d’attirer ; le renvoi, à celle d’éloigner."
+  },
+  {
+    "title": "Les paroles du travail sur la pierre brute",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      46,
+      47
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Premier coup\nBETHEL, je viens chercher ma force.\n\nDeuxième coup\nOLIAL, je vois ma force.\n\nTroisième coup\nOSIAS, je prends ma force.\n\nGeste symbolique final\nZorobabel, ma force est en moi.\n\nLors de l’offrande\nATMAS, MANASE, suivi de la demande.\n\nCes paroles accompagnent les gestes symboliques du travail sur soi et l’intention de l’offrande."
+  },
+  {
+    "title": "Les salutations aux trois lumières",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      46
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Première lumière\nMon Père, je vous adore. Donnez-moi de la sagesse.\n\nDeuxième lumière\nLe Fils est à moi. Fortifiez-moi Seigneur.\n\nTroisième lumière\nRendez-moi beau comme un ange. Le Saint-Esprit est à vous.\n\nLa succession des salutations associe la demande de sagesse, celle de force et celle de beauté aux trois lumières."
+  },
+  {
+    "title": "Préparer et fermer le travail rituel",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      41,
+      42
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Le canevas de travail\n1. Électrifier l’espace.\n2. Purifier les opérants par les quatre éléments ; Psaume 51.\n3. À l’ordre, vibrer les mantras OM, AUM, OM MANI PADME HUM ou IAH.\n4. Croix cabalistique.\n5. Musique de haute vibration.\n6. À la porte, placer une étoile sur les demandes ; Psaume 24.\n7. Notre Père des Initiés.\n8. Salutation des portes : AGLA.\n9. Bénédiction du pantacle et des objets.\n10. Psaume du jour ou autre.\n11. Allumage.\n12. Encenser et parfumer.\n13. Minutes spirituelles et demandes.\n14. Offrande.\n15. Bibliomancie.\n16. À l’ordre, signe, batterie et acclamation.\n17. Fermeture.\n18. Effacement du pantacle."
+  },
+  {
+    "title": "Sacrer et consacrer une bougie",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      41
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Pour sacrer une bougie\nBACCHOUR — NIAH — ZIAH — DIAH.\n\nConsécration\nPar le Dieu d’Abraham, d’Isaac et de Jacob, Seigneur, daigne bénir cette créature de cire afin qu’elle soit purifiée et qu’elle chasse tous les mauvais esprits tant visibles qu’invisibles par ton saint nom ELOIM.\n\nParoles sur la bougie\nIAH — IAOH — IAHOHAH.\n\nÀ l’allumage\nFIAT LUX ou SCHIN.\n\nLa consécration exprime la destination spirituelle de la bougie avant son utilisation."
+  },
+  {
+    "title": "Trois coups, trois pas et prise de place",
+    "category": "Gestes & travail rituel",
+    "source": "book",
+    "pages": [
+      45,
+      46
+    ],
+    "chapters": [
+      2
+    ],
+    "qa": "Les trois coups\nPremier coup : Atma.\nDeuxième coup : Buddhi.\nTroisième coup : Manas.\n\nAvant les trois pas\nAbraham, Isaac, Jacob, au nom de toutes les cérémonies mystiques et religieuses qui ont été célébrées dans ce temple, je viens chercher ma délivrance.\n\nLes trois pas\nDieu d’Abraham.\nDieu d’Isaac.\nDieu de Jacob.\n\nEn prenant place\nAccompagnez-moi Seigneur pour que je prenne place parmi mes frères : ABRAHAM, ISAAC, JACOB."
   }
 ];
 
-    const MEMENTO_THEME_GROUPS = [{"label": "Fondements & apprentissage", "themes": ["Catéchisme & tuilage", "Philosophie & connaissance de soi", "Devoirs, silence & fraternité", "Initiation, cabinet & voyages"]}, {"label": "Le temple & ses travaux", "themes": ["La loge, le temple & les nombres", "Outils du bâtisseur", "Décors & symboles du temple", "Officiers & vie en loge"]}, {"label": "Pratique & approfondissement", "themes": ["Éléments, alchimie & correspondances", "Anges & noms symboliques", "Prière, étoiles & pratique rituelle"]}];
+    const MEMENTO_THEME_GROUPS = [{"label": "Comprendre et se construire", "themes": ["Philosophie & connaissance de soi", "Devoirs & fraternité", "Catéchisme & reconnaissance"]}, {"label": "Le parcours de l’Apprenti", "themes": ["Initiation & marche", "Cabinet de réflexion"]}, {"label": "Le temple et la vie maçonnique", "themes": ["Le temple & les nombres", "Outils du bâtisseur", "Décors & insignes", "Officiers & tenue", "Rites, grades & obédiences"]}, {"label": "Spiritualité et pratique", "themes": ["Éléments & alchimie", "Anges & correspondances", "Prières & méditation", "Gestes & travail rituel"]}];
     const MEMENTO_THEMES = MEMENTO_THEME_GROUPS.flatMap(group => group.themes);
 
     let currentQuestions = [];
@@ -6019,9 +6022,11 @@ footer .font-cinzel { color:#a99a7b; font-size:10px; }
         list.innerHTML = '<p class="memento-empty">Aucune fiche trouvée. Essayez un autre terme ou changez les filtres.</p>';
         return;
       }
-      list.innerHTML = filtered.map(item => {
+      list.innerHTML = filtered.map((item, index) => {
         const source = MEMENTO_SOURCES[item.source];
-        return `<article class="memento-card">
+        const showHeading = !themeSelect.value && (index === 0 || filtered[index - 1].category !== item.category);
+        const heading = showHeading ? `<h3 class="memento-theme-heading">${escapeMemento(item.category)}<span>${filtered.filter(card => card.category === item.category).length} fiches</span></h3>` : '';
+        return `${heading}<article class="memento-card">
           <span class="memento-category">${escapeMemento(item.category)}</span>
           <h3>${escapeMemento(item.title)}</h3>
           <div class="memento-copy">${escapeMemento(item.qa)}</div>
